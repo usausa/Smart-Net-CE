@@ -1,0 +1,393 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5FD78DDC-056A-48CA-B3EC-7EBE8492F839}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Smart</RootNamespace>
+    <AssemblyName>Smart.CE</AssemblyName>
+    <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PlatformFamilyName>WindowsCE</PlatformFamilyName>
+    <PlatformID>E2BECB1F-8C8C-41ba-B736-9BE7D946A398</PlatformID>
+    <OSVersion>5.0</OSVersion>
+    <DeployDirSuffix>Smart.CE</DeployDirSuffix>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <NativePlatformName>Windows CE</NativePlatformName>
+    <FormFactorID>
+    </FormFactorID>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WindowsCE,NETCF</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>0109</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;WindowsCE,NETCF</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRules>-Microsoft.Security#CA2109;-Microsoft.Design#CA2210;-Microsoft.Design#CA1005;-Microsoft.Design#CA1020;-Microsoft.Design#CA1006;-Microsoft.Design#CA1008;-Microsoft.Design#CA1028;-Microsoft.Design#CA1004;-Microsoft.Design#CA1032;-Microsoft.Usage#CA2205;-Microsoft.Naming#CA1702;-Microsoft.Naming#CA1709;-Microsoft.Naming#CA1704;-Microsoft.Naming#CA1720;-Microsoft.Naming#CA1707;-Microsoft.Naming#CA1726</CodeAnalysisRules>
+    <NoWarn>0109</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CustomMarshalers" />
+    <Reference Include="Microsoft.Windowsce.Forms" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlClient, Version=3.0.3600.0, Culture=neutral, PublicKeyToken=3be235df1c8d2ad3, processorArchitecture=MSIL" />
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.0.0, Culture=neutral, PublicKeyToken=3be235df1c8d2ad3, processorArchitecture=MSIL" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActivatorEx.cs" />
+    <Compile Include="ArrayExtensions.cs" />
+    <Compile Include="Bcd.cs" />
+    <Compile Include="BetweenExtensions.cs" />
+    <Compile Include="Collections\Generic\CollectionExtensions.cs" />
+    <Compile Include="Collections\Generic\Comparers.Chain.cs" />
+    <Compile Include="Collections\Generic\Comparers.Comparison.cs" />
+    <Compile Include="Collections\Generic\Comparers.cs" />
+    <Compile Include="Collections\Generic\Comparers.DelegateComparer.cs" />
+    <Compile Include="Collections\Generic\Comparers.DelegateEquality.cs" />
+    <Compile Include="Collections\Generic\Comparers.Enumerable.Comparison.cs" />
+    <Compile Include="Collections\Generic\Comparers.Enumerable.Delegate.cs" />
+    <Compile Include="Collections\Generic\Comparers.Enumerable.ProjectionEquality.cs" />
+    <Compile Include="Collections\Generic\Comparers.Projection.cs" />
+    <Compile Include="Collections\Generic\Comparers.ProjectionEquality.cs" />
+    <Compile Include="Collections\Generic\Comparers.Reverse.cs" />
+    <Compile Include="Collections\Generic\DictionaryExtensions.cs" />
+    <Compile Include="Collections\Generic\KeyedList.cs" />
+    <Compile Include="Collections\Generic\LinkedHashMap.cs" />
+    <Compile Include="Collections\Generic\ListExtensions.cs" />
+    <Compile Include="Collections\Specialized\NameValueCollectionExtensions.cs" />
+    <Compile Include="ComponentModel\ComponentExtensions.cs" />
+    <Compile Include="ComponentModel\DataAnnotations\DisplayAttribute.cs" />
+    <Compile Include="Configuration\AppSettingsSection.cs" />
+    <Compile Include="Configuration\Configuration.cs" />
+    <Compile Include="Configuration\ConfigurationManager.cs" />
+    <Compile Include="Configuration\XmlSettings.cs" />
+    <Compile Include="Converter\Converters\AssignableConverter.cs" />
+    <Compile Include="Converter\Converters\ConvertibleConverter.cs" />
+    <Compile Include="Converter\Converters\DBNullConverter.cs" />
+    <Compile Include="Converter\Converters\EnumConverter.cs" />
+    <Compile Include="Converter\Converters\NullableConverter.cs" />
+    <Compile Include="Converter\Converters\NullConverter.cs" />
+    <Compile Include="Converter\Converters\SqlTypesNullableConverter.cs" />
+    <Compile Include="Converter\Converters\StringConverter.cs" />
+    <Compile Include="Converter\DefaultObjectConverters.cs" />
+    <Compile Include="Converter\IObjectConverter.cs" />
+    <Compile Include="Converter\ObjectConverter.cs" />
+    <Compile Include="Converter\ObjectConverterException.cs" />
+    <Compile Include="Data\DataReaderExtensions.cs" />
+    <Compile Include="Data\DataRecordExtensions.cs" />
+    <Compile Include="Data\DbConnectionExtensions.cs" />
+    <Compile Include="Data\Mapper\DbTypeMap.cs" />
+    <Compile Include="Data\Mapper\DynamicParameter.cs" />
+    <Compile Include="Data\Mapper\ParameterBuilders.cs" />
+    <Compile Include="Data\Mapper\QueryHandlers.cs" />
+    <Compile Include="Data\Mapper\SqlMapper.cs" />
+    <Compile Include="Data\Mapper\SqlMapperException.cs" />
+    <Compile Include="Data\Mapper\TypeMetadata.cs" />
+    <Compile Include="DateTimeExtensions.cs" />
+    <Compile Include="DateTimeOffset.cs" />
+    <Compile Include="DefaultValues.cs" />
+    <Compile Include="DesignMode.cs" />
+    <Compile Include="Diagnostics\DebugBreak.cs" />
+    <Compile Include="Diagnostics\DebugMessage.cs" />
+    <Compile Include="Diagnostics\FileVersionInfo.cs" />
+    <Compile Include="Diagnostics\NativeMethods.cs" />
+    <Compile Include="DisposableExtensions.cs" />
+    <Compile Include="Drawing\Border3DStyle.cs" />
+    <Compile Include="Drawing\Border3DStyleExtensions.cs" />
+    <Compile Include="Drawing\CaptureScreen.cs" />
+    <Compile Include="Drawing\ColorEx.cs" />
+    <Compile Include="Drawing\ColorExtensions.cs" />
+    <Compile Include="Drawing\ContentAlignmentEx.cs" />
+    <Compile Include="Drawing\DibSection.cs" />
+    <Compile Include="Drawing\FillDirection.cs" />
+    <Compile Include="Drawing\FontExtensions.cs" />
+    <Compile Include="Drawing\GraphicsExtensions.cs" />
+    <Compile Include="Drawing\IconExtensions.cs" />
+    <Compile Include="Drawing\ImageExtensions.cs" />
+    <Compile Include="Drawing\ImageHelper.cs" />
+    <Compile Include="Drawing\MemoryGraphics.cs" />
+    <Compile Include="Drawing\NativeMethods.cs" />
+    <Compile Include="Drawing\ShadowMask.cs" />
+    <Compile Include="Drawing\Shape.cs" />
+    <Compile Include="EnumEx.cs" />
+    <Compile Include="EnumExtensions.cs" />
+    <Compile Include="EventHandlerExtensions.cs" />
+    <Compile Include="Inflector.cs" />
+    <Compile Include="IO\BinaryReaderExtensions.cs" />
+    <Compile Include="IO\ByteBuffer.cs" />
+    <Compile Include="IO\ByteOrder.cs" />
+    <Compile Include="IO\DirectoryInfoExtensions.cs" />
+    <Compile Include="IO\DriveInfo.cs" />
+    <Compile Include="IO\FileCreateDisposition.cs" />
+    <Compile Include="IO\FileEx.cs" />
+    <Compile Include="IO\MemoryMappedStream.cs" />
+    <Compile Include="IO\NativeFile.cs" />
+    <Compile Include="IO\NativeMethods.cs" />
+    <Compile Include="IO\PhysicalAddress.cs" />
+    <Compile Include="IO\StreamExtensions.cs" />
+    <Compile Include="IO\TextReaderExtensions.cs" />
+    <Compile Include="Linq\Enumerable.Compatible.cs" />
+    <Compile Include="Linq\Enumerable.Custom.cs" />
+    <Compile Include="Linq\Indexed.cs" />
+    <Compile Include="Logging\DebugLogListener.cs" />
+    <Compile Include="Logging\Log.cs" />
+    <Compile Include="Logging\LogLevel.cs" />
+    <Compile Include="Logging\LogListener.cs" />
+    <Compile Include="Logging\TextWriterLogListener.cs" />
+    <Compile Include="Navigation\INavigatorAware.cs" />
+    <Compile Include="Navigation\IViewEventSupport.cs" />
+    <Compile Include="Navigation\IViewNotifySupport.cs" />
+    <Compile Include="Navigation\IViewProvider.cs" />
+    <Compile Include="Navigation\Navigator.cs" />
+    <Compile Include="Navigation\Plugins\AttributeMember.cs" />
+    <Compile Include="Navigation\Plugins\Context\IViewContextSupport.cs" />
+    <Compile Include="Navigation\Plugins\Context\ViewContextAttribute.cs" />
+    <Compile Include="Navigation\Plugins\Context\ViewContextPlugin.cs" />
+    <Compile Include="Navigation\Plugins\ForwadingPluginContext.cs" />
+    <Compile Include="Navigation\Plugins\INavigatorPlugin.cs" />
+    <Compile Include="Navigation\Plugins\NavigatorPluginBase.cs" />
+    <Compile Include="Navigation\Plugins\Parameter\ViewParameterAttribute.cs" />
+    <Compile Include="Navigation\Plugins\Parameter\ViewParameterPlugin.cs" />
+    <Compile Include="Navigation\ViewAttribute.cs" />
+    <Compile Include="Navigation\ViewExitEventArgs.cs" />
+    <Compile Include="Navigation\ViewForwardEventArgs.cs" />
+    <Compile Include="Navigation\ViewNotifyEventArgs.cs" />
+    <Compile Include="Navigation\ViewParameters.cs" />
+    <Compile Include="Navigation\Windows\Forms\ControlViewBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Navigation\Windows\Forms\ControlViewProvider.cs" />
+    <Compile Include="Net\MapDrive.cs" />
+    <Compile Include="Net\NativeMethods.cs" />
+    <Compile Include="Net\NetworkInformation\IPStatus.cs" />
+    <Compile Include="Net\NetworkInformation\NativeMethods.cs" />
+    <Compile Include="Net\NetworkInformation\Ping.cs" />
+    <Compile Include="Net\NetworkInformation\PingException.cs" />
+    <Compile Include="Net\NetworkInformation\PingOptions.cs" />
+    <Compile Include="Net\NetworkInformation\PingReply.cs" />
+    <Compile Include="Net\Sntp\SntpClient.cs" />
+    <Compile Include="Net\SocketExtensions.cs" />
+    <Compile Include="NumberExtension.cs" />
+    <Compile Include="ObjectExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Range.cs" />
+    <Compile Include="Ref.cs" />
+    <Compile Include="Reflection\AccessorExtensionsCE.cs" />
+    <Compile Include="Reflection\DelegateAccsessor.cs" />
+    <Compile Include="Reflection\DelegateMethodGenerator.cs" />
+    <Compile Include="Reflection\IAccessor.cs" />
+    <Compile Include="Reflection\MemberInfoExtensions.cs" />
+    <Compile Include="Reflection\ReflectionAccessor.cs" />
+    <Compile Include="Reflection\TypeExtensions.cs" />
+    <Compile Include="Reflection\TypeInformation.cs" />
+    <Compile Include="Reflection\TypeInformationFactory.cs" />
+    <Compile Include="Runtime\InteropServices\MarshalEx.cs" />
+    <Compile Include="Runtime\InteropServices\NativeMethods.cs" />
+    <Compile Include="Security\Cryptography\CRC16.cs" />
+    <Compile Include="Security\Cryptography\CRC32.cs" />
+    <Compile Include="Security\Cryptography\DeriveBytes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\Cryptography\Helper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\Cryptography\HMAC.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\Cryptography\HMACSHA1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\Cryptography\KeyedHashAlgorithm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\Cryptography\Rfc2898DeriveBytes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StringExtensions.cs" />
+    <Compile Include="Text\HexHelper.cs" />
+    <Compile Include="Text\SjisHelper.cs" />
+    <Compile Include="Text\StringAlignment.cs" />
+    <Compile Include="Text\StringBuilderExtensions.cs" />
+    <Compile Include="Threading\AtomicBoolean.cs" />
+    <Compile Include="Threading\AtomicInteger.cs" />
+    <Compile Include="Threading\EventWaitHandleEx.cs" />
+    <Compile Include="Threading\NamedMutex.cs" />
+    <Compile Include="Threading\NativeMethods.cs" />
+    <Compile Include="Threading\Semaphore.cs" />
+    <Compile Include="Threading\SemaphoreFullException.cs" />
+    <Compile Include="Threading\SynchronizationContext.cs" />
+    <Compile Include="Toolhelp\Heap.cs" />
+    <Compile Include="Toolhelp\ModuleEntry.cs" />
+    <Compile Include="Toolhelp\NativeMethods.cs" />
+    <Compile Include="Toolhelp\ProcessEntry.cs" />
+    <Compile Include="Toolhelp\ThreadEntry.cs" />
+    <Compile Include="Tuple.cs" />
+    <Compile Include="TypeExtensions.cs" />
+    <Compile Include="TypeExtensionsCE.cs" />
+    <Compile Include="UnixEpoch.cs" />
+    <Compile Include="Win32\CB.cs" />
+    <Compile Include="Win32\CBN.cs" />
+    <Compile Include="Win32\CBS.cs" />
+    <Compile Include="Win32\EM.cs" />
+    <Compile Include="Win32\ES.cs" />
+    <Compile Include="Win32\GW.cs" />
+    <Compile Include="Win32\GWL.cs" />
+    <Compile Include="Win32\HWND.cs" />
+    <Compile Include="Win32\LBS.cs" />
+    <Compile Include="Win32\LVM.cs" />
+    <Compile Include="Win32\NativeMethods.cs" />
+    <Compile Include="Win32\NMCUSTOMDRAW.cs" />
+    <Compile Include="Win32\NMHDR.cs" />
+    <Compile Include="Win32\NMLVCUSTOMDRAW.cs" />
+    <Compile Include="Win32\POINT.cs" />
+    <Compile Include="Win32\RECT.cs" />
+    <Compile Include="Win32\RegistryKeyExtensions.cs" />
+    <Compile Include="Win32\SIZE.cs" />
+    <Compile Include="Win32\SW.cs" />
+    <Compile Include="Win32\SWP.cs" />
+    <Compile Include="Win32\TCN.cs" />
+    <Compile Include="Win32\Win32Window.cs" />
+    <Compile Include="Win32\WindowHelper.cs" />
+    <Compile Include="Win32\WM.cs" />
+    <Compile Include="Win32\WS.cs" />
+    <Compile Include="Win32\WS_EX.cs" />
+    <Compile Include="WindowsCE\ACLineStatus.cs" />
+    <Compile Include="WindowsCE\CpuUsage.cs" />
+    <Compile Include="WindowsCE\DateTimeSetting.cs" />
+    <Compile Include="WindowsCE\DeviceInformation.cs" />
+    <Compile Include="WindowsCE\DeviceManager.cs" />
+    <Compile Include="WindowsCE\Led.cs" />
+    <Compile Include="WindowsCE\LedStatus.cs" />
+    <Compile Include="WindowsCE\MemoryManager.cs" />
+    <Compile Include="WindowsCE\MemoryStatus.cs" />
+    <Compile Include="WindowsCE\NativeMethods.cs" />
+    <Compile Include="WindowsCE\NdisDevice.cs" />
+    <Compile Include="WindowsCE\PowerBroadcastStatus.cs" />
+    <Compile Include="WindowsCE\PowerBroardCastEventArgs.cs" />
+    <Compile Include="WindowsCE\PowerManager.cs" />
+    <Compile Include="WindowsCE\PowerStatus.cs" />
+    <Compile Include="WindowsCE\ProcessorArchitecture.cs" />
+    <Compile Include="WindowsCE\ProcessorType.cs" />
+    <Compile Include="WindowsCE\StoreInformation.cs" />
+    <Compile Include="WindowsCE\SystemInfo.cs" />
+    <Compile Include="WindowsCE\SystemMemoryDivision.cs" />
+    <Compile Include="Windows\Forms\AnimateControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\ApplicationEx.cs" />
+    <Compile Include="Windows\Forms\BorderEffect.cs" />
+    <Compile Include="Windows\Forms\ButtonCustomize.cs" />
+    <Compile Include="Windows\Forms\ButtonExtensions.cs" />
+    <Compile Include="Windows\Forms\ButtonState.cs" />
+    <Compile Include="Windows\Forms\CheckBoxExtensions.cs" />
+    <Compile Include="Windows\Forms\ComboBoxExtensions.cs" />
+    <Compile Include="Windows\Forms\ControlEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\ControlExtensions.cs" />
+    <Compile Include="Windows\Forms\CreateParams.cs" />
+    <Compile Include="Windows\Forms\CursorChanger.cs" />
+    <Compile Include="Windows\Forms\FormExtensions.cs" />
+    <Compile Include="Windows\Forms\GradationStyle.cs" />
+    <Compile Include="Windows\Forms\GraphicalButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\GraphicalButtonBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\GraphicalControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\GraphicalToggle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\IButtonControl.cs" />
+    <Compile Include="Windows\Forms\ImageCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\IMessageFilter.cs" />
+    <Compile Include="Windows\Forms\InactivityFilter.cs" />
+    <Compile Include="Windows\Forms\KeyboardHook.cs" />
+    <Compile Include="Windows\Forms\KeyDataEventArgs.cs" />
+    <Compile Include="Windows\Forms\LinearGuage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\ListBoxExtensions.cs" />
+    <Compile Include="Windows\Forms\MessageHook.cs" />
+    <Compile Include="Windows\Forms\NativeMethods.cs" />
+    <Compile Include="Windows\Forms\NativeWindow.cs" />
+    <Compile Include="Windows\Forms\NotifyIcon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\PictureBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\SendKeys.cs" />
+    <Compile Include="Windows\Forms\SipButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\SipButtonCollection.cs" />
+    <Compile Include="Windows\Forms\SipControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\SipEventArgs.cs" />
+    <Compile Include="Windows\Forms\SystemInformationEx.cs" />
+    <Compile Include="Windows\Forms\Behaivors.TextBox.cs" />
+    <Compile Include="Windows\Forms\TextBoxExtensions.cs" />
+    <Compile Include="Windows\Forms\WndProcCallback.cs" />
+    <Compile Include="Windows\Forms\Behaivors.cs" />
+    <Compile Include="Windows\Forms\Behaivors.ComboBox.cs" />
+    <Compile Include="Windows\Forms\Behaivors.ListView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DesignTimeAttributes.xmta" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\Tool\StyleCop.MSBuild.4.7.49.0\build\StyleCop.MSBuild.Targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
