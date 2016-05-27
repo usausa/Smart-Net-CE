@@ -4,7 +4,7 @@
     using System.Reflection;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     /// <typeparam name="TTarget"></typeparam>
     /// <typeparam name="TMember"></typeparam>
@@ -15,17 +15,17 @@
         private readonly Action<TTarget, TMember> setter;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MemberInfo MemberInfo { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Type Type { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool CanRead
         {
@@ -33,7 +33,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool CanWrite
         {
@@ -41,7 +41,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="memberInfo"></param>
         /// <param name="type"></param>
@@ -56,7 +56,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="target"></param>
         /// <returns></returns>
@@ -66,7 +66,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="target"></param>
         /// <param name="value"></param>
@@ -77,7 +77,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     /// <typeparam name="TTarget"></typeparam>
     /// <typeparam name="TMember"></typeparam>
@@ -86,21 +86,21 @@
         private readonly Func<TTarget, TMember> getter;
 
         private readonly Action<TTarget, TMember> setter;
-        
+
         private readonly TMember nullValue;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MemberInfo MemberInfo { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Type Type { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool CanRead
         {
@@ -108,7 +108,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool CanWrite
         {
@@ -116,7 +116,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="memberInfo"></param>
         /// <param name="type"></param>
@@ -133,7 +133,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="target"></param>
         /// <returns></returns>
@@ -143,7 +143,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="target"></param>
         /// <param name="value"></param>

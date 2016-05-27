@@ -4,7 +4,7 @@
     using System.Runtime.InteropServices;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1815:OverrideEqualsAndOperatorEqualsOnValueTypes", Justification = "P/Invoke")]
     [StructLayout(LayoutKind.Sequential)]

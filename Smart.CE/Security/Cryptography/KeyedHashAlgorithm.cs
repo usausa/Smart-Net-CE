@@ -4,18 +4,18 @@
     using System.Security.Cryptography;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public abstract class KeyedHashAlgorithm : HashAlgorithm
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays", Justification = "Ignore")]
         protected byte[] KeyValue { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays", Justification = "Compatibility")]
         public virtual byte[] Key
@@ -36,7 +36,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="disposing"></param>
         protected override void Dispose(bool disposing)

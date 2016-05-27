@@ -7,7 +7,7 @@
     using Smart.Drawing;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class GraphicalControl : ControlEx
     {
@@ -29,7 +29,7 @@
         private bool disposeResource;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string Text
         {
@@ -42,7 +42,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Size TextPadding
         {
@@ -55,7 +55,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentAlignmentEx TextAlign
         {
@@ -68,7 +68,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool MultiLine
         {
@@ -81,7 +81,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GradationStyle GradationStyle
         {
@@ -94,7 +94,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override Color BackColor
         {
@@ -107,7 +107,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Color BackColor2
         {
@@ -120,7 +120,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Color ShadowColor
         {
@@ -133,7 +133,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ShadowMask ShadowMask
         {
@@ -146,7 +146,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool UseTransparent
         {
@@ -159,7 +159,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Color TransparentColor
         {
@@ -172,7 +172,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Image Image
         {
@@ -190,7 +190,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool DisposeResource
         {
@@ -203,7 +203,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="disposing"></param>
         protected override void Dispose(bool disposing)
@@ -219,7 +219,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         protected virtual void DisposeResources()
         {
@@ -231,7 +231,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", Justification = "Compatibility")]
@@ -240,7 +240,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Protected")]
@@ -252,7 +252,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="g"></param>
         protected virtual void OnDraw(Graphics g)
@@ -268,7 +268,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         protected virtual Rectangle CalcBackgroundRect()
@@ -277,7 +277,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         protected virtual Rectangle CalcTextRect()
@@ -291,7 +291,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         protected virtual Rectangle CalcBorderRect()
@@ -300,7 +300,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="g"></param>
         /// <param name="rect"></param>
@@ -332,7 +332,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="g"></param>
         /// <param name="rect"></param>
@@ -363,7 +363,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="g"></param>
         /// <param name="rect"></param>
@@ -373,7 +373,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="g"></param>
         /// <param name="rect"></param>
@@ -438,7 +438,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="g"></param>
         /// <param name="rect"></param>

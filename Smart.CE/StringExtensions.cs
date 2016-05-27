@@ -4,12 +4,12 @@
     using System.Text;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class StringExtensions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
@@ -19,7 +19,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         /// <param name="count"></param>

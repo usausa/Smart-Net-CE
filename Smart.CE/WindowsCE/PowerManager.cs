@@ -7,7 +7,7 @@
     using Microsoft.WindowsCE.Forms;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class PowerManager
     {
@@ -33,7 +33,7 @@
         private static EventHandler<PowerBroardCastEventArgs> powerBroadCast;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static event EventHandler<PowerBroardCastEventArgs> PowerBroadCast
         {
@@ -58,14 +58,14 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private class PowerMessageWindow : MessageWindow
         {
             private const int WM_POWERBROADCAST = 0x0218;
 
             /// <summary>
-            /// 
+            ///
             /// </summary>
             /// <param name="m"></param>
             protected override void WndProc(ref Message m)
@@ -84,7 +84,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static PowerStatus PowerStatus
         {
@@ -97,7 +97,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static void ResetSystemIdleTimer()
         {
@@ -105,7 +105,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static void SetIdleState()
         {
@@ -117,7 +117,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static void PowerOff()
         {
@@ -138,7 +138,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1806:DoNotIgnoreMethodResults", Justification = "Ignore")]
         public static void SoftReset()

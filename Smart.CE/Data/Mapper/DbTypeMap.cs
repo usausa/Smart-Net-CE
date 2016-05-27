@@ -6,7 +6,7 @@
     using System.Globalization;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class DbTypeMap
     {
@@ -15,7 +15,7 @@
         private Dictionary<Type, DbType> typeMap;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static DbTypeMap Default
         {
@@ -23,7 +23,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DbTypeMap()
         {
@@ -31,7 +31,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="type"></param>
         /// <param name="dbType"></param>
@@ -47,11 +47,11 @@
 
             var newCopy = new Dictionary<Type, DbType>(snapshot);
             newCopy[type] = dbType;
-            typeMap = newCopy; 
+            typeMap = newCopy;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Reset()
         {
@@ -97,7 +97,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>

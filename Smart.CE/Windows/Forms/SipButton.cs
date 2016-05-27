@@ -6,7 +6,7 @@
     using Smart.Drawing;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [DesignTimeVisible(false)]
     public class SipButton : Component
@@ -27,17 +27,17 @@
         private Image selectedImage;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         internal SipControl Parent { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int Key { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Rectangle Rectangle
         {
@@ -50,7 +50,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string Text
         {
@@ -63,7 +63,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Enabled
         {
@@ -76,7 +76,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Font Font
         {
@@ -89,7 +89,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Color BackColor
         {
@@ -102,7 +102,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Color BackColor2
         {
@@ -115,7 +115,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Color ForeColor
         {
@@ -128,7 +128,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Color BorderColor
         {
@@ -141,7 +141,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Color SelectedBackColor
         {
@@ -154,7 +154,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Color SelectedBackColor2
         {
@@ -167,7 +167,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Color SelectedForeColor
         {
@@ -180,7 +180,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Color SelectedBorderColor
         {
@@ -193,7 +193,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Image Image
         {
@@ -206,7 +206,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Image SelectedImage
         {
@@ -219,7 +219,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="disposing"></param>
         protected override void Dispose(bool disposing)
@@ -231,7 +231,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         protected void UpdateParent()
         {
@@ -242,7 +242,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="rect"></param>
         protected void UpdateParent(Rectangle rect)
@@ -254,7 +254,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>
@@ -265,7 +265,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="g"></param>
         /// <param name="selected"></param>

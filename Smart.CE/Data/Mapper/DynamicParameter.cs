@@ -6,7 +6,7 @@
     using System.Linq;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface IDynamicParameter
     {
@@ -14,7 +14,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed class DynamicParameter : IDynamicParameter
     {
@@ -33,7 +33,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DynamicParameter()
         {
@@ -41,7 +41,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="dbTypeMap"></param>
         public DynamicParameter(DbTypeMap dbTypeMap)
@@ -50,7 +50,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IEnumerable<string> ParameterNames
         {
@@ -58,7 +58,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="name"></param>
         /// <param name="value"></param>
@@ -68,7 +68,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="name"></param>
         /// <param name="value"></param>
@@ -79,7 +79,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="name"></param>
         /// <param name="value"></param>
@@ -91,7 +91,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="name"></param>
         /// <param name="value"></param>
@@ -103,7 +103,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="name"></param>
         /// <param name="value"></param>
@@ -116,7 +116,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="name"></param>
@@ -132,7 +132,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="cmd"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Framework only")]

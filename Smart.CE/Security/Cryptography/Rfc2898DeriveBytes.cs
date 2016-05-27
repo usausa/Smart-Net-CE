@@ -4,7 +4,7 @@
     using System.Text;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class Rfc2898DeriveBytes : DeriveBytes
     {
@@ -18,7 +18,7 @@
         private int startIndex;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int IterationCount
         {
@@ -39,7 +39,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays", Justification = "Compatibility")]
         public byte[] Salt
@@ -90,7 +90,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="password"></param>
         /// <param name="salt"></param>
@@ -101,7 +101,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="password"></param>
         /// <param name="salt"></param>
@@ -116,7 +116,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="disposing"></param>
         protected override void Dispose(bool disposing)
@@ -129,7 +129,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private void Initialize()
         {
@@ -140,7 +140,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override void Reset()
         {
@@ -148,7 +148,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="cb"></param>
         /// <returns></returns>
@@ -197,7 +197,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         private byte[] GetSource()

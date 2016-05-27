@@ -3,13 +3,13 @@
     using System.Security.Cryptography;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", Justification = "Ignore")]
     public class HMACSHA1 : HMAC
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HMACSHA1()
             : this(Helper.GenerateRandom(0x40), false)
@@ -17,7 +17,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="key"></param>
         public HMACSHA1(byte[] key)
@@ -26,7 +26,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="key"></param>
         /// <param name="useManagedSha1"></param>

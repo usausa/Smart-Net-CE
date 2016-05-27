@@ -1,7 +1,7 @@
 ﻿namespace Smart.Windows.Forms
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ButtonState
     {

@@ -6,12 +6,12 @@
     using System.IO;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class ImageExtensions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="image"></param>
         /// <returns></returns>
@@ -22,7 +22,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="image"></param>
         /// <param name="format"></param>
@@ -43,7 +43,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="image"></param>
         /// <param name="size"></param>
@@ -54,7 +54,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="image"></param>
         /// <param name="height"></param>
@@ -73,7 +73,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="image"></param>
         /// <param name="size"></param>
@@ -84,7 +84,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="image"></param>
         /// <param name="width"></param>
@@ -119,7 +119,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="image"></param>
         /// <param name="size"></param>
@@ -130,7 +130,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="image"></param>
         /// <param name="backColor"></param>
@@ -142,7 +142,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="image"></param>
         /// <param name="width"></param>
@@ -154,7 +154,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="image"></param>
         /// <param name="backColor"></param>

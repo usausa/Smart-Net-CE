@@ -6,12 +6,12 @@
     using Smart.Windows.Forms;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class ConfigurationManager
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="filePath"></param>
         /// <returns></returns>
@@ -21,7 +21,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public static Configuration OpenExeConfiguration()

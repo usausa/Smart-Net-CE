@@ -6,7 +6,7 @@
     using System.Linq;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     /// <typeparam name="TKey"></typeparam>
     /// <typeparam name="TValue"></typeparam>
@@ -16,7 +16,7 @@
         private readonly LinkedList<KeyValuePair<TKey, TValue>> list;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public LinkedHashMap()
         {
@@ -25,7 +25,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="comparer"></param>
         public LinkedHashMap(IEqualityComparer<TKey> comparer)
@@ -35,7 +35,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="capacity"></param>
         public LinkedHashMap(int capacity)
@@ -45,7 +45,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="capacity"></param>
         /// <param name="comparer"></param>
@@ -56,7 +56,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="source"></param>
         public LinkedHashMap(IEnumerable<KeyValuePair<TKey, TValue>> source)
@@ -76,7 +76,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="source"></param>
         /// <param name="comparer"></param>
@@ -86,7 +86,7 @@
             {
                 throw new ArgumentNullException("source");
             }
-            
+
             var countable = source as ICollection;
             dictionary = countable != null ? new Dictionary<TKey, LinkedListNode<KeyValuePair<TKey, TValue>>>(countable.Count, comparer) : new Dictionary<TKey, LinkedListNode<KeyValuePair<TKey, TValue>>>(comparer);
             list = new LinkedList<KeyValuePair<TKey, TValue>>();
@@ -97,7 +97,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
@@ -107,7 +107,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="key"></param>
         /// <param name="value"></param>
@@ -117,7 +117,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="key"></param>
         /// <param name="value"></param>
@@ -129,7 +129,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
@@ -145,7 +145,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="node"></param>
         private void DoRemove(LinkedListNode<KeyValuePair<TKey, TValue>> node)
@@ -155,7 +155,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="key"></param>
         /// <param name="value"></param>
@@ -173,7 +173,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="key"></param>
         /// <param name="value"></param>
@@ -192,7 +192,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
@@ -212,7 +212,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="node"></param>
         /// <param name="key"></param>
@@ -226,7 +226,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ICollection<TKey> Keys
         {
@@ -237,7 +237,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ICollection<TValue> Values
         {
@@ -248,7 +248,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Clear()
         {
@@ -257,7 +257,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int Count
         {
@@ -265,7 +265,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool IsReadOnly
         {
@@ -273,7 +273,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
@@ -282,7 +282,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         IEnumerator IEnumerable.GetEnumerator()
@@ -291,7 +291,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="item"></param>
         void ICollection<KeyValuePair<TKey, TValue>>.Add(KeyValuePair<TKey, TValue> item)
@@ -300,7 +300,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>
@@ -311,7 +311,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="arrayIndex"></param>
@@ -321,7 +321,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>

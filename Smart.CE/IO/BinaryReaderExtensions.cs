@@ -5,12 +5,12 @@
     using System.Runtime.InteropServices;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class BinaryReaderExtensions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="reader"></param>

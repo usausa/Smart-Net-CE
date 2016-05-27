@@ -5,7 +5,7 @@
     using System.Text;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     internal struct SHFILEINFO
@@ -20,7 +20,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     internal static class NativeMethods
     {

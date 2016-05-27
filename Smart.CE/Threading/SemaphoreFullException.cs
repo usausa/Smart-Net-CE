@@ -3,20 +3,20 @@
     using System;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [Serializable]
     public class SemaphoreFullException : SystemException
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SemaphoreFullException()
         {
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="message"></param>
         public SemaphoreFullException(string message)
@@ -25,7 +25,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>

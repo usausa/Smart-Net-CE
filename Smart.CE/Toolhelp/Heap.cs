@@ -4,12 +4,12 @@
     using System.Runtime.InteropServices;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class Heap
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="processId"></param>
         /// <returns></returns>

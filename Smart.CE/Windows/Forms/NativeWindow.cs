@@ -6,7 +6,7 @@
     using Microsoft.WindowsCE.Forms;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1049:TypesThatOwnNativeResourcesShouldBeDisposable", Justification = "Compatibility")]
     public class NativeWindow
@@ -18,12 +18,12 @@
         private WndProcDelegate windowProc;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IntPtr Handle { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ~NativeWindow()
         {
@@ -34,7 +34,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual void DestroyHandle()
         {
@@ -42,7 +42,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="handle"></param>
         /// <returns></returns>
@@ -54,7 +54,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="cp"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Interoperability", "CA1404:CallGetLastErrorImmediatelyAfterPInvoke", Justification = "No problem")]
@@ -81,7 +81,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="handle"></param>
         public void AssignHandle(IntPtr handle)
@@ -97,14 +97,14 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         protected virtual void OnHandleChange()
         {
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void ReleaseHandle()
         {
@@ -121,7 +121,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private void Subclass()
         {
@@ -134,7 +134,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private void UnSubclass()
         {
@@ -147,7 +147,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hWnd"></param>
         /// <param name="msg"></param>
@@ -160,7 +160,7 @@
             WndProc(ref m);
 
             // WM_NCDESTROY
-            if (msg == 130)    
+            if (msg == 130)
             {
                 ReleaseHandle();
             }
@@ -169,7 +169,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="m"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1045:DoNotPassTypesByReference", Justification = "Compatibility")]
@@ -179,7 +179,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="m"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1045:DoNotPassTypesByReference", Justification = "Compatibility")]

@@ -4,14 +4,14 @@
     using System.Collections.Generic;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class DefaultValue
     {
         private static readonly Dictionary<Type, object> Cache = new Dictionary<Type, object>();
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>

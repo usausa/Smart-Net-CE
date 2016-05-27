@@ -5,7 +5,7 @@
     using System.Reflection;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     /// <param name="type"></param>
     /// <param name="filterCriteria"></param>
@@ -13,7 +13,7 @@
     public delegate bool TypeFilter(Type type, object filterCriteria);
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     /// <param name="memberInfo"></param>
     /// <param name="filterCriteria"></param>
@@ -21,12 +21,12 @@
     public delegate bool MemberFilter(MemberInfo memberInfo, object filterCriteria);
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class TypeExtensionsCE
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="type"></param>
         /// <param name="filter"></param>
@@ -70,7 +70,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="type"></param>
         /// <param name="memberType"></param>
@@ -112,7 +112,7 @@
                     count += methods.Length;
                 }
             }
-            
+
             if ((memberType & MemberTypes.Constructor) != 0)
             {
                 constructors = type.GetConstructors(bindingAttr);
@@ -135,7 +135,7 @@
                     count += constructors.Length;
                 }
             }
-            
+
             if ((memberType & MemberTypes.Field) != 0)
             {
                 fields = type.GetFields(bindingAttr);
@@ -158,7 +158,7 @@
                     count += fields.Length;
                 }
             }
-            
+
             if ((memberType & MemberTypes.Property) != 0)
             {
                 properties = type.GetProperties(bindingAttr);
@@ -181,7 +181,7 @@
                     count += properties.Length;
                 }
             }
-            
+
             if ((memberType & MemberTypes.Event) != 0)
             {
                 events = type.GetEvents();
@@ -204,7 +204,7 @@
                     count += events.Length;
                 }
             }
-            
+
             if ((memberType & MemberTypes.NestedType) != 0)
             {
                 nestedTypes = type.GetNestedTypes(bindingAttr);
@@ -230,7 +230,7 @@
 
             var array = new MemberInfo[count];
             count = 0;
-            
+
             if (methods != null)
             {
                 foreach (var t in methods.Where(t => t != null))
@@ -238,7 +238,7 @@
                     array[count++] = t;
                 }
             }
-            
+
             if (constructors != null)
             {
                 foreach (var t in constructors.Where(t => t != null))
@@ -246,7 +246,7 @@
                     array[count++] = t;
                 }
             }
-            
+
             if (fields != null)
             {
                 foreach (var t in fields.Where(t => t != null))
@@ -254,7 +254,7 @@
                     array[count++] = t;
                 }
             }
-            
+
             if (properties != null)
             {
                 foreach (var t in properties.Where(t => t != null))
@@ -262,7 +262,7 @@
                     array[count++] = t;
                 }
             }
-            
+
             if (events != null)
             {
                 foreach (var t in events.Where(t => t != null))

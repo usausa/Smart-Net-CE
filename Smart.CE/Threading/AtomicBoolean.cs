@@ -3,7 +3,7 @@
     using System.Threading;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class AtomicBoolean
     {
@@ -25,14 +25,14 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AtomicBoolean()
         {
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="initialValue"></param>
         public AtomicBoolean(bool initialValue)
@@ -41,7 +41,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>

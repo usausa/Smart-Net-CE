@@ -5,7 +5,7 @@
     using System.Runtime.InteropServices;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class PhysicalAddress : IDisposable
     {
@@ -23,7 +23,7 @@
         private IntPtr virtualAddress;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="physicalAddress"></param>
         /// <param name="size"></param>
@@ -33,7 +33,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="physicalAddress"></param>
         /// <param name="size"></param>
@@ -62,7 +62,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ~PhysicalAddress()
         {
@@ -70,7 +70,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Dispose()
         {
@@ -79,7 +79,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="disposing"></param>
         protected virtual void Dispose(bool disposing)
@@ -91,7 +91,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Justification = "By Design")]
@@ -101,7 +101,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="address"></param>
         /// <returns></returns>
@@ -117,7 +117,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public byte ReadByte()
@@ -126,7 +126,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="length"></param>
         /// <returns></returns>
@@ -138,7 +138,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public short ReadInt16()
@@ -147,7 +147,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public int ReadInt32()
@@ -156,7 +156,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="offset"></param>
         /// <returns></returns>
@@ -166,7 +166,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="data"></param>
         public void WriteByte(byte data)
@@ -175,7 +175,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="bytes"></param>
         public void WriteBytes(byte[] bytes)
@@ -189,7 +189,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="data"></param>
         public void WriteInt16(short data)
@@ -198,7 +198,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="data"></param>
         public void WriteInt32(int data)
@@ -207,7 +207,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="data"></param>
         /// <param name="offset"></param>

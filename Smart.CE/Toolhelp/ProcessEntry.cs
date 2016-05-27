@@ -8,7 +8,7 @@
     using System.Text;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ProcessEntry
     {
@@ -30,42 +30,42 @@
         private const int MAX_PATH = 260;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public uint UsageCount { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public uint ProcessId { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public uint ThreadCount { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public uint ParentProcessId { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long BasePriority { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string ExeFile { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public uint BaseAddress { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Interoperability", "CA1404:CallGetLastErrorImmediatelyAfterPInvoke", Justification = "No problem")]
@@ -94,7 +94,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="data"></param>
         private ProcessEntry(byte[] data)
@@ -109,7 +109,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Kill()
         {
@@ -122,7 +122,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public ThreadEntry[] GetThreads()
@@ -131,7 +131,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public ModuleEntry[] GetModules()
@@ -140,7 +140,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public uint CalcHeapUsage()
@@ -149,7 +149,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public override string ToString()

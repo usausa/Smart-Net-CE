@@ -3,12 +3,12 @@
     using Microsoft.WindowsCE.Forms;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface IMessageFilter
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="m"></param>
         /// <returns></returns>

@@ -3,7 +3,7 @@
     using System;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CreateParams
     {
@@ -20,7 +20,7 @@
         public IntPtr Param { get; set; }
 
         public IntPtr Parent { get; set; }
-        
+
         public int Style { get; set; }
 
         public int Width { get; set; }
@@ -30,7 +30,7 @@
         public int Y { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateParams()
         {

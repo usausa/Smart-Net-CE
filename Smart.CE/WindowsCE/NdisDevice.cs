@@ -7,7 +7,7 @@
     using System.Text;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class NdisDevice : IDisposable
     {
@@ -31,7 +31,7 @@
         public string DeviceName { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="ndisDeviceName"></param>
         public NdisDevice(string ndisDeviceName)
@@ -42,7 +42,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ~NdisDevice()
         {
@@ -50,7 +50,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Dispose()
         {
@@ -59,7 +59,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="disposing"></param>
         protected virtual void Dispose(bool disposing)
@@ -72,7 +72,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public unsafe void UpdateDeviceName()
         {
@@ -100,7 +100,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public unsafe bool MediaConnected
         {
@@ -131,7 +131,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public unsafe int TxPowerLevel
         {

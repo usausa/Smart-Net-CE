@@ -5,12 +5,12 @@
     using Smart.Converter.Converters;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class DefaultObjectConverters
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public static IList<IObjectConverter> Create()

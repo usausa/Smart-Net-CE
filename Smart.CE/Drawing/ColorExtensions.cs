@@ -4,12 +4,12 @@
     using System.Drawing;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class ColorExtensions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="color"></param>
         /// <returns></returns>
@@ -19,7 +19,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="color1"></param>
         /// <param name="color2"></param>
@@ -34,7 +34,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="color"></param>
         /// <returns></returns>
@@ -44,7 +44,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="color"></param>
         /// <returns></returns>
@@ -55,7 +55,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="color"></param>
         /// <returns></returns>

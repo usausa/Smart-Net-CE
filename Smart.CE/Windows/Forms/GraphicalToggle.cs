@@ -5,7 +5,7 @@
     using System.Windows.Forms;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class GraphicalToggle : GraphicalButtonBase
     {
@@ -15,7 +15,7 @@
         private bool active;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Checked
         {
@@ -32,7 +32,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         protected override bool IsPressed
         {
@@ -40,7 +40,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         protected virtual void OnCheckStateChanged(EventArgs e)
@@ -52,7 +52,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Protected")]
@@ -69,7 +69,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Protected")]
@@ -94,7 +94,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         protected override void OnMouseUp(MouseEventArgs e)
@@ -111,7 +111,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Protected")]

@@ -5,19 +5,19 @@
     using System.Data;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface IParameterBuilder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
         bool IsMatch(object param);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="cmd"></param>
         /// <param name="param"></param>
@@ -25,12 +25,12 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class DynamicParameterParameterBuilder : IParameterBuilder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
@@ -51,14 +51,14 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class DictionaryParameterBuilder : IParameterBuilder
     {
         private readonly DbTypeMap dbTypeMap;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="dbTypeMap"></param>
         public DictionaryParameterBuilder(DbTypeMap dbTypeMap)
@@ -67,7 +67,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
@@ -77,7 +77,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="cmd"></param>
         /// <param name="param"></param>
@@ -101,7 +101,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ObjectParameterBuilder : IParameterBuilder
     {
@@ -110,7 +110,7 @@
         private readonly ITypeMetadataFactory metadataFactory;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="dbTypeMap"></param>
         /// <param name="metadataFactory"></param>
@@ -121,7 +121,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
@@ -131,7 +131,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="cmd"></param>
         /// <param name="param"></param>
@@ -155,12 +155,12 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class DefaultParameterBuilders
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public static IList<IParameterBuilder> Create()

@@ -8,24 +8,24 @@
     using Smart.Drawing;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public abstract class BorderEffect
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Control Target { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         protected BorderEffect()
         {
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="target"></param>
         protected BorderEffect(Control target)
@@ -34,7 +34,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="target"></param>
         public void Attach(Control target)
@@ -52,7 +52,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Detach()
         {
@@ -63,7 +63,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -76,7 +76,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -84,7 +84,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ShadowEffect : BorderEffect
     {
@@ -93,7 +93,7 @@
         private Color borderColor = Color.Gray;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ShadowMask ShadowMask
         {
@@ -106,7 +106,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int BorderWidth
         {
@@ -119,7 +119,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Color BorderColor
         {
@@ -132,14 +132,14 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ShadowEffect()
         {
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="target"></param>
         public ShadowEffect(Control target)
@@ -148,7 +148,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private void Invalidate()
         {
@@ -167,7 +167,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -224,7 +224,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class Border3DEffect : BorderEffect
     {
@@ -233,7 +233,7 @@
         private Color color = SystemColors.Control;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Border3DStyle Border3DStyle
         {
@@ -246,7 +246,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Color Color
         {
@@ -259,14 +259,14 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Border3DEffect()
         {
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="target"></param>
         public Border3DEffect(Control target)
@@ -275,7 +275,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private void Invalidate()
         {
@@ -291,7 +291,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -304,14 +304,14 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class BorderEffectManager
     {
         private readonly List<BorderEffect> borderEffects = new List<BorderEffect>();
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="effects"></param>
         public void Add(params BorderEffect[] effects)
@@ -320,7 +320,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="targets"></param>
         public void AddShadow(params Control[] targets)
@@ -337,7 +337,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="borderWidth"></param>
         /// <param name="targets"></param>
@@ -355,7 +355,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="borderColor"></param>
         /// <param name="targets"></param>
@@ -373,7 +373,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="shadowMask"></param>
         /// <param name="targets"></param>
@@ -391,7 +391,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="borderWidth"></param>
         /// <param name="borderColor"></param>
@@ -410,7 +410,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="borderWidth"></param>
         /// <param name="shadowMask"></param>
@@ -429,7 +429,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="borderColor"></param>
         /// <param name="shadowMask"></param>
@@ -448,7 +448,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="borderWidth"></param>
         /// <param name="borderColor"></param>
@@ -468,7 +468,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="targets"></param>
         public void AddBorder3D(params Control[] targets)
@@ -485,7 +485,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="border3DStyle"></param>
         /// <param name="targets"></param>
@@ -503,7 +503,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="color"></param>
         /// <param name="targets"></param>
@@ -521,7 +521,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="border3DStyle"></param>
         /// <param name="color"></param>
@@ -540,7 +540,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="targets"></param>
         public void Detach(params Control[] targets)
@@ -563,7 +563,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="target"></param>

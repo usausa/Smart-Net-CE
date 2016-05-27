@@ -4,12 +4,12 @@
     using System.Globalization;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class Border3DStyleExtensions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="style"></param>
         /// <returns></returns>

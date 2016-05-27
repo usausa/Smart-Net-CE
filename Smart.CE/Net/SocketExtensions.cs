@@ -3,12 +3,12 @@
     using System.Net.Sockets;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class SocketExtensions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="socket"></param>
         /// <returns></returns>

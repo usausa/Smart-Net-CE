@@ -6,12 +6,12 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class XmlSettings
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="fileName"></param>
@@ -31,7 +31,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="stream"></param>
@@ -46,7 +46,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="filename"></param>
         /// <param name="data"></param>
@@ -66,7 +66,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="stream"></param>
         /// <param name="data"></param>

@@ -3,7 +3,7 @@
     using System.Windows.Forms;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface IButtonControl
     {

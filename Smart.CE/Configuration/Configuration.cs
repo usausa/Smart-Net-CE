@@ -5,7 +5,7 @@
     using System.Xml;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces", Justification = "Compatibility")]
     public class Configuration
@@ -15,7 +15,7 @@
         public string FilePath { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="filePath"></param>
         internal Configuration(string filePath)
@@ -27,7 +27,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private void Load()
         {
@@ -55,7 +55,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Save()
         {

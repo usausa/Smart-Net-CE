@@ -6,24 +6,24 @@
     using System.Runtime.InteropServices;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class NativeFile : IDisposable
     {
         public static readonly IntPtr InvalidHandle = new IntPtr(-1);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string Name { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IntPtr Handle { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool IsOpen
         {
@@ -34,7 +34,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int Length
         {
@@ -45,7 +45,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public NativeFile()
         {
@@ -53,7 +53,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="name"></param>
         public NativeFile(string name)
@@ -68,7 +68,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ~NativeFile()
         {
@@ -76,7 +76,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Dispose()
         {
@@ -85,7 +85,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="disposing"></param>
         protected virtual void Dispose(bool disposing)
@@ -94,7 +94,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="access"></param>
         /// <param name="share"></param>
@@ -129,7 +129,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="access"></param>
         /// <param name="share"></param>
@@ -139,7 +139,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Close()
         {
@@ -154,7 +154,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="bytesToRead"></param>
         /// <returns></returns>
@@ -170,7 +170,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="bytes"></param>
         /// <returns></returns>
@@ -185,7 +185,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="bytes"></param>
         /// <param name="bytesToWrite"></param>
@@ -201,7 +201,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="distance"></param>
         /// <param name="seekFrom"></param>
@@ -217,7 +217,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="controlCode"></param>
         public void DeviceIoControl(uint controlCode)
@@ -226,7 +226,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="controlCode"></param>
         /// <param name="inData"></param>
@@ -236,7 +236,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="controlCode"></param>
         /// <param name="inData"></param>
@@ -248,7 +248,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="controlCode"></param>
         /// <param name="inData"></param>

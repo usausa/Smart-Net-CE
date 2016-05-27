@@ -7,7 +7,7 @@
     using Smart.Drawing;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ImageCheckBox : ControlEx
     {
@@ -36,7 +36,7 @@
         private bool disposeResource;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string Text
         {
@@ -49,7 +49,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CheckState CheckState
         {
@@ -67,7 +67,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Checked
         {
@@ -84,7 +84,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Image ImageChecked
         {
@@ -102,7 +102,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Image ImageUnchecked
         {
@@ -120,7 +120,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Image ImageIndeterminate
         {
@@ -138,7 +138,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Size ImageSize
         {
@@ -151,7 +151,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int TextMargin
         {
@@ -164,7 +164,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool LeftImage
         {
@@ -177,7 +177,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool DrawFocusRectangle
         {
@@ -190,7 +190,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Color FocusRectangleColor
         {
@@ -203,7 +203,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool UseTransparent
         {
@@ -216,7 +216,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Color TransparentColor
         {
@@ -229,7 +229,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool DisposeResource
         {
@@ -242,7 +242,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ImageCheckBox()
         {
@@ -250,7 +250,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="disposing"></param>
         protected override void Dispose(bool disposing)
@@ -266,7 +266,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         protected virtual void DisposeResources()
         {
@@ -290,7 +290,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         protected virtual void OnCheckStateChanged(EventArgs e)
@@ -302,7 +302,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         protected override void OnEnabledChanged(EventArgs e)
@@ -312,7 +312,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         protected override void OnGotFocus(EventArgs e)
@@ -322,7 +322,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         protected override void OnLostFocus(EventArgs e)
@@ -332,7 +332,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Protected")]
@@ -367,7 +367,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Protected")]
@@ -382,7 +382,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Protected")]
@@ -399,7 +399,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Protected")]
@@ -424,7 +424,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         protected override void OnMouseUp(MouseEventArgs e)
@@ -445,7 +445,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", Justification = "Compatibility")]
@@ -454,7 +454,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Protected")]

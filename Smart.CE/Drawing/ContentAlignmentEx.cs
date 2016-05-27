@@ -4,7 +4,7 @@
     using System.Drawing;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [Flags]
     public enum ContentAlignmentEx
@@ -21,7 +21,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class ContentAlignmentExtensions
     {
@@ -30,7 +30,7 @@
         //--------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="alignment"></param>
         /// <returns></returns>
@@ -40,7 +40,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="alignment"></param>
         /// <returns></returns>
@@ -50,7 +50,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="alignment"></param>
         /// <returns></returns>
@@ -60,7 +60,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="alignment"></param>
         /// <returns></returns>
@@ -70,7 +70,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="alignment"></param>
         /// <returns></returns>
@@ -80,7 +80,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="alignment"></param>
         /// <returns></returns>
@@ -94,7 +94,7 @@
         //--------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="textAlign"></param>
         /// <param name="sizeText"></param>
@@ -127,7 +127,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="textAlign"></param>
         /// <param name="sizeText"></param>

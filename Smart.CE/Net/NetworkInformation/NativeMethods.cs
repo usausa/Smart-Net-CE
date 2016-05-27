@@ -4,7 +4,7 @@
     using System.Runtime.InteropServices;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     internal struct IP_OPTION_INFORMATION
@@ -35,7 +35,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     internal struct ICMP_ECHO_REPLY
@@ -54,7 +54,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     internal static class NativeMethods
     {

@@ -5,7 +5,7 @@
     using System.Text;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     internal enum HookType
     {
@@ -15,7 +15,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     internal enum HookCode
     {
@@ -28,7 +28,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     internal struct KBDLLHOOKSTRUCT
@@ -41,7 +41,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     internal struct MSG
@@ -56,7 +56,7 @@
     }
 
     ///// <summary>
-    ///// 
+    /////
     ///// </summary>
     //[StructLayout( LayoutKind.Sequential )]
     //internal struct PAINTSTRUCT
@@ -71,7 +71,7 @@
     //}
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     internal struct NOTIFYICONDATA
@@ -87,7 +87,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     /// <param name="hWnd"></param>
     /// <param name="msg"></param>
@@ -97,7 +97,7 @@
     internal delegate IntPtr WndProcDelegate(IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam);
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     /// <param name="code"></param>
     /// <param name="wParam"></param>
@@ -106,7 +106,7 @@
     internal delegate int HookProc(HookCode code, IntPtr wParam, IntPtr lParam);
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     internal static class NativeMethods
     {

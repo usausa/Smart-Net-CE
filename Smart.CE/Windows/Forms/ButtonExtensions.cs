@@ -6,14 +6,14 @@
     using Smart.Win32;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class ButtonExtensions
     {
         private const int BM_CLOCK = 0x00f5;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="button"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Ignore")]

@@ -1,7 +1,7 @@
 ﻿namespace Smart.Drawing
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum FillDirection
     {

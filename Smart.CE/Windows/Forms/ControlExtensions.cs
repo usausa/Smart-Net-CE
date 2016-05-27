@@ -6,14 +6,14 @@
     using System.Windows.Forms;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class ControlExtensions
     {
         private const int WS_VSCROLL = 0x00200000;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="control"></param>
         /// <param name="action"></param>
@@ -36,7 +36,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="control"></param>
@@ -61,7 +61,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="parent"></param>
@@ -81,7 +81,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="parent"></param>
         /// <param name="name"></param>
@@ -93,7 +93,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="parent"></param>
@@ -106,7 +106,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="parent"></param>
         /// <returns></returns>
@@ -117,7 +117,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="control"></param>
         /// <returns></returns>
@@ -128,7 +128,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="control"></param>
         /// <returns></returns>
@@ -138,7 +138,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="control"></param>
         /// <returns></returns>
@@ -149,7 +149,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="control"></param>
         /// <returns></returns>
@@ -160,7 +160,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="parent"></param>
         /// <param name="control"></param>
@@ -198,7 +198,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="parent"></param>
         /// <param name="control"></param>
@@ -208,7 +208,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="parent"></param>
         /// <param name="control"></param>
@@ -219,7 +219,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="parent"></param>
         /// <param name="control"></param>
@@ -252,7 +252,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="control"></param>
         /// <returns></returns>

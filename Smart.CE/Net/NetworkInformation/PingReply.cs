@@ -4,38 +4,38 @@
     using System.Runtime.InteropServices;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class PingReply
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IPAddress Address { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IPStatus Status { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long RoundTripTime { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays", Justification = "Compatibility")]
         public byte[] Buffer { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PingOptions Options { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="reply"></param>
         internal PingReply(ICMP_ECHO_REPLY reply)

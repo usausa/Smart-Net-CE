@@ -3,12 +3,12 @@
     using System;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class EnumConverter : IObjectConverter
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         /// <param name="targetType"></param>
@@ -20,7 +20,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         /// <param name="targetType"></param>

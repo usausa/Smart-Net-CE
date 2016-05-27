@@ -13,9 +13,9 @@
         private readonly Func<T> getter;
 
         private readonly Action<T> setter;
-        
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public T Value
         {
@@ -24,7 +24,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="getter"></param>
         /// <param name="setter"></param>

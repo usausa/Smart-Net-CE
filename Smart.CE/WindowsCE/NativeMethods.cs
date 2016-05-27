@@ -4,7 +4,7 @@
     using System.Runtime.InteropServices;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     internal struct SystemTime
@@ -19,7 +19,7 @@
         internal short Millisecond;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="dt"></param>
         /// <returns></returns>
@@ -39,7 +39,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         internal DateTime ToDateTime()
@@ -53,7 +53,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     internal struct NLED_COUNT_INFO
@@ -62,7 +62,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     internal struct NLED_SETTINGS_INFO
@@ -77,7 +77,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     //[StructLayout(LayoutKind.Sequential)]
     //internal struct NLED_SUPPORTS_INFO
@@ -92,7 +92,7 @@
     //}
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     internal struct NDISUIO_QUERY_BINDING
@@ -105,7 +105,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     internal struct NIC_STATISTICS
@@ -125,7 +125,7 @@
         internal long BytesSent;                // 0 - Unknown (or not supported)
         internal long BytesReceived;            // 0 - Unknown (or not supported)
         internal long DirectedBytesReceived;
-        internal long DirectedPacketsReceived;  
+        internal long DirectedPacketsReceived;
         internal int PacketsReceiveErrors;
         internal int PacketsSendErrors;
         internal int ResetCount;
@@ -134,7 +134,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     internal class NdisuioQueryOidBuffer
     {
@@ -143,7 +143,7 @@
         internal byte[] Data { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="size"></param>
         /// <param name="oid"></param>
@@ -159,7 +159,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="offset"></param>
         /// <returns></returns>
@@ -170,7 +170,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     internal static class NativeMethods
     {
@@ -252,7 +252,7 @@
         [DllImport("coredll.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
         internal static extern bool GetSystemMemoryDivision(ref int lpdwStorePages, ref int lpdwRamPages, ref int lpdwPageSize);
-    
+
         [DllImport("coredll.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
         internal static extern bool SetSystemMemoryDivision(int dwStorePages);

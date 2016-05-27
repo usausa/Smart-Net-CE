@@ -6,7 +6,7 @@
     using System.Threading;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed class EventWaitHandleEx : IDisposable
     {
@@ -19,7 +19,7 @@
         public IntPtr Handle { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="handle"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Interoperability", "CA1404:CallGetLastErrorImmediatelyAfterPInvoke", Justification = "No problem")]
@@ -34,7 +34,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="initialState"></param>
         /// <param name="mode"></param>
@@ -44,7 +44,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="initialState"></param>
         /// <param name="mode"></param>
@@ -55,7 +55,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="initialState"></param>
         /// <param name="mode"></param>
@@ -77,7 +77,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Dispose()
         {
@@ -89,7 +89,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Close()
         {
@@ -97,7 +97,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
@@ -114,7 +114,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public bool Reset()
@@ -123,7 +123,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public bool Set()
@@ -132,7 +132,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public bool WaitOne()
@@ -141,7 +141,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="timeout"></param>
         /// <returns></returns>
@@ -151,7 +151,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="waitHandles"></param>
         /// <returns></returns>
@@ -161,7 +161,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="waitHandles"></param>
         /// <param name="millisecondsTimeout"></param>

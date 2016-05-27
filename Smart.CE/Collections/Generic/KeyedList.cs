@@ -6,7 +6,7 @@
     using System.Linq;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     /// <typeparam name="TKey"></typeparam>
     /// <typeparam name="TValue"></typeparam>
@@ -17,7 +17,7 @@
         private readonly List<KeyValuePair<TKey, TValue>> list = new List<KeyValuePair<TKey, TValue>>();
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool IsReadOnly
         {
@@ -25,7 +25,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int Count
         {
@@ -33,7 +33,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
@@ -61,7 +61,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
@@ -83,7 +83,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ICollection<TKey> Keys
         {
@@ -91,7 +91,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ICollection<TValue> Values
         {
@@ -99,7 +99,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IList<TKey> OrderedKeys
         {
@@ -110,7 +110,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IList<TValue> OrderedValues
         {
@@ -121,7 +121,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
@@ -136,7 +136,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
@@ -151,7 +151,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
@@ -171,7 +171,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>
@@ -181,7 +181,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Clear()
         {
@@ -190,7 +190,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
@@ -200,7 +200,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>
@@ -210,7 +210,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="key"></param>
         /// <param name="value"></param>
@@ -221,7 +221,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="item"></param>
         public void Add(KeyValuePair<TKey, TValue> item)
@@ -230,7 +230,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="arrayIndex"></param>
@@ -240,7 +240,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="index"></param>
         /// <param name="key"></param>
@@ -257,7 +257,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="index"></param>
         /// <param name="item"></param>
@@ -273,7 +273,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
@@ -290,7 +290,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>
@@ -300,7 +300,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="index"></param>
         public void RemoveAt(int index)
@@ -315,7 +315,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="key"></param>
         /// <param name="value"></param>
@@ -326,7 +326,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         IEnumerator IEnumerable.GetEnumerator()
@@ -335,7 +335,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         IEnumerator<KeyValuePair<TKey, TValue>> IEnumerable<KeyValuePair<TKey, TValue>>.GetEnumerator()

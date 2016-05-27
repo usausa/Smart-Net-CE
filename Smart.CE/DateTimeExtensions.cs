@@ -3,12 +3,12 @@
     using System;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class DateTimeExtensions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="date"></param>
         /// <param name="dateToCompare"></param>
@@ -19,7 +19,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="time"></param>
         /// <param name="timeToCompare"></param>
@@ -30,7 +30,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="source"></param>
         /// <param name="other"></param>
@@ -41,7 +41,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="source"></param>
         /// <param name="other"></param>
@@ -52,7 +52,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="date"></param>
         /// <returns></returns>
@@ -62,7 +62,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="date"></param>
         /// <returns></returns>
@@ -72,7 +72,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="date"></param>
         /// <returns></returns>
@@ -82,7 +82,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="date"></param>
         /// <returns></returns>
@@ -92,7 +92,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="time"></param>
         /// <returns></returns>
@@ -102,7 +102,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="time"></param>
         /// <returns></returns>
@@ -112,7 +112,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="date"></param>
         /// <param name="hour"></param>

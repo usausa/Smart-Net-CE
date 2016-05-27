@@ -1,14 +1,14 @@
 ﻿namespace Smart.WindowsCE
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class MemoryManager
     {
         private static readonly int MemoryPageSize;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         static MemoryManager()
         {
@@ -18,7 +18,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StoreInformation StoreInformation
         {
@@ -31,7 +31,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MemoryStatus MemoryStatus
         {
@@ -44,7 +44,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SystemMemoryDivision SystemMemoryDivision
         {
@@ -62,7 +62,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static int StorageMemory
         {

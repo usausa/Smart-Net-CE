@@ -5,7 +5,7 @@
     using System.Windows.Forms;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class AnimateControl : Control
     {
@@ -20,7 +20,7 @@
         private readonly Timer timer = new Timer();
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Image Image
         {
@@ -41,7 +41,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int Interval
         {
@@ -50,7 +50,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool AutoStart
         {
@@ -59,7 +59,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int LoopCount
         {
@@ -68,7 +68,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new int Height
         {
@@ -81,7 +81,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public new int Width
         {
@@ -94,7 +94,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnimateControl()
         {
@@ -103,7 +103,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="disposing"></param>
         protected override void Dispose(bool disposing)
@@ -116,7 +116,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         protected override void OnParentChanged(EventArgs e)
@@ -130,7 +130,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -155,7 +155,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Start()
         {
@@ -174,7 +174,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Stop()
         {
@@ -182,7 +182,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private void ResizeControl()
         {
@@ -194,7 +194,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", Justification = "Compatibility")]
@@ -207,7 +207,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Protected")]

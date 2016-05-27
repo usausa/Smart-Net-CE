@@ -5,14 +5,14 @@
     using System.Globalization;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class DebugMessage
     {
         private static string indent = string.Empty;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [Conditional("DEBUG")]
         public static void Indent()
@@ -21,7 +21,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [Conditional("DEBUG")]
         public static void Unindent()
@@ -33,7 +33,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         [Conditional("DEBUG")]
@@ -43,7 +43,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         [Conditional("DEBUG")]
@@ -53,7 +53,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="condition"></param>
         /// <param name="value"></param>
@@ -67,7 +67,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="condition"></param>
         /// <param name="value"></param>

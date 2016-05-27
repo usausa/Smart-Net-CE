@@ -6,7 +6,7 @@
     using System.Drawing.Imaging;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class GraphicsExtensions
     {
@@ -15,7 +15,7 @@
         //--------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="g"></param>
         /// <param name="text"></param>
@@ -48,7 +48,7 @@
                                 str = str.Substring(i);
                                 break;
                             }
-                            
+
                             if (i == 1)
                             {
                                 lines.Add(str.Substring(0, 1));
@@ -63,7 +63,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="g"></param>
         /// <param name="texts"></param>
@@ -96,7 +96,7 @@
         //--------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="g"></param>
         /// <param name="text"></param>
@@ -118,7 +118,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="g"></param>
         /// <param name="text"></param>
@@ -136,7 +136,7 @@
         //--------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="g"></param>
         /// <param name="text"></param>
@@ -186,7 +186,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="g"></param>
         /// <param name="text"></param>
@@ -207,7 +207,7 @@
         //--------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="color"></param>
         /// <returns></returns>
@@ -217,7 +217,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="color"></param>
         /// <returns></returns>
@@ -227,7 +227,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="color"></param>
         /// <returns></returns>
@@ -237,7 +237,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="color"></param>
         /// <returns></returns>
@@ -247,7 +247,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="g"></param>
         /// <param name="color"></param>
@@ -268,7 +268,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="g"></param>
         /// <param name="color"></param>
@@ -296,7 +296,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="g"></param>
         /// <param name="color"></param>
@@ -318,7 +318,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="g"></param>
         /// <param name="color"></param>
@@ -346,7 +346,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="g"></param>
         /// <param name="color"></param>
@@ -368,7 +368,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="g"></param>
         /// <param name="style"></param>
@@ -400,7 +400,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="g"></param>
         /// <param name="style"></param>
@@ -416,7 +416,7 @@
         //--------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="g"></param>
         /// <param name="gxDest"></param>
@@ -428,7 +428,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="g"></param>
         /// <param name="gxDest"></param>
@@ -450,7 +450,7 @@
         //--------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="g"></param>
         /// <param name="rect"></param>
@@ -471,7 +471,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="gr"></param>
         /// <param name="rc"></param>
@@ -524,7 +524,7 @@
         //--------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="image"></param>
         /// <returns></returns>
@@ -534,7 +534,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="g"></param>
         /// <param name="image"></param>
@@ -548,7 +548,7 @@
             {
                 var hdcDst = g.GetHdc();
                 var hdcSrc = gSrc.GetHdc();
-                
+
                 var blendFunction = new BlendFunction
                 {
                     BlendOp = 0x00, // AC_SRC_OVER
@@ -557,14 +557,14 @@
                     AlphaFormat = 0
                 };
                 NativeMethods.AlphaBlend(hdcDst, x, y, image.Width, image.Height, hdcSrc, 0, 0, image.Width, image.Height, blendFunction);
-                
+
                 g.ReleaseHdc(hdcDst);
                 gSrc.ReleaseHdc(hdcSrc);
             }
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="g"></param>
         /// <param name="image"></param>

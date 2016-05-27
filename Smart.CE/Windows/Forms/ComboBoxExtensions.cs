@@ -8,12 +8,12 @@
     using Smart.Win32;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class ComboBoxExtensions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="combo"></param>
         /// <returns></returns>
@@ -25,7 +25,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="combo"></param>
         /// <param name="value"></param>
@@ -37,7 +37,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="combo"></param>
         /// <returns></returns>
@@ -49,7 +49,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="combo"></param>
         /// <param name="value"></param>
@@ -61,7 +61,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="combo"></param>
         /// <param name="s"></param>
@@ -73,7 +73,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="combo"></param>
         /// <param name="s"></param>
@@ -91,7 +91,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="combo"></param>
         /// <param name="s"></param>
@@ -103,7 +103,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="combo"></param>
         /// <param name="s"></param>

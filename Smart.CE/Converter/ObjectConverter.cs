@@ -6,14 +6,14 @@
     using System.Linq;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ObjectConverter
     {
         private static readonly ObjectConverter Instance = new ObjectConverter();
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ObjectConverter Default
         {
@@ -21,12 +21,12 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private IList<IObjectConverter> converters;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ObjectConverter()
         {
@@ -34,7 +34,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="list"></param>
         public void SetConverters(IList<IObjectConverter> list)
@@ -43,7 +43,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void ResetConverters()
         {
@@ -51,7 +51,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="value"></param>
@@ -62,7 +62,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         /// <param name="targetType"></param>

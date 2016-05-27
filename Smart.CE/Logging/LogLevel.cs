@@ -1,7 +1,7 @@
 ﻿namespace Smart.Logging
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum LogLevel
     {

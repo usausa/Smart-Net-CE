@@ -4,14 +4,14 @@
     using System.Text;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class SjisHelper
     {
         private static readonly Encoding Encode = Encoding.GetEncoding("Shift_JIS");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
@@ -21,7 +21,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
@@ -31,7 +31,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="bytes"></param>
         /// <param name="index"></param>
@@ -43,7 +43,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="str"></param>
         /// <param name="length"></param>
@@ -113,7 +113,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="str"></param>
         /// <param name="length"></param>
@@ -125,7 +125,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="str"></param>
         /// <param name="length"></param>
@@ -137,7 +137,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="str"></param>
         /// <param name="length"></param>

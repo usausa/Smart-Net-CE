@@ -1,7 +1,7 @@
 ﻿namespace Smart.IO
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum FileCreateDisposition
     {

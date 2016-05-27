@@ -5,12 +5,12 @@
     using System.Runtime.InteropServices;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class FontExtensions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="font"></param>
         /// <returns></returns>

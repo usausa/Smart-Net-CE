@@ -8,7 +8,7 @@
     using System.Threading;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ThreadEntry
     {
@@ -25,37 +25,37 @@
         private const int CURRENT_PROCESS_ID_OFFSET = 40;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public uint UsageCount { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public uint ThreadId { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public uint OwnerProcessId { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int BasePriority { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int DeltaPriority { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public uint CurrentProcessId { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ThreadPriority Priority
         {
@@ -70,7 +70,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int Quantum
         {
@@ -90,7 +90,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public static ThreadEntry[] GetThreads()
@@ -99,7 +99,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="processId"></param>
         /// <returns></returns>
@@ -133,7 +133,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="data"></param>
         private ThreadEntry(byte[] data)
@@ -147,7 +147,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1806:DoNotIgnoreMethodResults", Justification = "Ignore")]
         public void Suspend()
@@ -156,7 +156,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1806:DoNotIgnoreMethodResults", Justification = "Ignore")]
         public void Resume()
@@ -165,7 +165,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public bool Terminate()
@@ -174,7 +174,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public override string ToString()

@@ -1,7 +1,7 @@
 ﻿namespace Smart.WindowsCE
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ACLineStatus : byte
     {

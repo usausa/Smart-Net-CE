@@ -5,24 +5,24 @@
     using System.Windows.Forms;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class GraphicalButton : GraphicalButtonBase, IButtonControl
     {
         private bool active;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool IsDefault { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DialogResult DialogResult { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         protected override bool IsPressed
         {
@@ -30,7 +30,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         protected override bool IsFocused
         {
@@ -38,7 +38,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         protected override void OnLostFocus(EventArgs e)
@@ -48,7 +48,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         protected override void OnClick(EventArgs e)
@@ -69,7 +69,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         protected override void OnDoubleClick(EventArgs e)
@@ -85,7 +85,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Protected")]
@@ -103,7 +103,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Protected")]
@@ -120,7 +120,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Protected")]
@@ -145,7 +145,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         public void NotifyDefault(bool value)
@@ -154,7 +154,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void PerformClick()
         {

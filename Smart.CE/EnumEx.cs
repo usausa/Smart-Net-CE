@@ -4,12 +4,12 @@
     using System.Reflection;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class EnumEx
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="type"></param>
         /// <param name="value"></param>
@@ -54,7 +54,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
@@ -82,7 +82,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>

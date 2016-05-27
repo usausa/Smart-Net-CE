@@ -22,7 +22,7 @@
         public bool IsAsync { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool RestoreFocus { get; set; }
 
@@ -142,7 +142,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="parent"></param>
         /// <returns></returns>

@@ -4,12 +4,12 @@
     using System.Collections.Generic;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class BetweenExtensions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         /// <param name="minValue"></param>
@@ -17,13 +17,13 @@
         /// <returns></returns>
         public static bool IsBetween(this byte value, byte minValue, byte maxValue)
         {
-            return minValue < maxValue 
-                ? value >= minValue && value <= maxValue 
+            return minValue < maxValue
+                ? value >= minValue && value <= maxValue
                 : value >= maxValue && value <= minValue;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         /// <param name="minValue"></param>
@@ -37,7 +37,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         /// <param name="minValue"></param>
@@ -51,7 +51,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         /// <param name="minValue"></param>
@@ -65,7 +65,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         /// <param name="minValue"></param>
@@ -79,7 +79,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         /// <param name="minValue"></param>
@@ -93,7 +93,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         /// <param name="minValue"></param>
@@ -107,7 +107,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="value"></param>
@@ -120,7 +120,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="value"></param>

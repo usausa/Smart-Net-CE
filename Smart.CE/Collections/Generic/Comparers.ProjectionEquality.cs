@@ -4,7 +4,7 @@
     using System.Collections.Generic;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     /// <typeparam name="TSource"></typeparam>
     /// <typeparam name="TKey"></typeparam>
@@ -15,7 +15,7 @@
         private readonly IEqualityComparer<TKey> comparer;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="keySelector"></param>
         public ProjectionEqualityComparer(Func<TSource, TKey> keySelector)
@@ -24,7 +24,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="keySelector"></param>
         /// <param name="comparer"></param>
@@ -40,7 +40,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>
@@ -59,7 +59,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>

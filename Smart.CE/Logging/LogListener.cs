@@ -3,27 +3,27 @@
     using System;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public abstract class LogListener : IDisposable
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         protected bool NeedIndent { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int IndentLevel { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int IndentSize { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         protected LogListener()
         {
@@ -32,7 +32,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Dispose()
         {
@@ -41,7 +41,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="disposing"></param>
         protected virtual void Dispose(bool disposing)
@@ -49,33 +49,33 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual void Close()
         {
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public virtual void Flush()
         {
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="message"></param>
         public abstract void Write(string message);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="message"></param>
         public abstract void WriteLine(string message);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         public virtual void Write(object value)
@@ -87,7 +87,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         public virtual void WriteLine(object value)
@@ -96,7 +96,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         protected virtual void WriteIndent()
         {

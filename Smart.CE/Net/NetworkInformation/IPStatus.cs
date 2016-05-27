@@ -1,7 +1,7 @@
 ﻿namespace Smart.Net.NetworkInformation
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum IPStatus
     {

@@ -5,37 +5,37 @@
     using Smart.Win32;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class KeyDataEventArgs : EventArgs
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Handled { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WM KeyMessage { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int KeyCode { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int ScanCode { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int TimeStamp { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="keyMessage"></param>
         /// <param name="keyCode"></param>

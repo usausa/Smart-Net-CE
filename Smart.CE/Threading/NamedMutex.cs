@@ -6,12 +6,12 @@
     using System.Threading;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed class NamedMutex : WaitHandle
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public NamedMutex()
             : this(false, null)
@@ -19,7 +19,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="initialOwner"></param>
         public NamedMutex(bool initialOwner)
@@ -28,7 +28,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="initialOwner"></param>
         /// <param name="name"></param>
@@ -46,7 +46,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="initialOwner"></param>
         /// <param name="name"></param>
@@ -68,7 +68,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="explicitDisposing"></param>
         protected override void Dispose(bool explicitDisposing)
@@ -78,7 +78,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override void Close()
         {
@@ -90,7 +90,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void ReleaseMutex()
         {
@@ -101,7 +101,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public override bool WaitOne()
@@ -110,7 +110,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="millisecondsTimeout"></param>
         /// <param name="exitContext"></param>

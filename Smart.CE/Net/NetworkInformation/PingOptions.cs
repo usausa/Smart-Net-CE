@@ -3,17 +3,17 @@
     using System;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class PingOptions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool DontFragment { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int Ttl { get; set; }
 
@@ -23,7 +23,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="ttl"></param>
         /// <param name="dontFragment"></param>
@@ -39,7 +39,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="reply"></param>
         internal PingOptions(ICMP_ECHO_REPLY reply)

@@ -4,12 +4,12 @@
     using System.Text;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class StringBuilderExtensions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="sb"></param>
         /// <param name="condition"></param>
@@ -30,7 +30,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="sb"></param>
         /// <param name="condition"></param>

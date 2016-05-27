@@ -6,7 +6,7 @@
     using System.Runtime.InteropServices;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class MemoryMappedStream : Stream
     {
@@ -28,7 +28,7 @@
         private long position;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool CanRead
         {
@@ -36,7 +36,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool CanSeek
         {
@@ -44,7 +44,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool CanWrite
         {
@@ -52,7 +52,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool CanTimeout
         {
@@ -60,7 +60,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override long Length
         {
@@ -68,7 +68,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override long Position
         {
@@ -84,7 +84,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IntPtr Pointer
         {
@@ -95,12 +95,12 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string Name { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="fileHandle"></param>
         /// <param name="name"></param>
@@ -127,7 +127,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="fileName"></param>
         /// <param name="maxSize"></param>
@@ -155,7 +155,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="fileName"></param>
         /// <returns></returns>
@@ -165,7 +165,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="name"></param>
         /// <param name="maxSize"></param>
@@ -176,7 +176,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public static MemoryMappedStream CreateInMemoryMap()
@@ -185,7 +185,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
@@ -195,7 +195,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override void Close()
         {
@@ -223,7 +223,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override void Flush()
         {
@@ -231,7 +231,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="offset"></param>
         /// <param name="origin"></param>
@@ -265,7 +265,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="buffer"></param>
         /// <param name="offset"></param>
@@ -290,7 +290,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="buffer"></param>
         /// <param name="offset"></param>

@@ -3,7 +3,7 @@
     using System;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [Flags]
     public enum ShadowMask
@@ -22,12 +22,12 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class ShadowMaskExtension
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="mask"></param>
         /// <returns></returns>
@@ -37,7 +37,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="mask"></param>
         /// <returns></returns>
@@ -47,7 +47,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="mask"></param>
         /// <returns></returns>
@@ -57,7 +57,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="mask"></param>
         /// <returns></returns>

@@ -5,7 +5,7 @@
     using System.Net.Sockets;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class SntpClient
     {
@@ -15,22 +15,22 @@
         private readonly byte[] data = new byte[NTP_PACKET_LENGTH];
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string Server { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int Port { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int Timeout { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DateTime Transmit
         {
@@ -45,7 +45,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SntpClient()
         {
@@ -54,7 +54,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="milliseconds"></param>
         /// <returns></returns>
@@ -66,7 +66,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="offset"></param>
         /// <returns></returns>
@@ -89,7 +89,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="offset"></param>
         /// <param name="date"></param>
@@ -118,7 +118,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private void Initialize()
         {
@@ -132,7 +132,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public bool Synchronize()

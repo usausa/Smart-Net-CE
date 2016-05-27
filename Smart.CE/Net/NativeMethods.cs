@@ -4,7 +4,7 @@
     using System.Runtime.InteropServices;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     internal struct NETRESOURCE
     {
@@ -19,7 +19,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     internal static class NativeMethods
     {

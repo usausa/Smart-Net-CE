@@ -5,12 +5,12 @@
     using Smart.ComponentModel.DataAnnotations;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class EnumExtensions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>

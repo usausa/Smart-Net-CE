@@ -6,12 +6,12 @@
     using System.Threading;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed class Semaphore : WaitHandle
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="initialCount"></param>
         /// <param name="maximumCount"></param>
@@ -21,7 +21,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="initialCount"></param>
         /// <param name="maximumCount"></param>
@@ -55,7 +55,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="initialCount"></param>
         /// <param name="maximumCount"></param>
@@ -93,7 +93,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="explicitDisposing"></param>
         protected override void Dispose(bool explicitDisposing)
@@ -103,7 +103,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override void Close()
         {
@@ -115,7 +115,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public int Release()
@@ -124,7 +124,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="releaseCount"></param>
         /// <returns></returns>
@@ -145,7 +145,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public override bool WaitOne()
@@ -154,7 +154,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="millisecondsTimeout"></param>
         /// <param name="exitContext"></param>

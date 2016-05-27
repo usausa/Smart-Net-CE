@@ -7,7 +7,7 @@
     using System.Text;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class DeviceManager
     {
@@ -25,7 +25,7 @@
         private const int SPI_GETOEMINFO = 0x0102;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SystemInfo SystemInformation
         {
@@ -38,7 +38,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations", Justification = "Ignore")]
         public static string OemInfo
@@ -63,7 +63,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations", Justification = "Ignore")]
         public static string PlatformType
@@ -88,7 +88,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Version PlatformVersion
         {
@@ -117,7 +117,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public static Guid DeviceGuid
@@ -139,7 +139,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public static string DeviceId
@@ -168,7 +168,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         private static byte[] GetRawDeviceId()
@@ -206,7 +206,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static void ShowCalibrationScreen()
         {
@@ -214,7 +214,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static void ActiveSyncStart()
         {
@@ -222,7 +222,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static void ActiveSyncStop()
         {

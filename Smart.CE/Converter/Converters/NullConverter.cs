@@ -3,12 +3,12 @@
     using System;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class NullConverter : IObjectConverter
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         /// <param name="targetType"></param>
@@ -19,7 +19,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         /// <param name="targetType"></param>

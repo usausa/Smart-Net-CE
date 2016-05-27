@@ -191,7 +191,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="id"></param>
         /// <param name="domain"></param>
@@ -403,7 +403,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="id"></param>
         /// <param name="parameters"></param>
@@ -433,7 +433,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="id"></param>
         /// <param name="parameters"></param>
@@ -478,7 +478,7 @@
                         stacked[stacked.Count - temp.Length + i] = temp[i];
                     }
                 }
-                
+
                 if (!exist)
                 {
                     // 新規スタック
@@ -490,7 +490,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="level"></param>
         /// <param name="parameters"></param>
@@ -515,7 +515,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="parameters"></param>
         /// <param name="updateStack"></param>
@@ -533,7 +533,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="parameters"></param>
         /// <param name="updateStack"></param>

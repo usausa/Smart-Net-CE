@@ -6,17 +6,17 @@
     using Smart.Win32;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class ListBoxExtensions
     {
-        private const int LVS_SINGLESEL = 0x4; 
+        private const int LVS_SINGLESEL = 0x4;
 
         private const int LVM_FIRST = 0x1000;
         private const int LVM_SCROLL = LVM_FIRST + 20;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="listView"></param>
         /// <returns></returns>
@@ -28,7 +28,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="listView"></param>
         /// <returns></returns>
@@ -41,7 +41,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="listView"></param>
         /// <param name="multiline"></param>
@@ -64,7 +64,7 @@
         // TODO HitTest
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="listView"></param>
         /// <param name="x"></param>

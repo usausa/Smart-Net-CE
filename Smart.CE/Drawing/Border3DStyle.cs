@@ -1,7 +1,7 @@
 ﻿namespace Smart.Drawing
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum Border3DStyle
     {
@@ -16,7 +16,7 @@
         /// ボーダー1の浮き出し用
         /// </summary>
         RaisedInner = 0x0004,
-        
+
         /// <summary>
         /// ボーダー2の窪み用
         /// </summary>

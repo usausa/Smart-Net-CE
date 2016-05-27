@@ -5,7 +5,7 @@
     using System.Runtime.InteropServices;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [StructLayout(LayoutKind.Auto)]
     public struct DateTimeOffset : IComparable, IComparable<DateTimeOffset>, IEquatable<DateTimeOffset>
@@ -19,13 +19,13 @@
         public static readonly DateTimeOffset MaxValue = new DateTimeOffset(DateTime.MaxValue.Ticks, TimeSpan.Zero);
 
         private readonly DateTime dateTime;
-        
+
         private readonly short offsetMinutes;
 
         private static short ValidateOffset(TimeSpan offset)
         {
             var ticks = offset.Ticks;
-            
+
             if (ticks % TimeSpan.TicksPerMinute != 0)
             {
                 throw new ArgumentException("offset precision", "offset");
@@ -41,7 +41,7 @@
         private static DateTime ValidateDate(DateTime dateTime, TimeSpan offset)
         {
             var utcTicks = dateTime.Ticks - offset.Ticks;
-            
+
             if (utcTicks < DateTime.MinValue.Ticks || utcTicks > DateTime.MaxValue.Ticks)
             {
                 throw new ArgumentOutOfRangeException("offset");

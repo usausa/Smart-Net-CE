@@ -6,7 +6,7 @@
     using System.Runtime.InteropServices;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class Ping : IDisposable
     {
@@ -15,7 +15,7 @@
         private bool disposed;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private byte[] SendBuffer
         {
@@ -34,7 +34,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ~Ping()
         {
@@ -42,7 +42,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Dispose()
         {
@@ -51,7 +51,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="disposing"></param>
         protected virtual void Dispose(bool disposing)
@@ -68,7 +68,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hostNameOrAddress"></param>
         /// <returns></returns>
@@ -78,7 +78,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="address"></param>
         /// <returns></returns>
@@ -88,7 +88,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hostNameOrAddress"></param>
         /// <param name="timeout"></param>
@@ -99,7 +99,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="address"></param>
         /// <param name="timeout"></param>
@@ -110,7 +110,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hostNameOrAddress"></param>
         /// <param name="timeout"></param>
@@ -122,7 +122,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="address"></param>
         /// <param name="timeout"></param>
@@ -134,7 +134,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hostNameOrAddress"></param>
         /// <param name="timeout"></param>
@@ -169,7 +169,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="address"></param>
         /// <param name="timeout"></param>
@@ -221,7 +221,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="address"></param>
         /// <param name="buffer"></param>

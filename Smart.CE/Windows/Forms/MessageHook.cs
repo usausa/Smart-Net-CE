@@ -5,7 +5,7 @@
     using Microsoft.WindowsCE.Forms;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1049:TypesThatOwnNativeResourcesShouldBeDisposable", Justification = "No problem")]
     public class MessageHook
@@ -18,7 +18,7 @@
         private readonly List<WndProcCallback> callbacks = new List<WndProcCallback>();
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="handle"></param>
         /// <param name="callback"></param>
@@ -38,7 +38,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="handle"></param>
         /// <param name="callback"></param>
@@ -52,7 +52,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="message"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1045:DoNotPassTypesByReference", Justification = "Compatibility")]
@@ -66,7 +66,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="handle"></param>
         private MessageHook(IntPtr handle)
@@ -75,7 +75,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="callback"></param>
         private void AddHook(WndProcCallback callback)
@@ -89,7 +89,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="callback"></param>
         private void RemoveHook(WndProcCallback callback)
@@ -103,7 +103,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private void Subclass()
         {
@@ -112,7 +112,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private void UnSubclass()
         {
@@ -120,7 +120,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private void Release()
         {
@@ -133,7 +133,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hWnd"></param>
         /// <param name="msg"></param>
@@ -154,9 +154,9 @@
             }
 
             // WM_NCDESTROY
-            //if( msg == 130 ) 
+            //if( msg == 130 )
             // WM_DESTROY
-            if (msg == 2) 
+            if (msg == 2)
             {
                 Release();
             }
@@ -172,7 +172,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="m"></param>
         private void CallWindowProc(ref Message m)

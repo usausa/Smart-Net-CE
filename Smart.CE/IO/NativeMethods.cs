@@ -5,7 +5,7 @@
     using System.Runtime.InteropServices;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     internal enum PageProtection
     {
@@ -15,7 +15,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     internal static class NativeMethods
     {

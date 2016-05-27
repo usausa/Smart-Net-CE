@@ -3,7 +3,7 @@
     using System;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [Flags]
     public enum ButtonCustomize
@@ -20,12 +20,12 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class ButtonCustomizeExtensions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="customize"></param>
         /// <returns></returns>
@@ -35,7 +35,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="customize"></param>
         /// <returns></returns>
@@ -45,7 +45,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="customize"></param>
         /// <returns></returns>

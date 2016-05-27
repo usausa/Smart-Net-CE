@@ -5,12 +5,12 @@
     using System.Reflection;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class MemberInfoExtensions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="memberInfo"></param>
         /// <returns></returns>
@@ -44,7 +44,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="memberInfo"></param>
         /// <param name="target"></param>
@@ -68,7 +68,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="memberInfo"></param>
         /// <param name="target"></param>

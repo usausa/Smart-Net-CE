@@ -6,12 +6,12 @@
     using System.Reflection;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class DelegateMethodGenerator
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="pi"></param>
         /// <returns></returns>
@@ -45,7 +45,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="TTarget"></typeparam>
         /// <typeparam name="TMember"></typeparam>
@@ -57,7 +57,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="pi"></param>
         /// <returns></returns>
@@ -91,7 +91,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="TTarget"></typeparam>
         /// <typeparam name="TMember"></typeparam>

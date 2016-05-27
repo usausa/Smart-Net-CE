@@ -8,14 +8,14 @@
     using System.Runtime.InteropServices;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class DriveInfo
     {
         private readonly string driveName;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DirectoryInfo RootDirectory
         {
@@ -26,22 +26,22 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long AvailableFree { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long Total { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long TotalFree { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="driveName"></param>
         public DriveInfo(string driveName)
@@ -71,7 +71,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public override string ToString()
@@ -80,7 +80,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public static DriveInfo[] GetDrives()

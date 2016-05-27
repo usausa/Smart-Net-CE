@@ -3,7 +3,7 @@
     using System;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ByteBuffer
     {
@@ -20,7 +20,7 @@
         private IByteOrder order = ByteOrders.Default;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays", Justification = "Performance")]
         public byte[] Array
@@ -29,7 +29,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int Position
         {
@@ -46,7 +46,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int Limit
         {
@@ -67,7 +67,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int Capacity
         {
@@ -78,7 +78,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int Remaining
         {
@@ -89,7 +89,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool HasRemaining
         {
@@ -100,7 +100,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="capacity"></param>
         public ByteBuffer(int capacity)
@@ -111,7 +111,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         public ByteBuffer(byte[] array)
@@ -127,7 +127,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="offset"></param>
@@ -146,7 +146,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <returns></returns>
@@ -161,7 +161,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="offset"></param>
@@ -180,7 +180,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public ByteBuffer Clear()
@@ -191,7 +191,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public ByteBuffer Flip()
@@ -202,7 +202,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="byteOrder"></param>
         /// <returns></returns>
@@ -218,7 +218,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="index"></param>
         /// <param name="value"></param>
@@ -230,7 +230,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="index"></param>
         /// <param name="value"></param>
@@ -247,7 +247,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="index"></param>
         /// <param name="value"></param>
@@ -259,7 +259,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="index"></param>
         /// <param name="value"></param>
@@ -271,7 +271,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
@@ -281,7 +281,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="index"></param>
         /// <param name="length"></param>
@@ -294,7 +294,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
@@ -304,7 +304,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>

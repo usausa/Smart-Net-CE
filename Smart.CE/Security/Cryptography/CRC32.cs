@@ -3,7 +3,7 @@
     using System.Security.Cryptography;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CRC32 : HashAlgorithm
     {
@@ -68,7 +68,7 @@
         private uint crcValue;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CRC32()
         {
@@ -77,7 +77,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="ibStart"></param>
@@ -96,7 +96,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         protected override byte[] HashFinal()
@@ -107,7 +107,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override void Initialize()
         {

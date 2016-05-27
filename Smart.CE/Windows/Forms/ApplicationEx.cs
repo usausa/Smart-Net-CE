@@ -8,7 +8,7 @@
     using Microsoft.WindowsCE.Forms;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class ApplicationEx
     {
@@ -20,12 +20,12 @@
         private static MSG msg;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool MessageLoop { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations", Justification = "Ignore")]
         public static string ExecutablePath
@@ -49,7 +49,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static string StartupPath
         {
@@ -60,7 +60,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         public static void AddMessageFilter(IMessageFilter value)
@@ -69,7 +69,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="filter"></param>
         public static void RemoveMessageFilter(IMessageFilter filter)
@@ -78,7 +78,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static void Run()
         {
@@ -86,7 +86,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="form"></param>
         public static void Run(Form form)
@@ -95,7 +95,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="form"></param>
         /// <param name="displayMainForm"></param>
@@ -112,7 +112,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="showForm"></param>
         private static void RunMessageLoop(bool showForm)
@@ -132,7 +132,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         private static bool Pump()
@@ -160,7 +160,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static void Exit()
         {
@@ -168,7 +168,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static void DoEvents()
         {
@@ -179,7 +179,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -189,7 +189,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private static void ExitThread()
         {

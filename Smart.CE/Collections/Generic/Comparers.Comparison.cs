@@ -4,7 +4,7 @@
     using System.Collections.Generic;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public class ComparisonComparer<T> : IComparer<T>
@@ -12,7 +12,7 @@
         private readonly Comparison<T> comparison;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="comparison"></param>
         public ComparisonComparer(Comparison<T> comparison)
@@ -26,7 +26,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>

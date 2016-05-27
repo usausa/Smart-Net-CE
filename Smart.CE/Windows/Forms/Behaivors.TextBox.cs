@@ -11,14 +11,14 @@
     using Smart.Win32;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class FocusWithSelectTextBoxBehavior : IBehaivor<TextBox>
     {
         private static readonly FocusWithSelectTextBoxBehavior Singleton = new FocusWithSelectTextBoxBehavior();
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static FocusWithSelectTextBoxBehavior Default
         {
@@ -26,14 +26,14 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private FocusWithSelectTextBoxBehavior()
         {
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="control"></param>
         public void Attach(TextBox control)
@@ -47,7 +47,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="control"></param>
         public void Detach(TextBox control)
@@ -61,7 +61,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -73,18 +73,18 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class FocusColorTextBoxBehavior : IBehaivor<TextBox>
     {
         private readonly Color focusColor;
-        
+
         private Color backColor;
 
         private bool attached;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="focusColor"></param>
         public FocusColorTextBoxBehavior(Color focusColor)
@@ -93,7 +93,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="control"></param>
         public void Attach(TextBox control)
@@ -115,7 +115,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="control"></param>
         public void Detach(TextBox control)
@@ -137,7 +137,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -149,7 +149,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -161,7 +161,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class NumberInputBehavior : IBehaivor<TextBox>
     {
@@ -170,7 +170,7 @@
         private static readonly NumberInputBehavior NegativeSingleton = new NumberInputBehavior(false);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static NumberInputBehavior Default
         {
@@ -178,7 +178,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static NumberInputBehavior Negative
         {
@@ -186,12 +186,12 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private readonly bool allowNegative;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="allowNegative"></param>
         private NumberInputBehavior(bool allowNegative)
@@ -200,7 +200,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="control"></param>
         public void Attach(TextBox control)
@@ -214,7 +214,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="control"></param>
         public void Detach(TextBox control)
@@ -228,7 +228,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -323,7 +323,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ExtendTextBoxBehavior : IBehaivor<TextBox>
     {
@@ -340,7 +340,7 @@
         public bool Compositioning { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="control"></param>
         public void Attach(TextBox control)
@@ -360,7 +360,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="control"></param>
         public void Detach(TextBox control)
@@ -375,7 +375,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="m"></param>
         /// <returns></returns>
@@ -385,7 +385,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="m"></param>
         /// <returns></returns>
@@ -457,7 +457,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         protected virtual void OnStartComposition(EventArgs e)
@@ -469,7 +469,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         protected virtual void OnEndComposition(EventArgs e)
@@ -481,7 +481,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         protected virtual void OnCut(CancelEventArgs e)
@@ -493,7 +493,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         protected virtual void OnCopy(CancelEventArgs e)
@@ -505,7 +505,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         protected virtual void OnPaste(CancelEventArgs e)

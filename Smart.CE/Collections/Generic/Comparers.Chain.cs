@@ -4,7 +4,7 @@
     using System.Linq;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public class ChainComparers<T> : IComparer<T>
@@ -12,7 +12,7 @@
         private readonly IComparer<T>[] comparers;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="comparers"></param>
         public ChainComparers(params IComparer<T>[] comparers)
@@ -21,7 +21,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>

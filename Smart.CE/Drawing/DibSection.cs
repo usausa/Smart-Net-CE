@@ -4,7 +4,7 @@
     using System.IO;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class DibSection
     {
@@ -17,7 +17,7 @@
         private byte[] data;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>
@@ -47,7 +47,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="stream"></param>
         /// <returns></returns>

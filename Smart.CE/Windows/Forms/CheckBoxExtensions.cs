@@ -5,14 +5,14 @@
     using Smart.Win32;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class CheckBoxExtensions
     {
         private const int BS_RIGHTBUTTON = 0x00000020;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="check"></param>
         /// <returns></returns>
@@ -25,7 +25,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="check"></param>
         /// <param name="value"></param>

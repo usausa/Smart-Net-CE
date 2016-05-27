@@ -6,7 +6,7 @@
     using System.Linq;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     internal class MemberInformation
     {
@@ -22,7 +22,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class TypeInformation
     {
@@ -31,7 +31,7 @@
         public Type MemberType { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="type"></param>
         public TypeInformation(Type type)
@@ -41,7 +41,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="type"></param>
         private void BuildMember(Type type)
@@ -58,7 +58,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public IEnumerable<IAccessor> GetAccessors()
@@ -67,7 +67,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="nonPublic"></param>
         /// <returns></returns>
@@ -77,7 +77,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public IEnumerable<IAccessor> GetReadableAccessors()
@@ -86,7 +86,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="nonPublic"></param>
         /// <returns></returns>
@@ -96,7 +96,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public IEnumerable<IAccessor> GetWritableAccessors()
@@ -105,7 +105,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="nonPublic"></param>
         /// <returns></returns>
@@ -115,7 +115,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
@@ -125,7 +125,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="name"></param>
         /// <param name="nonPublic"></param>

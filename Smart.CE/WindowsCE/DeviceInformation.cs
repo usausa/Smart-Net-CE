@@ -5,32 +5,32 @@
     using Microsoft.Win32;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class DeviceInformation
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string DeviceId { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string Name { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string Key { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string Module { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="deviceId"></param>
         /// <param name="name"></param>
@@ -45,7 +45,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public static DeviceInformation[] GetActiveDvices()

@@ -1,10 +1,11 @@
 ﻿namespace Smart
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class ArrayExtensions
     {
@@ -13,7 +14,7 @@
         //--------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="array"></param>
@@ -26,7 +27,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="array"></param>
@@ -42,16 +43,16 @@
             int copy;
             for (copy = 1; copy <= length / 2; copy <<= 1)
             {
-                Array.Copy(array, offset, array, offset + copy, copy);
+                Buffer.BlockCopy(array, offset, array, offset + copy, copy);
             }
 
-            Array.Copy(array, offset, array, offset + copy, length - copy);
+            Buffer.BlockCopy(array, offset, array, offset + copy, length - copy);
 
             return array;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="value"></param>
@@ -63,7 +64,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="offset"></param>
@@ -87,7 +88,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="value"></param>
@@ -99,7 +100,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="offset"></param>
@@ -123,7 +124,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="value"></param>
@@ -135,7 +136,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="offset"></param>
@@ -159,7 +160,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="value"></param>
@@ -171,7 +172,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="offset"></param>
@@ -195,7 +196,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="value"></param>
@@ -207,7 +208,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="offset"></param>
@@ -231,7 +232,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="value"></param>
@@ -243,7 +244,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="offset"></param>
@@ -267,7 +268,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="value"></param>
@@ -279,7 +280,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="offset"></param>
@@ -303,7 +304,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="value"></param>
@@ -315,7 +316,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="offset"></param>
@@ -343,7 +344,7 @@
         //--------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="array"></param>
@@ -359,12 +360,12 @@
 
             var result = new T[array.Length + others.Sum(_ => _.Length)];
 
-            Array.Copy(array, 0, result, 0, array.Length);
+            Buffer.BlockCopy(array, 0, result, 0, array.Length);
 
             var offset = array.Length;
             foreach (var other in others)
             {
-                Array.Copy(other, 0, result, offset, other.Length);
+                Buffer.BlockCopy(other, 0, result, offset, other.Length);
                 offset += other.Length;
             }
 
@@ -372,7 +373,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="others"></param>
@@ -400,7 +401,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="others"></param>
@@ -428,7 +429,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="others"></param>
@@ -456,7 +457,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="others"></param>
@@ -484,7 +485,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="others"></param>
@@ -512,7 +513,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="others"></param>
@@ -540,7 +541,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="others"></param>
@@ -568,7 +569,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="others"></param>
@@ -600,7 +601,7 @@
         //--------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="array"></param>
@@ -612,13 +613,13 @@
         {
             var result = new T[Math.Min(length, array.Length - offset)];
 
-            Array.Copy(array, offset, result, 0, result.Length);
+            Buffer.BlockCopy(array, offset, result, 0, result.Length);
 
             return result;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="offset"></param>
@@ -635,7 +636,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="offset"></param>
@@ -652,7 +653,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="offset"></param>
@@ -669,7 +670,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="offset"></param>
@@ -686,7 +687,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="offset"></param>
@@ -703,7 +704,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="offset"></param>
@@ -720,7 +721,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="offset"></param>
@@ -737,7 +738,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="offset"></param>
@@ -751,6 +752,235 @@
             Buffer.BlockCopy(array, offset, result, 0, result.Length);
 
             return result;
+        }
+
+        //--------------------------------------------------------------------------------
+        // ArrayEqual
+        //--------------------------------------------------------------------------------
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="array"></param>
+        /// <param name="offset"></param>
+        /// <param name="other"></param>
+        /// <param name="otherOffset"></param>
+        /// <param name="length"></param>
+        /// <returns></returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        public static bool ArrayEquals<T>(this T[] array, int offset, T[] other, int otherOffset, int length)
+        {
+            return ArrayEquals(array, offset, other, otherOffset, length, EqualityComparer<T>.Default);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="array"></param>
+        /// <param name="offset"></param>
+        /// <param name="other"></param>
+        /// <param name="otherOffset"></param>
+        /// <param name="length"></param>
+        /// <param name="comparer"></param>
+        /// <returns></returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        public static bool ArrayEquals<T>(this T[] array, int offset, T[] other, int otherOffset, int length, IEqualityComparer<T> comparer)
+        {
+            for (var i = 0; i < length; i++)
+            {
+                if (!comparer.Equals(array[offset + i], other[otherOffset + i]))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="array"></param>
+        /// <param name="offset"></param>
+        /// <param name="other"></param>
+        /// <param name="otherOffset"></param>
+        /// <param name="length"></param>
+        /// <returns></returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        public static bool ArrayEquals(this byte[] array, int offset, byte[] other, int otherOffset, int length)
+        {
+            for (var i = 0; i < length; i++)
+            {
+                if (array[offset + i].CompareTo(other[otherOffset + i]) != 0)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="array"></param>
+        /// <param name="offset"></param>
+        /// <param name="other"></param>
+        /// <param name="otherOffset"></param>
+        /// <param name="length"></param>
+        /// <returns></returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        public static bool ArrayEquals(this short[] array, int offset, short[] other, int otherOffset, int length)
+        {
+            for (var i = 0; i < length; i++)
+            {
+                if (array[offset + i].CompareTo(other[otherOffset + i]) != 0)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="array"></param>
+        /// <param name="offset"></param>
+        /// <param name="other"></param>
+        /// <param name="otherOffset"></param>
+        /// <param name="length"></param>
+        /// <returns></returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        public static bool ArrayEquals(this int[] array, int offset, int[] other, int otherOffset, int length)
+        {
+            for (var i = 0; i < length; i++)
+            {
+                if (array[offset + i].CompareTo(other[otherOffset + i]) != 0)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="array"></param>
+        /// <param name="offset"></param>
+        /// <param name="other"></param>
+        /// <param name="otherOffset"></param>
+        /// <param name="length"></param>
+        /// <returns></returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        public static bool ArrayEquals(this long[] array, int offset, long[] other, int otherOffset, int length)
+        {
+            for (var i = 0; i < length; i++)
+            {
+                if (array[offset + i].CompareTo(other[otherOffset + i]) != 0)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="array"></param>
+        /// <param name="offset"></param>
+        /// <param name="other"></param>
+        /// <param name="otherOffset"></param>
+        /// <param name="length"></param>
+        /// <returns></returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        public static bool ArrayEquals(this float[] array, int offset, float[] other, int otherOffset, int length)
+        {
+            for (var i = 0; i < length; i++)
+            {
+                if (array[offset + i].CompareTo(other[otherOffset + i]) != 0)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="array"></param>
+        /// <param name="offset"></param>
+        /// <param name="other"></param>
+        /// <param name="otherOffset"></param>
+        /// <param name="length"></param>
+        /// <returns></returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        public static bool ArrayEquals(this double[] array, int offset, double[] other, int otherOffset, int length)
+        {
+            for (var i = 0; i < length; i++)
+            {
+                if (array[offset + i].CompareTo(other[otherOffset + i]) != 0)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="array"></param>
+        /// <param name="offset"></param>
+        /// <param name="other"></param>
+        /// <param name="otherOffset"></param>
+        /// <param name="length"></param>
+        /// <returns></returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        public static bool ArrayEquals(this bool[] array, int offset, bool[] other, int otherOffset, int length)
+        {
+            for (var i = 0; i < length; i++)
+            {
+                if (array[offset + i].CompareTo(other[otherOffset + i]) != 0)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="array"></param>
+        /// <param name="offset"></param>
+        /// <param name="other"></param>
+        /// <param name="otherOffset"></param>
+        /// <param name="length"></param>
+        /// <returns></returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        public static bool ArrayEquals(this char[] array, int offset, char[] other, int otherOffset, int length)
+        {
+            for (var i = 0; i < length; i++)
+            {
+                if (array[offset + i].CompareTo(other[otherOffset + i]) != 0)
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }

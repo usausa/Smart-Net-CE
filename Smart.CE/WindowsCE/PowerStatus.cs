@@ -1,7 +1,7 @@
 ﻿namespace Smart.WindowsCE
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1815:OverrideEqualsAndOperatorEqualsOnValueTypes", Justification = "P/Invoke")]
     public struct PowerStatus

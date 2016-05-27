@@ -4,12 +4,12 @@
     using System.Windows.Forms;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class FormExtensions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="form"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Ignore")]

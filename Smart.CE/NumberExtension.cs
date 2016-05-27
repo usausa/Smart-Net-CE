@@ -3,12 +3,12 @@
     using System;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class NumberExtension
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="src"></param>
         /// <returns></returns>
@@ -19,7 +19,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="src"></param>
         /// <returns></returns>
@@ -30,7 +30,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="src"></param>
         /// <returns></returns>
@@ -41,7 +41,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="src"></param>
         /// <returns></returns>
@@ -52,7 +52,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="src"></param>
         /// <returns></returns>
@@ -63,7 +63,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="src"></param>
         /// <returns></returns>

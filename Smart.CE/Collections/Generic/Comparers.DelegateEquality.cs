@@ -4,7 +4,7 @@
     using System.Collections.Generic;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public class DelegateEqualityComparer<T> : IEqualityComparer<T>
@@ -14,7 +14,7 @@
         private readonly Func<T, int> getHashCode;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="equals"></param>
         /// <param name="getHashCode"></param>
@@ -25,7 +25,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>
@@ -36,7 +36,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>

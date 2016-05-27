@@ -11,12 +11,12 @@
 #endif
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class SqlTypesNullableConverter : IObjectConverter
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         /// <param name="targetType"></param>
@@ -27,7 +27,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         /// <param name="targetType"></param>

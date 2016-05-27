@@ -4,12 +4,12 @@
     using System.Data;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class DataRecordExtensions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="record"></param>
         /// <param name="i"></param>
@@ -21,7 +21,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="record"></param>
         /// <param name="i"></param>
@@ -33,7 +33,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="record"></param>
         /// <param name="i"></param>
@@ -45,7 +45,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="record"></param>
         /// <param name="i"></param>
@@ -57,7 +57,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="record"></param>
         /// <param name="i"></param>
@@ -69,7 +69,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="record"></param>
         /// <param name="i"></param>
@@ -81,7 +81,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="record"></param>
         /// <param name="i"></param>
@@ -93,7 +93,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="record"></param>
         /// <param name="i"></param>
@@ -105,7 +105,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="record"></param>
         /// <param name="i"></param>
@@ -117,7 +117,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="record"></param>
         /// <param name="i"></param>
@@ -129,7 +129,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="record"></param>
         /// <param name="i"></param>

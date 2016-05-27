@@ -1,7 +1,7 @@
 ﻿namespace Smart.WindowsCE
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CpuUsage
     {
@@ -9,7 +9,7 @@
         private uint prevIdle;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CpuUsage()
         {
@@ -18,7 +18,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public double UsageDouble
         {
@@ -42,7 +42,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int Usage
         {

@@ -4,14 +4,14 @@
     using System.Reflection;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     internal class ReflectionFieldAccessor : IAccessor
     {
         private readonly FieldInfo fieldInfo;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MemberInfo MemberInfo
         {
@@ -19,7 +19,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Type Type
         {
@@ -27,7 +27,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool CanRead
         {
@@ -35,7 +35,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool CanWrite
         {
@@ -43,7 +43,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="fieldInfo"></param>
         public ReflectionFieldAccessor(FieldInfo fieldInfo)
@@ -52,7 +52,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="target"></param>
         /// <returns></returns>
@@ -62,7 +62,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="target"></param>
         /// <param name="value"></param>

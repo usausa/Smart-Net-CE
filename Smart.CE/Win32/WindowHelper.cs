@@ -10,7 +10,7 @@
     using Smart.WindowsCE;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class WindowHelper
     {
@@ -32,7 +32,7 @@
         private const int SHGFI_SMALLICON = 0x000000001;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="handle"></param>
         public static void StartFullScreen(IntPtr handle)
@@ -57,7 +57,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="handle"></param>
         public static void EndFullScreen(IntPtr handle)
@@ -82,7 +82,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="handle"></param>
         /// <param name="value"></param>
@@ -92,7 +92,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static void DisableIME()
         {
@@ -100,7 +100,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="handle"></param>
         /// <param name="small"></param>

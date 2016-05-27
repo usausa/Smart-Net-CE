@@ -9,7 +9,7 @@
     using Smart.Converter;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class SqlMapper
     {
@@ -24,7 +24,7 @@
         public static ObjectConverter Converter { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         static SqlMapper()
         {
@@ -34,7 +34,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="list"></param>
         public static void SetParameterBuilders(IList<IParameterBuilder> list)
@@ -43,7 +43,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static void ResetParameterBuilders()
         {
@@ -51,7 +51,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="list"></param>
         public static void SetQueryHandlers(IList<IQueryHandler> list)
@@ -60,7 +60,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static void ResetQueryHandlers()
         {
@@ -72,7 +72,7 @@
         //--------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="con"></param>
         /// <param name="transaction"></param>
@@ -85,14 +85,14 @@
         private static IDbCommand SetupCommand(IDbConnection con, IDbTransaction transaction, string sql, object param, int? commandTimeout, CommandType? commandType)
         {
             var cmd = con.CreateCommand();
-            
+
             if (transaction != null)
             {
                 cmd.Transaction = transaction;
             }
-            
+
             cmd.CommandText = sql;
-            
+
             if (commandTimeout.HasValue)
             {
                 cmd.CommandTimeout = commandTimeout.Value;
@@ -122,7 +122,7 @@
         //--------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="wasClosed"></param>
         /// <param name="con"></param>
@@ -145,7 +145,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="con"></param>
         /// <param name="sql"></param>
@@ -165,7 +165,7 @@
                     {
                         con.Open();
                     }
-                    
+
                     var result = cmd.ExecuteNonQuery();
 
                     return result;
@@ -178,7 +178,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="con"></param>
@@ -212,7 +212,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="con"></param>
         /// <param name="sql"></param>
@@ -247,7 +247,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="con"></param>
@@ -415,7 +415,7 @@
         {
             return ExecuteReaderImpl(con, sql, param, null, commandTimeout, commandType, CommandBehavior.Default);
         }
-        
+
         public static IDataReader ExecuteReader(this IDbConnection con, string sql, object param, IDbTransaction transaction)
         {
             return ExecuteReaderImpl(con, sql, param, transaction, null, null, CommandBehavior.Default);

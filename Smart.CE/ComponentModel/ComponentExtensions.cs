@@ -3,12 +3,12 @@
     using System.ComponentModel;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class ComponentExtensions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="target"></param>
         /// <returns></returns>

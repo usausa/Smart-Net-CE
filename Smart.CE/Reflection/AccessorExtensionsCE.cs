@@ -5,12 +5,12 @@
     using System.Reflection;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class AccessorExtensionsCE
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="fi"></param>
         /// <returns></returns>
@@ -20,7 +20,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="pi"></param>
         /// <returns></returns>
@@ -42,7 +42,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="mi"></param>
         /// <returns></returns>

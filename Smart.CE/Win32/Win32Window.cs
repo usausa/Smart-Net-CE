@@ -7,7 +7,7 @@
     using System.Text;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class Win32Window
     {
@@ -16,7 +16,7 @@
         //--------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Justification = "P/Invoke")]
@@ -26,7 +26,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Justification = "P/Invoke")]
@@ -36,7 +36,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="className"></param>
         /// <param name="wndName"></param>
@@ -47,7 +47,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hwnd"></param>
         /// <param name="nCmd"></param>
@@ -58,7 +58,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hwnd"></param>
         /// <returns></returns>
@@ -72,7 +72,7 @@
         //--------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hwnd"></param>
         /// <returns></returns>
@@ -88,7 +88,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hwnd"></param>
         /// <returns></returns>
@@ -104,7 +104,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hwnd"></param>
         /// <param name="text"></param>
@@ -115,7 +115,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hwnd"></param>
         /// <returns></returns>
@@ -125,7 +125,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hwnd"></param>
         /// <param name="value"></param>
@@ -135,7 +135,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hwnd"></param>
         /// <param name="style"></param>
@@ -146,7 +146,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hwnd"></param>
         /// <param name="removeStyle"></param>
@@ -161,7 +161,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hwnd"></param>
         /// <returns></returns>
@@ -171,7 +171,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hwnd"></param>
         /// <param name="value"></param>
@@ -181,7 +181,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hwnd"></param>
         /// <param name="index"></param>
@@ -192,7 +192,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hwnd"></param>
         /// <param name="index"></param>
@@ -207,7 +207,7 @@
         //--------------------------------------------------------------------------------
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hwnd"></param>
         /// <param name="bEnable"></param>
@@ -218,7 +218,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hwnd"></param>
         /// <returns></returns>
@@ -228,7 +228,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hwnd"></param>
         /// <returns></returns>
@@ -238,7 +238,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hwnd"></param>
         /// <param name="pos"></param>
@@ -254,7 +254,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hwnd"></param>
         /// <param name="nCmdShow"></param>
@@ -265,7 +265,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hwnd"></param>
         /// <param name="x"></param>
@@ -296,7 +296,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hwnd"></param>
         /// <param name="msg"></param>
@@ -309,7 +309,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hwnd"></param>
         /// <param name="msg"></param>
@@ -322,7 +322,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hwnd"></param>
         /// <param name="msg"></param>
@@ -335,7 +335,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hwnd"></param>
         /// <param name="msg"></param>
@@ -348,7 +348,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hwnd"></param>
         /// <param name="msg"></param>
@@ -361,7 +361,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hwnd"></param>
         /// <param name="msg"></param>
@@ -374,7 +374,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hwnd"></param>
         /// <param name="msg"></param>

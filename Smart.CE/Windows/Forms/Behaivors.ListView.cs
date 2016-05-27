@@ -6,7 +6,7 @@
     using System.Windows.Forms;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class SortListBewBeaivors : IBehaivor<ListView>
     {
@@ -15,7 +15,7 @@
         private readonly bool[] ascendings;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="sortFunctions"></param>
         public SortListBewBeaivors(IEnumerable<Func<ListViewItem, ListViewItem, bool, int>> sortFunctions)
@@ -25,7 +25,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="control"></param>
         public void Attach(ListView control)
@@ -39,7 +39,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="control"></param>
         public void Detach(ListView control)
@@ -53,7 +53,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -77,9 +77,9 @@
 
                 var list = listView.Items.Cast<ListViewItem>().ToList();
                 list.Sort(0, count, comparer);
-                
+
                 listView.Items.Clear();
-                
+
                 foreach (var item in list)
                 {
                     listView.Items.Add(item);
@@ -97,7 +97,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private class SortFunctionComparer : IComparer<ListViewItem>
         {
@@ -105,7 +105,7 @@
             private readonly bool ascending;
 
             /// <summary>
-            /// 
+            ///
             /// </summary>
             /// <param name="sortFunction"></param>
             /// <param name="ascending"></param>
@@ -116,7 +116,7 @@
             }
 
             /// <summary>
-            /// 
+            ///
             /// </summary>
             /// <param name="x"></param>
             /// <param name="y"></param>

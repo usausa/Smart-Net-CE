@@ -6,7 +6,7 @@
     using Smart.Drawing;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class GraphicalButtonBase : GraphicalControl
     {
@@ -35,7 +35,7 @@
         private Image disabledImage;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Size PressedOffset
         {
@@ -48,7 +48,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool DrawFocusRectangle
         {
@@ -61,7 +61,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Color FocusRectangleColor
         {
@@ -77,7 +77,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ButtonCustomize Customize
         {
@@ -90,7 +90,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BorderStyle BorderStyle
         {
@@ -112,7 +112,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int BorderWidth
         {
@@ -139,7 +139,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Color PressedForeColor
         {
@@ -155,7 +155,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Color PressedBackColor
         {
@@ -171,7 +171,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Color PressedBackColor2
         {
@@ -187,7 +187,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Image PressedImage
         {
@@ -207,7 +207,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Color FocusedForeColor
         {
@@ -223,7 +223,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Color FocusedBackColor
         {
@@ -239,7 +239,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Color FocusedBackColor2
         {
@@ -255,7 +255,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Image FocusedImage
         {
@@ -275,7 +275,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Color DisabledForeColor
         {
@@ -291,7 +291,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Color DisabledBackColor
         {
@@ -307,7 +307,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Color DisabledBackColor2
         {
@@ -323,7 +323,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Image DisabledImage
         {
@@ -343,7 +343,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         protected virtual bool IsPressed
         {
@@ -351,7 +351,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         protected virtual bool IsFocused
         {
@@ -359,7 +359,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GraphicalButtonBase()
         {
@@ -367,7 +367,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         protected override void DisposeResources()
         {
@@ -393,7 +393,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         protected override void OnEnabledChanged(EventArgs e)
@@ -403,7 +403,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         protected override void OnGotFocus(EventArgs e)
@@ -413,7 +413,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         protected override void OnLostFocus(EventArgs e)
@@ -423,7 +423,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Protected")]
@@ -458,7 +458,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         protected virtual ButtonState ResolveButtonState()
@@ -479,7 +479,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="g"></param>
         protected override void OnDraw(Graphics g)
@@ -491,7 +491,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         protected override Rectangle CalcTextRect()
@@ -516,7 +516,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         protected virtual Rectangle CalcFocusRect()
@@ -525,7 +525,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="g"></param>
         /// <param name="rect"></param>
@@ -550,7 +550,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="g"></param>
         /// <param name="rect"></param>
@@ -609,7 +609,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="g"></param>
         /// <param name="rect"></param>
@@ -647,7 +647,7 @@
                 {
                     g.DrawBorder(IsPressed ? Border3DStyle.SunkenOuter : Border3DStyle.RaisedInner, borderColor, rect);
                 }
-                else 
+                else
                 {
                     g.DrawBorder(IsPressed ? Border3DStyle.Sunken : Border3DStyle.Raised, borderColor, rect);
                 }
@@ -655,7 +655,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="g"></param>
         /// <param name="rect"></param>

@@ -5,12 +5,12 @@
     using Microsoft.Win32;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class RegistryKeyExtensions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="keyHive"></param>
         /// <param name="path"></param>
@@ -57,7 +57,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="keyHive"></param>
         /// <param name="path"></param>

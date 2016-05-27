@@ -6,7 +6,7 @@
     using Smart.Runtime.InteropServices;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     internal enum NetworkErrors
     {
@@ -31,7 +31,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class MapDrive
     {
@@ -44,7 +44,7 @@
         private const int RESOURCEUSAGE_CONNECTABLE = 0x00000001;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hwnd"></param>
         /// <param name="netRes"></param>
@@ -84,7 +84,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="shareName"></param>
         /// <param name="force"></param>

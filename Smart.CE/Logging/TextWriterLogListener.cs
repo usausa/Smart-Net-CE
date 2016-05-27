@@ -4,17 +4,17 @@
     using System.IO;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class TextWriterLogListener : LogListener
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
-        public TextWriter Writer { get; set; } 
+        public TextWriter Writer { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="fileName"></param>
         public TextWriterLogListener(string fileName)
@@ -23,7 +23,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="stream"></param>
         public TextWriterLogListener(Stream stream)
@@ -36,7 +36,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="writer"></param>
         public TextWriterLogListener(TextWriter writer)
@@ -49,7 +49,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="disposing"></param>
         protected override void Dispose(bool disposing)
@@ -62,7 +62,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override void Close()
         {
@@ -73,7 +73,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override void Flush()
         {
@@ -84,7 +84,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="message"></param>
         public override void Write(string message)
@@ -102,7 +102,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="message"></param>
         public override void WriteLine(string message)

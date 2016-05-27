@@ -5,7 +5,7 @@
     using System.Windows.Forms;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ControlEx : Control
     {
@@ -16,7 +16,7 @@
         private bool doubleBuffered;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         protected Graphics DoubleBuffer
         {
@@ -31,7 +31,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool DoubleBuffered
         {
@@ -55,12 +55,12 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SizeF ScaleFactor { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="disposing"></param>
         protected override void Dispose(bool disposing)
@@ -73,7 +73,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private void DisposeDoubleBuffer()
         {
@@ -91,7 +91,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private void UpdateDoubleBuffer()
         {
@@ -103,7 +103,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="graphics"></param>
         /// <returns></returns>
@@ -118,7 +118,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="args"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Protected")]
@@ -131,7 +131,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         protected override void OnResize(EventArgs e)
@@ -145,7 +145,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="factor"></param>
         /// <param name="specified"></param>

@@ -4,7 +4,7 @@
     using System.Reflection;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface IAccessor
     {

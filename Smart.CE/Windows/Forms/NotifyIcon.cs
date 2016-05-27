@@ -8,7 +8,7 @@
     using Microsoft.WindowsCE.Forms;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class NotifyIcon : Component
     {
@@ -34,12 +34,12 @@
         private bool visible;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public uint Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Visible
         {
@@ -70,7 +70,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Icon Icon
         {
@@ -100,7 +100,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string Text
         {
@@ -134,7 +134,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public NotifyIcon()
         {
@@ -146,7 +146,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="disposing"></param>
         protected override void Dispose(bool disposing)
@@ -166,7 +166,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         private void OnClick(EventArgs e)
@@ -178,7 +178,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         private void OnDoubleClick(EventArgs e)
@@ -190,7 +190,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         private void OnMouseDown(MouseEventArgs e)
@@ -202,7 +202,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         private void OnMouseUp(MouseEventArgs e)
@@ -219,14 +219,14 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private class NotifyIconMessageWindow : MessageWindow
         {
             private readonly NotifyIcon parent;
 
             /// <summary>
-            /// 
+            ///
             /// </summary>
             /// <param name="parent"></param>
             internal NotifyIconMessageWindow(NotifyIcon parent)
@@ -235,7 +235,7 @@
             }
 
             /// <summary>
-            /// 
+            ///
             /// </summary>
             /// <param name="m"></param>
             protected override void WndProc(ref Message m)

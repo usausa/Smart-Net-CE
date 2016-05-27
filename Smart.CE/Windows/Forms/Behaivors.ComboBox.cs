@@ -8,7 +8,7 @@
     using Smart.Win32;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ExtendComboBoxBeaivors : IBehaivor<ComboBox>
     {
@@ -16,12 +16,12 @@
         public event EventHandler<EventArgs> DropDownClosed;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IntPtr Handle { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="control"></param>
         public void Attach(ComboBox control)
@@ -41,7 +41,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="control"></param>
         public void Detach(ComboBox control)
@@ -56,7 +56,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="m"></param>
         /// <returns></returns>
@@ -66,7 +66,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="m"></param>
         /// <returns></returns>

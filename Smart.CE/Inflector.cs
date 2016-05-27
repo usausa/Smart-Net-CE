@@ -5,12 +5,12 @@
     using System.Text;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class Inflector
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="word"></param>
         /// <returns></returns>
@@ -20,7 +20,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="word"></param>
         /// <returns></returns>
@@ -30,7 +30,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="word"></param>
         /// <param name="isUpper"></param>
@@ -67,7 +67,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="word"></param>
         /// <returns></returns>
@@ -96,7 +96,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="word"></param>
         /// <returns></returns>

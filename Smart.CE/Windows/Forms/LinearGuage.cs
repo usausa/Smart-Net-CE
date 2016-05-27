@@ -7,7 +7,7 @@
     using Smart.Drawing;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class LinearGuage : ControlEx
     {
@@ -26,7 +26,7 @@
         private double currentValue;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Vertical
         {
@@ -39,7 +39,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int BorderWidth
         {
@@ -52,7 +52,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Color BorderColor
         {
@@ -65,7 +65,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Color GuageColor
         {
@@ -78,7 +78,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Color GuageBackColor
         {
@@ -91,7 +91,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool ShowValue
         {
@@ -104,7 +104,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string Unit
         {
@@ -117,7 +117,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string Format
         {
@@ -130,7 +130,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public double MaxValue
         {
@@ -143,7 +143,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public double MinValue
         {
@@ -156,7 +156,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public double CurrentValue
         {
@@ -169,7 +169,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", Justification = "Compatibility")]
@@ -178,7 +178,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="e"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Protected")]

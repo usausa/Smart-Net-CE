@@ -4,7 +4,7 @@
     using System.Runtime.InteropServices;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [Flags]
     internal enum CreateToolhelp32Flags
@@ -17,7 +17,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     internal struct HEAPLIST32
     {
@@ -28,7 +28,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     internal struct HEAPENTRY32
     {
@@ -44,7 +44,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     internal static class NativeMethods
     {
@@ -56,7 +56,7 @@
 
         [DllImport("toolhelp.dll", SetLastError = true)]
         internal static extern IntPtr CreateToolhelp32Snapshot(CreateToolhelp32Flags flags, uint processid);
-        
+
         [DllImport("toolhelp.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
         internal static extern bool CloseToolhelp32Snapshot(IntPtr handle);
@@ -65,7 +65,7 @@
 
         [DllImport("toolhelp.dll", SetLastError = true)]
         internal static extern int Process32First(IntPtr handle, byte[] pe);
-        
+
         [DllImport("toolhelp.dll", SetLastError = true)]
         internal static extern int Process32Next(IntPtr handle, byte[] pe);
 
@@ -73,7 +73,7 @@
 
         [DllImport("toolhelp.dll", SetLastError = true)]
         internal static extern int Thread32First(IntPtr handle, byte[] te);
-        
+
         [DllImport("toolhelp.dll", SetLastError = true)]
         internal static extern int Thread32Next(IntPtr handle, byte[] te);
 
@@ -81,7 +81,7 @@
 
         [DllImport("toolhelp.dll", SetLastError = true)]
         internal static extern int Module32First(IntPtr handle, byte[] me);
-        
+
         [DllImport("toolhelp.dll", SetLastError = true)]
         internal static extern int Module32Next(IntPtr handle, byte[] me);
 
@@ -90,15 +90,15 @@
         [DllImport("toolhelp.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
         internal static extern bool Heap32ListFirst(IntPtr hSnapshot, ref HEAPLIST32 lphl);
-        
+
         [DllImport("toolhelp.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
         internal static extern bool Heap32ListNext(IntPtr hSnapshot, ref HEAPLIST32 lphl);
-        
+
         [DllImport("toolhelp.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
         internal static extern bool Heap32First(IntPtr hSnapshot, ref HEAPENTRY32 lphe, uint processId, uint heapId);
-        
+
         [DllImport("toolhelp.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
         internal static extern bool Heap32Next(IntPtr hSnapshot, ref HEAPENTRY32 lphe);

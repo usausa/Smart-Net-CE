@@ -5,7 +5,7 @@
     public static class IconExtensions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="icon"></param>
         /// <returns></returns>

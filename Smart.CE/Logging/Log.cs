@@ -3,7 +3,7 @@
     using System.Collections.Generic;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class Log
     {
@@ -12,22 +12,22 @@
         private static int indentSize;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static LogLevel LogLevel { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static IList<LogListener> Listeners { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool AutoFlush { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static int IndentSize
         {
@@ -42,7 +42,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static int IndentLevel
         {
@@ -61,10 +61,10 @@
             LogLevel = LogLevel.Off;
             Listeners = new List<LogListener>();
             AutoFlush = true;
-        } 
+        }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static void Close()
         {
@@ -75,7 +75,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static void Flush()
         {
@@ -86,7 +86,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static void Indent()
         {
@@ -98,7 +98,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static void Unindent()
         {
@@ -114,7 +114,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         private static void SetIndentLevel(int value)
@@ -132,7 +132,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         private static void SetIndentSize(int value)
@@ -150,7 +150,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="message"></param>
         public static void Write(string message)
@@ -166,7 +166,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         public static void Write(object value)
@@ -182,7 +182,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="message"></param>
         public static void WriteLine(string message)
@@ -198,7 +198,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         public static void WriteLine(object value)
@@ -214,7 +214,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="condition"></param>
         /// <param name="message"></param>
@@ -227,7 +227,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="condition"></param>
         /// <param name="value"></param>
@@ -240,7 +240,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="condition"></param>
         /// <param name="message"></param>
@@ -253,7 +253,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="condition"></param>
         /// <param name="value"></param>
@@ -266,7 +266,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="message"></param>
         public static void Error(string message)
@@ -278,7 +278,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         public static void Error(object value)
@@ -290,7 +290,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="message"></param>
         public static void Warning(string message)
@@ -302,7 +302,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         public static void Warning(object value)
@@ -314,7 +314,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="message"></param>
         public static void Info(string message)
@@ -326,7 +326,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         public static void Info(object value)
@@ -338,7 +338,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="message"></param>
         public static void Debug(string message)
@@ -350,7 +350,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         public static void Debug(object value)

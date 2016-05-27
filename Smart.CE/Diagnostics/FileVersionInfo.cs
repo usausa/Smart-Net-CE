@@ -5,57 +5,57 @@ namespace Smart.Diagnostics
     using System.Runtime.InteropServices;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class FileVersionInfo
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string FileName { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int FileMajorPart { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int FileMinorPart { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int FileBuildPart { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int FilePrivatePart { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int ProductMajorPart { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int ProductMinorPart { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int ProductBuildPart { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int ProductPrivatePart { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="filename"></param>
         private FileVersionInfo(string filename)
@@ -95,7 +95,7 @@ namespace Smart.Diagnostics
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="fileName"></param>
         /// <returns></returns>

@@ -6,12 +6,12 @@
     using System.Text;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class MarshalEx
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="m"></param>
         /// <returns></returns>
@@ -20,14 +20,14 @@
             if (m == null)
             {
                 throw new ArgumentNullException("m");
-            } 
-            
+            }
+
             var hInstance = NativeMethods.GetModuleHandle(Equals(m.Assembly, Assembly.GetCallingAssembly()) ? null : m.Assembly.GetName().CodeBase);
             return hInstance == IntPtr.Zero ? new IntPtr(-1) : hInstance;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="s"></param>
         /// <returns></returns>
@@ -44,7 +44,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
@@ -66,7 +66,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="data"></param>
@@ -82,7 +82,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="data"></param>

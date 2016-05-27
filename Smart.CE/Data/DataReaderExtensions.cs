@@ -4,12 +4,12 @@
     using System.Data;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class DataReaderExtensions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="reader"></param>
         /// <returns></returns>

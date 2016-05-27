@@ -3,12 +3,12 @@
     using System;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class EventHandlerExtensions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="handler"></param>
         /// <param name="sender"></param>
@@ -24,7 +24,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="TEventArgs"></typeparam>
         /// <param name="handler"></param>

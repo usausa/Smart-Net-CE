@@ -7,7 +7,7 @@
     using System.Text;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ModuleEntry
     {
@@ -26,42 +26,42 @@
         //private const int FLAGS_OFFSET = 1072;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public uint ModuleId { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public uint GlobalCount { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public uint ProcessCount { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public uint BaseAddress { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public uint BaseSize { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string Module { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string ExePath { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="processId"></param>
         /// <returns></returns>
@@ -91,7 +91,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="data"></param>
         private ModuleEntry(byte[] data)

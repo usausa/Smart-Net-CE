@@ -5,7 +5,7 @@
     using System.Runtime.InteropServices;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     internal struct TRIVERTEX
     {
@@ -33,7 +33,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     internal struct GRADIENT_RECT
     {
@@ -48,7 +48,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     internal struct BlendFunction
     {
@@ -59,7 +59,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum RasterOp : uint
     {
@@ -81,7 +81,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     internal enum PenStyle
     {
@@ -90,7 +90,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     internal struct LOGFONT
@@ -113,7 +113,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     internal enum RgnCombineMode
     {
@@ -127,7 +127,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     internal static class NativeMethods
     {

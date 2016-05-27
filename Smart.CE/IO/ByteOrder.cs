@@ -3,12 +3,12 @@
     using System;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface IByteOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="bytes"></param>
         /// <param name="index"></param>
@@ -16,7 +16,7 @@
         void PutShort(byte[] bytes, int index, short value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="bytes"></param>
         /// <param name="index"></param>
@@ -24,7 +24,7 @@
         void PutInt(byte[] bytes, int index, int value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="bytes"></param>
         /// <param name="index"></param>
@@ -32,7 +32,7 @@
         short GetShort(byte[] bytes, int index);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="bytes"></param>
         /// <param name="index"></param>
@@ -41,12 +41,12 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     internal class DefaultEndian : IByteOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="bytes"></param>
         /// <param name="index"></param>
@@ -58,7 +58,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="bytes"></param>
         /// <param name="index"></param>
@@ -70,7 +70,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="bytes"></param>
         /// <param name="index"></param>
@@ -81,7 +81,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="bytes"></param>
         /// <param name="index"></param>
@@ -93,12 +93,12 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     internal class ReverseEndian : IByteOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="bytes"></param>
         /// <param name="index"></param>
@@ -111,7 +111,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="bytes"></param>
         /// <param name="index"></param>
@@ -124,7 +124,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="bytes"></param>
         /// <param name="index"></param>
@@ -138,7 +138,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="bytes"></param>
         /// <param name="index"></param>
@@ -153,24 +153,24 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class ByteOrders
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = "Mutable")]
         public static readonly IByteOrder Default = new DefaultEndian();
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = "Mutable")]
         public static readonly IByteOrder LittleEndian = BitConverter.IsLittleEndian ? (IByteOrder)new DefaultEndian() : new ReverseEndian();
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = "Mutable")]
         public static readonly IByteOrder BigEndian = BitConverter.IsLittleEndian ? (IByteOrder)new ReverseEndian() : new DefaultEndian();

@@ -4,23 +4,23 @@
     using System.Drawing;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class MemoryGraphics : IDisposable
     {
         private Bitmap memoryBitmap;
 
         private int width;
-       
+
         private int height;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Graphics Graphics { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Rectangle Bounds
         {
@@ -28,7 +28,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Size Size
         {
@@ -36,7 +36,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ~MemoryGraphics()
         {
@@ -44,7 +44,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Dispose()
         {
@@ -53,7 +53,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="disposing"></param>
         protected virtual void Dispose(bool disposing)
@@ -72,7 +72,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public bool CanBuffer()
@@ -81,7 +81,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="graphics"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Performance")]
@@ -94,7 +94,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="newWidth"></param>
         /// <param name="newHeight"></param>

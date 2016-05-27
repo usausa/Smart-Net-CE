@@ -3,13 +3,13 @@
     using System;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [Serializable]
     public class ObjectConverterException : Exception
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="message"></param>
         public ObjectConverterException(string message)
@@ -18,7 +18,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>

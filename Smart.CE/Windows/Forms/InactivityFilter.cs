@@ -6,7 +6,7 @@
     using Smart.Win32;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class InactivityFilter : IMessageFilter, IDisposable
     {
@@ -15,17 +15,17 @@
         private readonly Timer timer = new Timer();
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int Timeout { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Elapsed { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="timeoutMilliseconds"></param>
         public InactivityFilter(int timeoutMilliseconds)
@@ -36,7 +36,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ~InactivityFilter()
         {
@@ -44,7 +44,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Dispose()
         {
@@ -53,7 +53,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="disposing"></param>
         protected virtual void Dispose(bool disposing)
@@ -62,7 +62,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -79,7 +79,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Reset()
         {
@@ -88,7 +88,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="m"></param>
         /// <returns></returns>

@@ -3,13 +3,13 @@
     using System.Security.Cryptography;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class CRC16 : HashAlgorithm
     {
         private const uint MASK = 0xffff;
 
-        private static readonly uint[] Table = 
+        private static readonly uint[] Table =
         {
             0x0000, 0x1189, 0x2312, 0x329b, 0x4624, 0x57ad, 0x6536, 0x74bf,
             0x8c48, 0x9dc1, 0xaf5a, 0xbed3, 0xca6c, 0xdbe5, 0xe97e, 0xf8f7,
@@ -46,12 +46,12 @@
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private uint crcValue;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CRC16()
         {
@@ -60,7 +60,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="ibStart"></param>
@@ -79,7 +79,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         protected override byte[] HashFinal()
@@ -89,7 +89,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override void Initialize()
         {

@@ -4,7 +4,7 @@
     using System.Windows.Forms;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class SystemInformationEx
     {
@@ -31,7 +31,7 @@
         private const int SM_CYSMICON = 50;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Size ScreenSize
         {
@@ -42,7 +42,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static int VerticalScrollBarArrowHeight
         {
@@ -53,7 +53,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static int VerticalScrollBarWidth
         {
@@ -64,7 +64,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static int HorizontalScrollBarArrowWidth
         {
@@ -75,7 +75,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static int HorizontalScrollBarHeight
         {
@@ -86,7 +86,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static int CaptionHeight
         {
@@ -97,7 +97,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Size FixedFrameBorderSize
         {
@@ -108,7 +108,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Size IconSize
         {
@@ -119,7 +119,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Size CursorSize
         {
@@ -130,7 +130,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool DebugOS
         {
@@ -141,7 +141,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool MousePresent
         {
@@ -152,7 +152,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Size DoubleClickSize
         {
@@ -163,7 +163,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Size IconSpacingSize
         {
@@ -174,7 +174,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Size SmallIconSize
         {
@@ -185,7 +185,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Size BorderSize
         {
@@ -196,7 +196,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static int DoubleClickTime
         {
@@ -207,7 +207,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static int MenuHeight
         {
@@ -218,7 +218,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Rectangle WorkingArea
         {

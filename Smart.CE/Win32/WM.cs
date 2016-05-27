@@ -1,7 +1,7 @@
 ﻿namespace Smart.Win32
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum WM
     {
@@ -156,7 +156,7 @@
         ENTERSIZEMOVE        = 561,
         EXITSIZEMOVE         = 562,
         DROPFILES            = 563,
-        MDIREFRESHMENU       = 564, 
+        MDIREFRESHMENU       = 564,
 
         MOUSEHOVER           = 673,
         MOUSELEAVE           = 675,

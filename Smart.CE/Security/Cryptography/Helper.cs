@@ -4,14 +4,14 @@
     using System.Security.Cryptography;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     internal static class Helper
     {
         private static readonly RNGCryptoServiceProvider StaticRandomCryptoNumberGenerator = new RNGCryptoServiceProvider();
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="i"></param>
         /// <returns></returns>
@@ -22,7 +22,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="keySize"></param>
         /// <returns></returns>

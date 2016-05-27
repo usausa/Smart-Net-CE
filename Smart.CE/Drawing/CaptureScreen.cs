@@ -6,12 +6,12 @@
     using System.Windows.Forms;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class CaptureScreen
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="fileName"></param>
         public static void Snapshot(string fileName)
@@ -20,7 +20,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public static Bitmap Snapshot()
@@ -29,7 +29,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hwnd"></param>
         /// <param name="rect"></param>
@@ -43,7 +43,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hwnd"></param>
         /// <param name="rect"></param>

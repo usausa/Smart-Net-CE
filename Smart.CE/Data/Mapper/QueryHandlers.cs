@@ -8,19 +8,19 @@
     using Smart.Reflection;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface IQueryHandler
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
         bool IsMatch(Type type);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="factory"></param>
@@ -31,14 +31,14 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class DictionaryQueryHandler : IQueryHandler
     {
         private static readonly Type TargetType = typeof(IDictionary<string, object>);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
@@ -48,7 +48,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="factory"></param>
@@ -85,14 +85,14 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class ObjectQueryHandler : IQueryHandler
     {
         private readonly ITypeMetadataFactory metadataFactory;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="metadataFactory"></param>
         public ObjectQueryHandler(ITypeMetadataFactory metadataFactory)
@@ -101,7 +101,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
@@ -111,7 +111,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="factory"></param>
@@ -162,12 +162,12 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class DefaultQueryHandlers
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public static IList<IQueryHandler> Create()

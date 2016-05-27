@@ -6,7 +6,7 @@
     using Smart.Reflection;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface ITypeMetadata
     {
@@ -17,7 +17,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class DefaultTypeMetadata : ITypeMetadata
     {
@@ -26,7 +26,7 @@
         private readonly Dictionary<string, IAccessor> mapAccessors = new Dictionary<string, IAccessor>(StringComparer.OrdinalIgnoreCase);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="type"></param>
         public DefaultTypeMetadata(Type type)
@@ -46,7 +46,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public IEnumerable<IAccessor> GetParameterAccessors()
@@ -55,7 +55,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="column"></param>
         /// <returns></returns>
@@ -68,7 +68,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public interface ITypeMetadataFactory
     {
@@ -76,7 +76,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class DefaultTypeMetaDataFactory : ITypeMetadataFactory
     {
@@ -87,7 +87,7 @@
         private readonly Dictionary<Type, DefaultTypeMetadata> cache = new Dictionary<Type, DefaultTypeMetadata>();
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static DefaultTypeMetaDataFactory Default
         {
@@ -95,7 +95,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>

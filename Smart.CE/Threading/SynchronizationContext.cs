@@ -5,18 +5,18 @@
     using System.Windows.Forms;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     /// <param name="state"></param>
     public delegate void SendOrPostCallback(object state);
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class SynchronizationContext
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="d"></param>
         /// <param name="state"></param>
@@ -31,7 +31,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="d"></param>
         /// <param name="state"></param>
@@ -47,7 +47,7 @@
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1001:TypesThatOwnDisposableFieldsShouldBeDisposable", Justification = "No problem")]
     public class WindowsFormsSynchronizationContext : SynchronizationContext
@@ -55,7 +55,7 @@
         private readonly Control marshalingControl;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WindowsFormsSynchronizationContext()
         {
@@ -67,7 +67,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="control"></param>
         public WindowsFormsSynchronizationContext(Control control)
@@ -76,7 +76,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="d"></param>
         /// <param name="state"></param>
@@ -89,7 +89,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="d"></param>
         /// <param name="state"></param>

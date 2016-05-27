@@ -4,14 +4,14 @@
     using System.Windows.Forms;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed class CursorChanger : IDisposable
     {
         private static int refCount;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CursorChanger() :
             this(Cursors.WaitCursor)
@@ -19,7 +19,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="cursor"></param>
         public CursorChanger(Cursor cursor)
@@ -34,7 +34,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Dispose()
         {

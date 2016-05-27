@@ -3,7 +3,7 @@
     using System.Threading;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public class AtomicInteger
     {
@@ -22,14 +22,14 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AtomicInteger()
         {
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="initialValue"></param>
         public AtomicInteger(int initialValue)
@@ -38,7 +38,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>

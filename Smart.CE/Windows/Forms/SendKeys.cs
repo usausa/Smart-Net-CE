@@ -5,7 +5,7 @@
     using System.Linq;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class SendKeys
     {
@@ -22,7 +22,7 @@
         private const int ALTPOS = 2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private class KeywordVk
         {
@@ -44,52 +44,52 @@
         }
 
         private static readonly KeywordVk[] Keywords =
-        { 
+        {
             new KeywordVk("ENTER", 13),
-            new KeywordVk("TAB", 0x9), 
+            new KeywordVk("TAB", 0x9),
             new KeywordVk("ESC", 0x1b), new KeywordVk("ESCAPE", 0x1b),
 
             new KeywordVk("HOME", 0x24),
-            new KeywordVk("END", 0x23), 
+            new KeywordVk("END", 0x23),
             new KeywordVk("LEFT", 0x25),
-            new KeywordVk("RIGHT", 0x27), 
+            new KeywordVk("RIGHT", 0x27),
             new KeywordVk("UP", 0x26),
-            new KeywordVk("DOWN", 0x28), 
+            new KeywordVk("DOWN", 0x28),
             new KeywordVk("PGUP", 0x21),
-            new KeywordVk("PGDN", 0x22), 
+            new KeywordVk("PGDN", 0x22),
             new KeywordVk("NUMLOCK", 0x90),
-            new KeywordVk("SCROLLLOCK", 0x91), 
+            new KeywordVk("SCROLLLOCK", 0x91),
             new KeywordVk("PRTSC", 0x2c),
-            new KeywordVk("BREAK", 0x3), 
+            new KeywordVk("BREAK", 0x3),
 
             new KeywordVk("BACKSPACE", 0x8), new KeywordVk("BKSP", 0x8), new KeywordVk("BS", 0x8),
-            new KeywordVk("CLEAR", 0xc), 
+            new KeywordVk("CLEAR", 0xc),
             new KeywordVk("CAPSLOCK", 0x14),
             new KeywordVk("INS", 0x2d), new KeywordVk("INSERT", 0x2d),
             new KeywordVk("DEL", 0x2e), new KeywordVk("DELETE", 0x2e),
-            new KeywordVk("HELP", 0x2f), 
+            new KeywordVk("HELP", 0x2f),
 
             new KeywordVk("F1", 0x70),
-            new KeywordVk("F2", 0x71), 
+            new KeywordVk("F2", 0x71),
             new KeywordVk("F3", 0x72),
-            new KeywordVk("F4", 0x73), 
+            new KeywordVk("F4", 0x73),
             new KeywordVk("F5", 0x74),
-            new KeywordVk("F6", 0x75), 
+            new KeywordVk("F6", 0x75),
             new KeywordVk("F7", 0x76),
-            new KeywordVk("F8", 0x77), 
+            new KeywordVk("F8", 0x77),
             new KeywordVk("F9", 0x78),
-            new KeywordVk("F10", 0x79), 
+            new KeywordVk("F10", 0x79),
             new KeywordVk("F11", 0x7a),
-            new KeywordVk("F12", 0x7b), 
+            new KeywordVk("F12", 0x7b),
             new KeywordVk("F13", 0x7c),
-            new KeywordVk("F14", 0x7d), 
+            new KeywordVk("F14", 0x7d),
             new KeywordVk("F15", 0x7e),
-            new KeywordVk("F16", 0x7f), 
+            new KeywordVk("F16", 0x7f),
 
             new KeywordVk("MULTIPLY", 0x6a),
-            new KeywordVk("ADD", 0x6b), 
+            new KeywordVk("ADD", 0x6b),
             new KeywordVk("SUBTRACT", 0x6d),
-            new KeywordVk("DIVIDE", 0x6f), 
+            new KeywordVk("DIVIDE", 0x6f),
             new KeywordVk("+", 0x6b),
 
             new KeywordVk("%", 0x35, true),
@@ -103,7 +103,7 @@
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="keyword"></param>
         /// <returns></returns>
@@ -113,7 +113,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="keys"></param>
         public static void Send(string keys)
@@ -159,7 +159,7 @@
                         SendKey(ALTVK, KEYEVENTF_KEYDOWN);
                         break;
 
-                    case '~': // ENTER key 
+                    case '~': // ENTER key
                         SendChar(13, mods);
                         break;
 
@@ -239,7 +239,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="k"></param>
         /// <param name="flags"></param>
@@ -249,7 +249,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="k"></param>
         /// <param name="mods"></param>
@@ -262,7 +262,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="keys"></param>
         /// <param name="level"></param>
@@ -272,7 +272,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="keys"></param>
         /// <param name="level"></param>

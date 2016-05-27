@@ -1,7 +1,7 @@
 ﻿namespace Smart.Win32
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum TCN
     {

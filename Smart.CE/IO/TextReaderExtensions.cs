@@ -4,12 +4,12 @@
     using System.IO;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public static class TextReaderExtensions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="reader"></param>
         /// <returns></returns>

@@ -4,7 +4,7 @@
     using System.Security.Cryptography;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", Justification = "Compatibility")]
     public abstract class HMAC : KeyedHashAlgorithm
@@ -17,17 +17,17 @@
         private byte[] outer;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string HashName { get; private set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         protected int BlockSizeValue { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override byte[] Key
         {
@@ -46,7 +46,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hashName"></param>
         /// <param name="hash1"></param>
@@ -60,7 +60,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="disposing"></param>
         protected override void Dispose(bool disposing)
@@ -75,7 +75,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="array"></param>
         /// <param name="ibStart"></param>
@@ -91,7 +91,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         protected override byte[] HashFinal()
@@ -113,7 +113,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override void Initialize()
         {
@@ -123,7 +123,7 @@
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="key"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Protected")]
