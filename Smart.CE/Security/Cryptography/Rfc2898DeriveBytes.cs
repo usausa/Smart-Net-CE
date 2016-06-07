@@ -166,11 +166,11 @@
             {
                 if (cb < byteCount)
                 {
-                    Array.Copy(buffer, startIndex, dst, 0, cb);
+                    Buffer.BlockCopy(buffer, startIndex, dst, 0, cb);
                     startIndex += cb;
                     return dst;
                 }
-                Array.Copy(buffer, startIndex, dst, 0, byteCount);
+                Buffer.BlockCopy(buffer, startIndex, dst, 0, byteCount);
                 startIndex = endIndex = 0;
                 dstOffsetBytes += byteCount;
             }
@@ -181,13 +181,13 @@
                 var length = cb - dstOffsetBytes;
                 if (length > 20)
                 {
-                    Array.Copy(src, 0, dst, dstOffsetBytes, 20);
+                    Buffer.BlockCopy(src, 0, dst, dstOffsetBytes, 20);
                     dstOffsetBytes += 20;
                 }
                 else
                 {
-                    Array.Copy(src, 0, dst, dstOffsetBytes, length);
-                    Array.Copy(src, length, buffer, startIndex, 20 - length);
+                    Buffer.BlockCopy(src, 0, dst, dstOffsetBytes, length);
+                    Buffer.BlockCopy(src, length, buffer, startIndex, 20 - length);
                     endIndex += 20 - length;
                     return dst;
                 }
