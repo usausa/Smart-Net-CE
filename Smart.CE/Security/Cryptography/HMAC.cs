@@ -126,7 +126,7 @@
         ///
         /// </summary>
         /// <param name="key"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Protected")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Protected")]
         protected void InitializeKey(byte[] key)
         {
             if (key.Length > BlockSizeValue)

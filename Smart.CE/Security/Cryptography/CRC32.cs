@@ -82,7 +82,7 @@
         /// <param name="array"></param>
         /// <param name="ibStart"></param>
         /// <param name="cbSize"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Protected")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Protected")]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2233:OperationsShouldNotOverflow", Justification = "Ignore")]
         protected override void HashCore(byte[] array, int ibStart, int cbSize)
         {

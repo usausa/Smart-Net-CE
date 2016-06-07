@@ -80,6 +80,7 @@
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2109:ReviewVisibleEventHandlers", Justification = "Protected")]
         protected abstract void OnParentPaint(object sender, PaintEventArgs e);
     }
 
@@ -171,7 +172,7 @@
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Framework only")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Framework only")]
         protected override void OnParentPaint(object sender, PaintEventArgs e)
         {
             var top = shadowMask.IsTop() ? borderWidth : 0;
@@ -295,7 +296,7 @@
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Framework only")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Framework only")]
         protected override void OnParentPaint(object sender, PaintEventArgs e)
         {
             var width = border3DStyle.CalcBorderWidth();

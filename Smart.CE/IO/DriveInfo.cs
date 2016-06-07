@@ -12,6 +12,8 @@
     /// </summary>
     public class DriveInfo
     {
+        private const FileAttributes DriceAttributes = FileAttributes.Temporary | FileAttributes.Directory;
+
         private readonly string driveName;
 
         /// <summary>
@@ -85,11 +87,9 @@
         /// <returns></returns>
         public static DriveInfo[] GetDrives()
         {
-            const FileAttributes Attributes = FileAttributes.Temporary | FileAttributes.Directory;
-
             var list = new List<DriveInfo> { new DriveInfo(@"\") };
             list.AddRange(new DirectoryInfo(@"\").GetDirectories()
-                .Where(di => (di.Attributes & Attributes) == Attributes)
+                .Where(di => (di.Attributes & DriceAttributes) == DriceAttributes)
                 .Select(di => new DriveInfo(di.Name)));
 
             return list.ToArray();

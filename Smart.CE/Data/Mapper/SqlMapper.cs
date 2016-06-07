@@ -81,7 +81,7 @@
         /// <param name="commandTimeout"></param>
         /// <param name="commandType"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2100:SQL クエリのセキュリティ脆弱性を確認", Justification = "Ignore")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2100:ReviewSqlQueriesForSecurityVulnerabilities", Justification = "Ignore")]
         private static IDbCommand SetupCommand(IDbConnection con, IDbTransaction transaction, string sql, object param, int? commandTimeout, CommandType? commandType)
         {
             var cmd = con.CreateCommand();

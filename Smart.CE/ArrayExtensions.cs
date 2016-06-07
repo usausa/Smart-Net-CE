@@ -20,7 +20,7 @@
         /// <param name="array"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static T[] Fill<T>(this T[] array, T value)
         {
             return Fill(array, 0, array.Length, value);
@@ -35,7 +35,7 @@
         /// <param name="length"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static T[] Fill<T>(this T[] array, int offset, int length, T value)
         {
             array[offset] = value;
@@ -57,7 +57,7 @@
         /// <param name="array"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static byte[] Fill(this byte[] array, byte value)
         {
             return Fill(array, 0, array.Length, value);
@@ -71,7 +71,7 @@
         /// <param name="length"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static byte[] Fill(this byte[] array, int offset, int length, byte value)
         {
             array[offset] = value;
@@ -93,7 +93,7 @@
         /// <param name="array"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static short[] Fill(this short[] array, short value)
         {
             return Fill(array, 0, array.Length, value);
@@ -107,7 +107,7 @@
         /// <param name="length"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static short[] Fill(this short[] array, int offset, int length, short value)
         {
             array[offset] = value;
@@ -129,7 +129,7 @@
         /// <param name="array"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static int[] Fill(this int[] array, int value)
         {
             return Fill(array, 0, array.Length, value);
@@ -143,7 +143,7 @@
         /// <param name="length"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static int[] Fill(this int[] array, int offset, int length, int value)
         {
             array[offset] = value;
@@ -165,7 +165,7 @@
         /// <param name="array"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static long[] Fill(this long[] array, long value)
         {
             return Fill(array, 0, array.Length, value);
@@ -179,7 +179,7 @@
         /// <param name="length"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static long[] Fill(this long[] array, int offset, int length, long value)
         {
             array[offset] = value;
@@ -201,7 +201,7 @@
         /// <param name="array"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static float[] Fill(this float[] array, float value)
         {
             return Fill(array, 0, array.Length, value);
@@ -215,7 +215,7 @@
         /// <param name="length"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static float[] Fill(this float[] array, int offset, int length, float value)
         {
             array[offset] = value;
@@ -237,7 +237,7 @@
         /// <param name="array"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static double[] Fill(this double[] array, double value)
         {
             return Fill(array, 0, array.Length, value);
@@ -251,7 +251,7 @@
         /// <param name="length"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static double[] Fill(this double[] array, int offset, int length, double value)
         {
             array[offset] = value;
@@ -273,7 +273,7 @@
         /// <param name="array"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static bool[] Fill(this bool[] array, bool value)
         {
             return Fill(array, 0, array.Length, value);
@@ -287,7 +287,7 @@
         /// <param name="length"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static bool[] Fill(this bool[] array, int offset, int length, bool value)
         {
             array[offset] = value;
@@ -309,7 +309,7 @@
         /// <param name="array"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static char[] Fill(this char[] array, char value)
         {
             return Fill(array, 0, array.Length, value);
@@ -323,7 +323,7 @@
         /// <param name="length"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static char[] Fill(this char[] array, int offset, int length, char value)
         {
             array[offset] = value;
@@ -350,7 +350,7 @@
         /// <param name="array"></param>
         /// <param name="others"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static T[] Combine<T>(this T[] array, params T[][] others)
         {
             if (others == null)
@@ -378,7 +378,7 @@
         /// <param name="array"></param>
         /// <param name="others"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static byte[] Combine(this byte[] array, params byte[][] others)
         {
             if (others == null)
@@ -406,7 +406,7 @@
         /// <param name="array"></param>
         /// <param name="others"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static short[] Combine(this short[] array, params short[][] others)
         {
             if (others == null)
@@ -434,7 +434,7 @@
         /// <param name="array"></param>
         /// <param name="others"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static int[] Combine(this int[] array, params int[][] others)
         {
             if (others == null)
@@ -462,7 +462,7 @@
         /// <param name="array"></param>
         /// <param name="others"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static long[] Combine(this long[] array, params long[][] others)
         {
             if (others == null)
@@ -490,7 +490,7 @@
         /// <param name="array"></param>
         /// <param name="others"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static float[] Combine(this float[] array, params float[][] others)
         {
             if (others == null)
@@ -518,7 +518,7 @@
         /// <param name="array"></param>
         /// <param name="others"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static double[] Combine(this double[] array, params double[][] others)
         {
             if (others == null)
@@ -546,7 +546,7 @@
         /// <param name="array"></param>
         /// <param name="others"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static bool[] Combine(this bool[] array, params bool[][] others)
         {
             if (others == null)
@@ -574,7 +574,7 @@
         /// <param name="array"></param>
         /// <param name="others"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static char[] Combine(this char[] array, params char[][] others)
         {
             if (others == null)
@@ -608,7 +608,7 @@
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static T[] SubArray<T>(this T[] array, int offset, int length)
         {
             var result = new T[Math.Min(length, array.Length - offset)];
@@ -625,7 +625,7 @@
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static byte[] SubArray(this byte[] array, int offset, int length)
         {
             var result = new byte[Math.Min(length, array.Length - offset)];
@@ -642,7 +642,7 @@
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static short[] SubArray(this short[] array, int offset, int length)
         {
             var result = new short[Math.Min(length, array.Length - offset)];
@@ -659,7 +659,7 @@
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static int[] SubArray(this int[] array, int offset, int length)
         {
             var result = new int[Math.Min(length, array.Length - offset)];
@@ -676,7 +676,7 @@
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static long[] SubArray(this long[] array, int offset, int length)
         {
             var result = new long[Math.Min(length, array.Length - offset)];
@@ -693,7 +693,7 @@
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static float[] SubArray(this float[] array, int offset, int length)
         {
             var result = new float[Math.Min(length, array.Length - offset)];
@@ -710,7 +710,7 @@
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static double[] SubArray(this double[] array, int offset, int length)
         {
             var result = new double[Math.Min(length, array.Length - offset)];
@@ -727,7 +727,7 @@
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static bool[] SubArray(this bool[] array, int offset, int length)
         {
             var result = new bool[Math.Min(length, array.Length - offset)];
@@ -744,7 +744,7 @@
         /// <param name="offset"></param>
         /// <param name="length"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static char[] SubArray(this char[] array, int offset, int length)
         {
             var result = new char[Math.Min(length, array.Length - offset)];
@@ -768,7 +768,7 @@
         /// <param name="otherOffset"></param>
         /// <param name="length"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static bool ArrayEquals<T>(this T[] array, int offset, T[] other, int otherOffset, int length)
         {
             return ArrayEquals(array, offset, other, otherOffset, length, EqualityComparer<T>.Default);
@@ -785,7 +785,7 @@
         /// <param name="length"></param>
         /// <param name="comparer"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static bool ArrayEquals<T>(this T[] array, int offset, T[] other, int otherOffset, int length, IEqualityComparer<T> comparer)
         {
             for (var i = 0; i < length; i++)
@@ -808,7 +808,7 @@
         /// <param name="otherOffset"></param>
         /// <param name="length"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static bool ArrayEquals(this byte[] array, int offset, byte[] other, int otherOffset, int length)
         {
             for (var i = 0; i < length; i++)
@@ -831,7 +831,7 @@
         /// <param name="otherOffset"></param>
         /// <param name="length"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static bool ArrayEquals(this short[] array, int offset, short[] other, int otherOffset, int length)
         {
             for (var i = 0; i < length; i++)
@@ -854,7 +854,7 @@
         /// <param name="otherOffset"></param>
         /// <param name="length"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static bool ArrayEquals(this int[] array, int offset, int[] other, int otherOffset, int length)
         {
             for (var i = 0; i < length; i++)
@@ -877,7 +877,7 @@
         /// <param name="otherOffset"></param>
         /// <param name="length"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static bool ArrayEquals(this long[] array, int offset, long[] other, int otherOffset, int length)
         {
             for (var i = 0; i < length; i++)
@@ -900,7 +900,7 @@
         /// <param name="otherOffset"></param>
         /// <param name="length"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static bool ArrayEquals(this float[] array, int offset, float[] other, int otherOffset, int length)
         {
             for (var i = 0; i < length; i++)
@@ -923,7 +923,7 @@
         /// <param name="otherOffset"></param>
         /// <param name="length"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static bool ArrayEquals(this double[] array, int offset, double[] other, int otherOffset, int length)
         {
             for (var i = 0; i < length; i++)
@@ -946,7 +946,7 @@
         /// <param name="otherOffset"></param>
         /// <param name="length"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static bool ArrayEquals(this bool[] array, int offset, bool[] other, int otherOffset, int length)
         {
             for (var i = 0; i < length; i++)
@@ -969,7 +969,7 @@
         /// <param name="otherOffset"></param>
         /// <param name="length"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static bool ArrayEquals(this char[] array, int offset, char[] other, int otherOffset, int length)
         {
             for (var i = 0; i < length; i++)

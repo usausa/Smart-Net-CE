@@ -12,7 +12,7 @@
         /// </summary>
         /// <param name="socket"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static bool IsConnecting(this Socket socket)
         {
             if (!socket.Connected)

@@ -28,7 +28,7 @@
         {
             if (NeedIndent)
             {
-                this.WriteIndent();
+                WriteIndent();
             }
             Debug.WriteLine(message);
 

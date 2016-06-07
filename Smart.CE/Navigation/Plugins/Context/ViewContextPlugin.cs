@@ -47,7 +47,7 @@
         /// ビュー作成イベント
         /// </summary>
         /// <param name="view">ビュー</param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Framework only")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Framework only")]
         public override void OnCreate(object view)
         {
             foreach (var member in GetAttributeMembers(view.GetType()))
@@ -81,7 +81,7 @@
         /// ビュー破棄イベント
         /// </summary>
         /// <param name="view">ビュー</param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Framework only")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Framework only")]
         public override void OnDispose(object view)
         {
             foreach (var member in GetAttributeMembers(view.GetType()))

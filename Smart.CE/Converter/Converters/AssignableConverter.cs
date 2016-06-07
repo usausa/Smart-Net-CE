@@ -13,7 +13,7 @@
         /// <param name="value"></param>
         /// <param name="targetType"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Framework only")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Framework only")]
         public bool IsMatch(object value, Type targetType)
         {
             return (value != null) && targetType.IsInstanceOfType(value);

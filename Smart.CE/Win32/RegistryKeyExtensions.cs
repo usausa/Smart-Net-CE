@@ -16,7 +16,7 @@
         /// <param name="path"></param>
         /// <param name="name"></param>
         /// <param name="value"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static void WriteToRegistry(this RegistryKey keyHive, string path, string name, object value)
         {
             if (path == null)
@@ -64,7 +64,7 @@
         /// <param name="name"></param>
         /// <param name="defaultValue"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static object ReadFromRegistry(this RegistryKey keyHive, string path, string name, object defaultValue)
         {
             if (path == null)

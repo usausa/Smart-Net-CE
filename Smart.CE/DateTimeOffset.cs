@@ -52,14 +52,14 @@
 
         public DateTimeOffset(long ticks, TimeSpan offset)
         {
-            this.offsetMinutes = ValidateOffset(offset);
-            this.dateTime = ValidateDate(new DateTime(ticks), offset);
+            offsetMinutes = ValidateOffset(offset);
+            dateTime = ValidateDate(new DateTime(ticks), offset);
         }
 
         public DateTimeOffset(DateTime dateTime)
         {
             var offset = dateTime.Kind != DateTimeKind.Utc ? TimeZone.CurrentTimeZone.GetUtcOffset(dateTime) : new TimeSpan(0);
-            this.offsetMinutes = ValidateOffset(offset);
+            offsetMinutes = ValidateOffset(offset);
             this.dateTime = ValidateDate(dateTime, offset);
         }
 
@@ -79,26 +79,26 @@
                     throw new ArgumentException("offset UTC mismatch");
                 }
             }
-            this.offsetMinutes = ValidateOffset(offset);
+            offsetMinutes = ValidateOffset(offset);
             this.dateTime = ValidateDate(dateTime, offset);
         }
 
         public DateTimeOffset(int year, int month, int day, int hour, int minute, int second, TimeSpan offset)
         {
-            this.offsetMinutes = ValidateOffset(offset);
-            this.dateTime = ValidateDate(new DateTime(year, month, day, hour, minute, second), offset);
+            offsetMinutes = ValidateOffset(offset);
+            dateTime = ValidateDate(new DateTime(year, month, day, hour, minute, second), offset);
         }
 
         public DateTimeOffset(int year, int month, int day, int hour, int minute, int second, int millisecond, TimeSpan offset)
         {
-            this.offsetMinutes = ValidateOffset(offset);
-            this.dateTime = ValidateDate(new DateTime(year, month, day, hour, minute, second, millisecond), offset);
+            offsetMinutes = ValidateOffset(offset);
+            dateTime = ValidateDate(new DateTime(year, month, day, hour, minute, second, millisecond), offset);
         }
 
         public DateTimeOffset(int year, int month, int day, int hour, int minute, int second, int millisecond, Calendar calendar, TimeSpan offset)
         {
-            this.offsetMinutes = ValidateOffset(offset);
-            this.dateTime = ValidateDate(new DateTime(year, month, day, hour, minute, second, millisecond, calendar), offset);
+            offsetMinutes = ValidateOffset(offset);
+            dateTime = ValidateDate(new DateTime(year, month, day, hour, minute, second, millisecond, calendar), offset);
         }
 
         public static DateTimeOffset Now
@@ -118,7 +118,7 @@
 
         public DateTime UtcDateTime
         {
-            get { return DateTime.SpecifyKind(this.dateTime, DateTimeKind.Utc); }
+            get { return DateTime.SpecifyKind(dateTime, DateTimeKind.Utc); }
         }
 
         public DateTime LocalDateTime
@@ -128,12 +128,12 @@
 
         public DateTimeOffset ToOffset(TimeSpan offset)
         {
-            return new DateTimeOffset((this.dateTime + offset).Ticks, offset);
+            return new DateTimeOffset((dateTime + offset).Ticks, offset);
         }
 
         private DateTime ClockDateTime
         {
-            get { return new DateTime((this.dateTime + Offset).Ticks, DateTimeKind.Unspecified); }
+            get { return new DateTime((dateTime + Offset).Ticks, DateTimeKind.Unspecified); }
         }
 
         public DateTime Date
@@ -181,7 +181,7 @@
 
         public TimeSpan Offset
         {
-            get { return new TimeSpan(0, this.offsetMinutes, 0); }
+            get { return new TimeSpan(0, offsetMinutes, 0); }
         }
 
         public int Second

@@ -135,7 +135,7 @@
         ///
         /// </summary>
         /// <param name="cmd"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Framework only")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Framework only")]
         void IDynamicParameter.BuildParameters(IDbCommand cmd)
         {
             foreach (var param in parameters.Values)

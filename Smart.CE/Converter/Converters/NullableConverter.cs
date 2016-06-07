@@ -13,7 +13,7 @@
         /// <param name="value"></param>
         /// <param name="targetType"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Framework only")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Framework only")]
         public bool IsMatch(object value, Type targetType)
         {
             return targetType.IsGenericType && targetType.GetGenericTypeDefinition() == typeof(Nullable<>);
@@ -26,7 +26,7 @@
         /// <param name="targetType"></param>
         /// <param name="converter"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Framework only")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Framework only")]
         public object Convert(object value, Type targetType, ObjectConverter converter)
         {
             if ((value == null) || (value == DBNull.Value))

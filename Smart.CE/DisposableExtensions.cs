@@ -13,7 +13,7 @@
         /// <typeparam name="T"></typeparam>
         /// <param name="disposable"></param>
         /// <param name="action"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static void Using<T>(this T disposable, Action<T> action) where T : IDisposable
         {
             using (disposable)

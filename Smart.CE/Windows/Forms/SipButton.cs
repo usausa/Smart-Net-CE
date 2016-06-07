@@ -324,7 +324,7 @@
                 }
             }
 
-            g.DrawText(text, this.font ?? this.Parent.Font, selected ? selectedForeColor : foreColor, rectangle, ContentAlignmentEx.MiddleCenter);
+            g.DrawText(text, font ?? Parent.Font, selected ? selectedForeColor : foreColor, rectangle, ContentAlignmentEx.MiddleCenter);
         }
     }
 }

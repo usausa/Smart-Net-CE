@@ -11,6 +11,13 @@
         /// <summary>
         ///
         /// </summary>
+        public ObjectConverterException()
+        {
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
         /// <param name="message"></param>
         public ObjectConverterException(string message)
             : base(message)

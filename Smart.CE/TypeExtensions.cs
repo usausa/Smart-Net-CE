@@ -21,7 +21,7 @@
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static bool IsAnonymous(this Type type)
         {
             return Attribute.IsDefined(type, typeof(CompilerGeneratedAttribute), false) &&
@@ -37,7 +37,7 @@
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static bool IsNullableType(this Type type)
         {
             return type.IsGenericType && (type.GetGenericTypeDefinition() == typeof(Nullable<>));
@@ -48,7 +48,7 @@
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static Type GetValueType(this Type type)
         {
             var pi = type.GetProperty("Value");
@@ -60,7 +60,7 @@
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static bool IsEnumerableType(this Type type)
         {
             return type.GetInterfaces().Contains(typeof(IEnumerable));
@@ -71,7 +71,7 @@
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static bool IsListType(this Type type)
         {
             return type.GetInterfaces().Contains(typeof(IList));
@@ -82,7 +82,7 @@
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static bool IsDictionaryType(this Type type)
         {
             if (type.IsGenericType && (type.GetGenericTypeDefinition() == typeof(IDictionary<,>)))
@@ -100,7 +100,7 @@
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static Type GetDictionaryType(this Type type)
         {
             if (type.IsGenericType && (type.GetGenericTypeDefinition() == typeof(IDictionary<,>)))
@@ -128,7 +128,7 @@
         /// <param name="type"></param>
         /// <param name="enumerable"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static Type GetElementType(this Type type, IEnumerable enumerable)
         {
             if (type.HasElementType)
@@ -193,7 +193,7 @@
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static Type GetEnumType(this Type type)
         {
             if (type.IsNullableType())
@@ -221,7 +221,7 @@
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static bool HasDefaultConstructor(this Type type)
         {
 #if WindowsCE
@@ -237,7 +237,7 @@
         /// <param name="type"></param>
         /// <param name="interfaceType"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static bool IsImplements(this Type type, Type interfaceType)
         {
             if (interfaceType == null)
@@ -259,7 +259,7 @@
         /// <param name="type"></param>
         /// <param name="baseType"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static bool IsInherits(this Type type, Type baseType)
         {
             do

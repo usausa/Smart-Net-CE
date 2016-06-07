@@ -14,7 +14,7 @@
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Ignore")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Ignore")]
         public static string ToDisplayName(this Enum value)
         {
             var fi = value.GetType().GetField(value.ToString());

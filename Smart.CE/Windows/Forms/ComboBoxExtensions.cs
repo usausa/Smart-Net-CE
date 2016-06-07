@@ -18,7 +18,7 @@
         /// <param name="combo"></param>
         /// <returns></returns>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Ignore")]
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static bool GetDroppedDown(this ComboBox combo)
         {
             return Win32Window.SendMessage(combo.Handle, (int)CB.GETDROPPEDSTATE, 0, 0) != IntPtr.Zero;
@@ -30,7 +30,7 @@
         /// <param name="combo"></param>
         /// <param name="value"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Ignore")]
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static void SetDroppedDown(this ComboBox combo, bool value)
         {
             Win32Window.SendMessage(combo.Handle, (int)CB.SHOWDROPDOWN, value ? 1 : 0, 0);
@@ -42,7 +42,7 @@
         /// <param name="combo"></param>
         /// <returns></returns>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Ignore")]
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static int GetDropDownWidth(this ComboBox combo)
         {
             return (int)Win32Window.SendMessage(combo.Handle, (int)CB.GETDROPPEDWIDTH, 0, 0);
@@ -54,7 +54,7 @@
         /// <param name="combo"></param>
         /// <param name="value"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Ignore")]
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static void SetDropDownWidth(this ComboBox combo, int value)
         {
             Win32Window.SendMessage(combo.Handle, (int)CB.SETDROPPEDWIDTH, value, 0);
@@ -66,7 +66,7 @@
         /// <param name="combo"></param>
         /// <param name="s"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static int FindString(this ComboBox combo, string s)
         {
             return FindString(combo, s, -1);
@@ -80,7 +80,7 @@
         /// <param name="startIndex"></param>
         /// <returns></returns>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Ignore")]
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static int FindString(this ComboBox combo, string s, int startIndex)
         {
             var lParam = MarshalEx.StringToHGlobalUni(s);
@@ -96,7 +96,7 @@
         /// <param name="combo"></param>
         /// <param name="s"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static int FindStringExact(this ComboBox combo, string s)
         {
             return FindStringExact(combo, s, -1);
@@ -110,7 +110,7 @@
         /// <param name="startIndex"></param>
         /// <returns></returns>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Ignore")]
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static int FindStringExact(this ComboBox combo, string s, int startIndex)
         {
             var lParam = MarshalEx.StringToHGlobalUni(s);

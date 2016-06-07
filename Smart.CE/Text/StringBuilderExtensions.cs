@@ -15,7 +15,7 @@
         /// <param name="condition"></param>
         /// <param name="valueFactory"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static StringBuilder AppendLineIf(this StringBuilder sb, bool condition, Func<object> valueFactory)
         {
             if (condition)
@@ -36,7 +36,7 @@
         /// <param name="condition"></param>
         /// <param name="valueFactory"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static StringBuilder AppendIf(this StringBuilder sb, bool condition, Func<object> valueFactory)
         {
             if (condition)

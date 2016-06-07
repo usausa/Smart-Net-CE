@@ -72,7 +72,7 @@
         ///
         /// </summary>
         /// <param name="e"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Protected")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Protected")]
         protected override void OnMouseDown(MouseEventArgs e)
         {
             Focus();
@@ -94,7 +94,7 @@
         ///
         /// </summary>
         /// <param name="e"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Protected")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Protected")]
         protected override void OnMouseUp(MouseEventArgs e)
         {
             if (selectedButton == null)
@@ -131,7 +131,7 @@
         ///
         /// </summary>
         /// <param name="e"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Protected")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Protected")]
         protected override void OnMouseMove(MouseEventArgs e)
         {
             if ((selectedButton == null) || (!Capture))
@@ -173,7 +173,7 @@
         ///
         /// </summary>
         /// <param name="e"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Protected")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Protected")]
         protected override void OnPaint(PaintEventArgs e)
         {
             var g = GetPresentationMedium(e.Graphics);

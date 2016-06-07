@@ -14,7 +14,7 @@
         /// <param name="record"></param>
         /// <param name="i"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static bool? GetNullableBoolean(this IDataRecord record, int i)
         {
             return record.IsDBNull(i) ? null : (bool?)record.GetBoolean(i);
@@ -26,7 +26,7 @@
         /// <param name="record"></param>
         /// <param name="i"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static byte? GetNullableByte(this IDataRecord record, int i)
         {
             return record.IsDBNull(i) ? null : (byte?)record.GetByte(i);
@@ -38,7 +38,7 @@
         /// <param name="record"></param>
         /// <param name="i"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static char? GetNullableChar(this IDataRecord record, int i)
         {
             return record.IsDBNull(i) ? null : (char?)record.GetChar(i);
@@ -50,7 +50,7 @@
         /// <param name="record"></param>
         /// <param name="i"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static DateTime? GetNullableDateTime(this IDataRecord record, int i)
         {
             return record.IsDBNull(i) ? null : (DateTime?)record.GetDateTime(i);
@@ -62,7 +62,7 @@
         /// <param name="record"></param>
         /// <param name="i"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static Decimal? GetNullableDecimal(this IDataRecord record, int i)
         {
             return record.IsDBNull(i) ? null : (Decimal?)record.GetDecimal(i);
@@ -74,7 +74,7 @@
         /// <param name="record"></param>
         /// <param name="i"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static double? GetNullableDouble(this IDataRecord record, int i)
         {
             return record.IsDBNull(i) ? null : (double?)record.GetDouble(i);
@@ -86,7 +86,7 @@
         /// <param name="record"></param>
         /// <param name="i"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static float? GetNullableFloat(this IDataRecord record, int i)
         {
             return record.IsDBNull(i) ? null : (float?)record.GetFloat(i);
@@ -98,7 +98,7 @@
         /// <param name="record"></param>
         /// <param name="i"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static Guid? GetNullableGuid(this IDataRecord record, int i)
         {
             return record.IsDBNull(i) ? null : (Guid?)record.GetGuid(i);
@@ -110,7 +110,7 @@
         /// <param name="record"></param>
         /// <param name="i"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static short? GetNullableInt16(this IDataRecord record, int i)
         {
             return record.IsDBNull(i) ? null : (short?)record.GetInt32(i);
@@ -122,7 +122,7 @@
         /// <param name="record"></param>
         /// <param name="i"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static int? GetNullableInt32(this IDataRecord record, int i)
         {
             return record.IsDBNull(i) ? null : (int?)record.GetInt32(i);
@@ -134,7 +134,7 @@
         /// <param name="record"></param>
         /// <param name="i"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static long? GetNullableInt64(this IDataRecord record, int i)
         {
             return record.IsDBNull(i) ? null : (long?)record.GetInt64(i);

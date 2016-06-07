@@ -10,7 +10,7 @@
         /// </summary>
         /// <param name="input"></param>
         /// <param name="output"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static void CopyTo(this Stream input, Stream output)
         {
             if (ReferenceEquals(output, null))
@@ -18,11 +18,10 @@
                 throw new ArgumentNullException("output");
             }
 
-            const int BufferSize = 4096;
-            var buffer = new byte[BufferSize];
+            var buffer = new byte[4096];
             while (true)
             {
-                var read = input.Read(buffer, 0, BufferSize);
+                var read = input.Read(buffer, 0, buffer.Length);
                 if (read == 0)
                 {
                     break;
@@ -37,7 +36,7 @@
         /// <param name="input"></param>
         /// <param name="output"></param>
         /// <param name="bufferSize"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static void CopyTo(this Stream input, Stream output, int bufferSize)
         {
             if (ReferenceEquals(output, null))
@@ -62,7 +61,7 @@
         /// </summary>
         /// <param name="stream"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static byte[] ReadAllBytes(this Stream stream)
         {
             var memoryStream = stream as MemoryStream;
@@ -84,7 +83,7 @@
         /// <param name="stream"></param>
         /// <param name="size"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static byte[] ReadBytes(this Stream stream, int size)
         {
             var buffer = new byte[size];

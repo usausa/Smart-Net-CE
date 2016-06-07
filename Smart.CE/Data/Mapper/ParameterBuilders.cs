@@ -81,7 +81,7 @@
         /// </summary>
         /// <param name="cmd"></param>
         /// <param name="param"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Framework only")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Framework only")]
         public void BuildParameters(IDbCommand cmd, object param)
         {
             foreach (var keyValue in (IDictionary<string, Object>)param)
@@ -135,7 +135,7 @@
         /// </summary>
         /// <param name="cmd"></param>
         /// <param name="param"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Framework only")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Framework only")]
         public void BuildParameters(IDbCommand cmd, object param)
         {
             foreach (var accessor in metadataFactory.Create(param.GetType()).GetParameterAccessors())

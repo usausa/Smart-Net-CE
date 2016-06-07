@@ -49,7 +49,7 @@
         /// <param name="memberInfo"></param>
         /// <param name="target"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static object GetMemberValue(this MemberInfo memberInfo, object target)
         {
             var propertyInfo = memberInfo as PropertyInfo;
@@ -73,7 +73,7 @@
         /// <param name="memberInfo"></param>
         /// <param name="target"></param>
         /// <param name="value"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static void SetMemberValue(this MemberInfo memberInfo, object target, object value)
         {
             var propertyInfo = memberInfo as PropertyInfo;

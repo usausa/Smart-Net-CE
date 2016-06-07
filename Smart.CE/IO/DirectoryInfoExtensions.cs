@@ -15,7 +15,7 @@
         /// </summary>
         /// <param name="directory"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Ignore")]
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static void DeleteIfExists(this DirectoryInfo directory)
         {
             if (directory.Exists)
@@ -29,7 +29,7 @@
         /// </summary>
         /// <param name="directory"></param>
         /// <param name="recursive"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static void DeleteIfExists(this DirectoryInfo directory, bool recursive)
         {
             if (directory.Exists)
@@ -43,7 +43,7 @@
         /// </summary>
         /// <param name="directory"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static long GetFolderSize(this DirectoryInfo directory)
         {
             return directory.GetFiles().Sum(fi => fi.Length) + directory.GetDirectories().Sum(subFolder => GetFolderSize(subFolder));
@@ -55,7 +55,7 @@
         /// <param name="directory"></param>
         /// <param name="pattern"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static IEnumerable<FileInfo> FindFileRecursive(this DirectoryInfo directory, string pattern)
         {
             return directory.GetFiles(pattern)
@@ -69,7 +69,7 @@
         /// <param name="directory"></param>
         /// <param name="predicate"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static IEnumerable<FileInfo> FindFileRecursive(this DirectoryInfo directory, Func<FileInfo, bool> predicate)
         {
             return directory.GetFiles()
@@ -84,7 +84,7 @@
         /// <param name="source"></param>
         /// <param name="destination"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static DirectoryInfo CopyTo(this DirectoryInfo source, string destination)
         {
             var targetDirectory = new DirectoryInfo(destination);
@@ -97,7 +97,7 @@
         /// </summary>
         /// <param name="source"></param>
         /// <param name="destination"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static void CopyTo(this DirectoryInfo source, DirectoryInfo destination)
         {
             if (destination.Exists == false)
@@ -123,7 +123,7 @@
         /// <param name="destination"></param>
         /// <param name="overwrite"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static DirectoryInfo CopyTo(this DirectoryInfo source, string destination, bool overwrite)
         {
             var destinationDirectory = new DirectoryInfo(destination);
@@ -137,7 +137,7 @@
         /// <param name="source"></param>
         /// <param name="destination"></param>
         /// <param name="overwrite"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static void CopyTo(this DirectoryInfo source, DirectoryInfo destination, bool overwrite)
         {
             if (destination.Exists == false)

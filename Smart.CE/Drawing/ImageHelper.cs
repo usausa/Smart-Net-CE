@@ -16,7 +16,7 @@
         /// <param name="height"></param>
         /// <param name="render"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:スコープを失う前にオブジェクトを破棄", Justification = "Factory")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:DisposeObjectsBeforeLosingScope", Justification = "Factory")]
         public static Bitmap CreateBitmap(int width, int height, Action<Graphics> render)
         {
             if (render == null)

@@ -32,7 +32,7 @@
         /// </summary>
         /// <param name="context">プラグインコンテキスト</param>
         /// <param name="view">遷移元ビュー</param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Framework only")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Framework only")]
         public override void OnNavigateFrom(ForwadingPluginContext context, object view)
         {
             context.Save(GetType(), GatherExportParameters(view));
@@ -43,7 +43,7 @@
         /// </summary>
         /// <param name="context">プラグインコンテキスト</param>
         /// <param name="view">遷移先ビュー</param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Framework only")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Framework only")]
         public override void OnNavigateTo(ForwadingPluginContext context, object view)
         {
             var parameters = context.Load<Dictionary<string, object>>(GetType());

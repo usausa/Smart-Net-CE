@@ -26,7 +26,7 @@
         /// <typeparam name="T"></typeparam>
         /// <param name="source"></param>
         /// <param name="collection"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static void AddRange<T>(this ICollection<T> source, IEnumerable<T> collection)
         {
             if (collection != null)
@@ -44,7 +44,7 @@
         /// <typeparam name="T"></typeparam>
         /// <param name="source"></param>
         /// <param name="predicate"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static void RemoveWhere<T>(this ICollection<T> source, Predicate<T> predicate)
         {
             var deleteItems = source.Where(_ => predicate(_)).ToList();

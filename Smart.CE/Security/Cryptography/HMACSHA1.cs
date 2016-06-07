@@ -30,7 +30,7 @@
         /// </summary>
         /// <param name="key"></param>
         /// <param name="useManagedSha1"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:スコープを失う前にオブジェクトを破棄", Justification = "Ignore")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:DisposeObjectsBeforeLosingScope", Justification = "Ignore")]
         public HMACSHA1(byte[] key, bool useManagedSha1)
             : base("SHA1", useManagedSha1 ? (HashAlgorithm)new SHA1Managed() : new SHA1CryptoServiceProvider(), useManagedSha1 ? (HashAlgorithm)new SHA1Managed() : new SHA1CryptoServiceProvider())
         {

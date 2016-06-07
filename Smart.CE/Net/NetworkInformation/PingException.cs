@@ -11,6 +11,13 @@
         /// <summary>
         ///
         /// </summary>
+        public PingException()
+        {
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
         /// <param name="message"></param>
         public PingException(string message)
             : base(message)

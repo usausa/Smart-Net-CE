@@ -48,7 +48,7 @@
         /// <param name="hwnd"></param>
         /// <param name="rect"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:スコープを失う前にオブジェクトを破棄", Justification = "Factory")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:DisposeObjectsBeforeLosingScope", Justification = "Factory")]
         public static Bitmap Snapshot(IntPtr hwnd, Rectangle rect)
         {
             var bitmap = new Bitmap(rect.Width, rect.Height);

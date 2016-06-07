@@ -17,7 +17,7 @@
         /// </summary>
         /// <param name="control"></param>
         /// <param name="action"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static void InvokeIfNeed(this Control control, Action action)
         {
             if (action == null)
@@ -42,7 +42,7 @@
         /// <param name="control"></param>
         /// <param name="action"></param>
         /// <param name="args"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static void InvokeIfNeed<T>(this Control control, Action<T> action, T args)
         {
             if (action == null)
@@ -67,7 +67,7 @@
         /// <param name="parent"></param>
         /// <param name="factory"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static T AddControl<T>(this Control parent, Func<Control, T> factory)
         {
             if (factory == null)
@@ -86,7 +86,7 @@
         /// <param name="parent"></param>
         /// <param name="name"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static Control GetControl(this Control parent, string name)
         {
             return parent.Controls.OfType<Control>().FirstOrDefault(c => c.Name == name);
@@ -99,7 +99,7 @@
         /// <param name="parent"></param>
         /// <param name="name"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static T GetControl<T>(this Control parent, string name) where T : Control
         {
             return parent.Controls.OfType<T>().FirstOrDefault(c => c.Name == name);
@@ -110,7 +110,7 @@
         /// </summary>
         /// <param name="parent"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static Control GetFocused(this Control parent)
         {
             return parent.Focused ? parent : parent.Controls.Cast<Control>().Select(c => GetFocused(c)).FirstOrDefault(_ => _ != null);
@@ -121,7 +121,7 @@
         /// </summary>
         /// <param name="control"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static bool IsOwnFocus(this Control control)
         {
             return TestFocusHierarchy(control);
@@ -142,7 +142,7 @@
         /// </summary>
         /// <param name="control"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static int CalcResolution(this ContainerControl control)
         {
             return Convert.ToInt32(control.CurrentAutoScaleDimensions.Height / 96);
@@ -153,7 +153,7 @@
         /// </summary>
         /// <param name="control"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static bool IsHighResolution(this ContainerControl control)
         {
             return (int)control.CurrentAutoScaleDimensions.Height == 192;
@@ -166,7 +166,7 @@
         /// <param name="control"></param>
         /// <param name="forward"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static Control GetNextControl(this Control parent, Control control, bool forward)
         {
             var index = parent.Controls.IndexOf(control);
@@ -225,7 +225,7 @@
         /// <param name="control"></param>
         /// <param name="marginX"></param>
         /// <param name="marginY"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static void ScrollToControlVisible(this ScrollableControl parent, Control control, int marginX, int marginY)
         {
             int x;
@@ -256,7 +256,7 @@
         /// </summary>
         /// <param name="control"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static bool IsScollBarVisibile(this Control control)
         {
             var style = (int)NativeMethods.GetWindowLong(control.Handle, -16);

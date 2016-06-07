@@ -19,7 +19,7 @@
         /// <param name="list"></param>
         /// <param name="other"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static int Compare<T>(this IList<T> list, IList<T> other) where T : IComparable<T>
         {
             if (other == null)
@@ -42,7 +42,7 @@
         /// <param name="other"></param>
         /// <param name="length"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static int Compare<T>(this IList<T> list, IList<T> other, int length) where T : IComparable<T>
         {
             if (other == null)
@@ -63,7 +63,7 @@
         /// <param name="otherOffset"></param>
         /// <param name="length"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static int Compare<T>(this IList<T> list, int listOffset, IList<T> other, int otherOffset, int length) where T : IComparable<T>
         {
             if (other == null)
@@ -106,7 +106,7 @@
         /// <param name="other"></param>
         /// <param name="comparison"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static int Compare<T>(this IList<T> list, IList<T> other, Comparison<T> comparison)
         {
             if (other == null)
@@ -135,7 +135,7 @@
         /// <param name="length"></param>
         /// <param name="comparison"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static int Compare<T>(this IList<T> list, IList<T> other, int length, Comparison<T> comparison)
         {
             if (other == null)
@@ -162,7 +162,7 @@
         /// <param name="length"></param>
         /// <param name="comparison"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static int Compare<T>(this IList<T> list, int listOffset, IList<T> other, int otherOffset, int length, Comparison<T> comparison)
         {
             if (other == null)

@@ -243,7 +243,7 @@
         ///
         /// </summary>
         /// <param name="e"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Protected")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Protected")]
         protected override void OnPaint(PaintEventArgs e)
         {
             var g = GetPresentationMedium(e.Graphics);
@@ -304,7 +304,7 @@
         /// </summary>
         /// <param name="g"></param>
         /// <param name="rect"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Protected")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Protected")]
         protected virtual void DrawBackground(Graphics g, Rectangle rect)
         {
             if (image != null)
@@ -340,7 +340,7 @@
         /// <param name="isTransparent"></param>
         /// <param name="back"></param>
         /// <param name="transparent"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Protected")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Protected")]
         protected static void DrawImage(Graphics g, Rectangle rect, Image target, bool isTransparent, Color back, Color transparent)
         {
             if (isTransparent)
@@ -384,7 +384,7 @@
         /// <param name="color"></param>
         /// <param name="shadow"></param>
         /// <param name="mask"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Protected")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Protected")]
         protected static void DrawText(Graphics g, Rectangle rect, string text, ContentAlignmentEx alignment, bool multiline, Font font, Color color, Color shadow, ShadowMask mask)
         {
             if (multiline == false)

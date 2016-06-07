@@ -22,7 +22,7 @@
         /// <param name="font"></param>
         /// <param name="width"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static string[] GetMultilineText(this Graphics g, string text, Font font, float width)
         {
             var lines = new List<string>();
@@ -69,7 +69,7 @@
         /// <param name="texts"></param>
         /// <param name="font"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static SizeF CalcMultilineTextSize(this Graphics g, string[] texts, Font font)
         {
             var totalWidth = 0;
@@ -107,7 +107,7 @@
         /// <param name="width"></param>
         /// <param name="height"></param>
         /// <param name="textAlign"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static void DrawText(this Graphics g, string text, Font font, Color color, float x, float y, float width, float height, ContentAlignmentEx textAlign)
         {
             var rect = textAlign.CalcTextRect(g.MeasureString(text, font), x, y, width, height);
@@ -145,7 +145,7 @@
         /// <param name="x"></param>
         /// <param name="y"></param>
         /// <param name="mask"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static void DrawShadow(this Graphics g, string text, Font font, Color color, float x, float y, ShadowMask mask)
         {
             using (var brush = new SolidBrush(color))
@@ -195,7 +195,7 @@
         /// <param name="rect"></param>
         /// <param name="textAlign"></param>
         /// <param name="mask"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static void DrawShadow(this Graphics g, string text, Font font, Color color, RectangleF rect, ContentAlignmentEx textAlign, ShadowMask mask)
         {
             var rc = textAlign.CalcTextRect(g.MeasureString(text, font), rect);
@@ -435,7 +435,7 @@
         /// <param name="width"></param>
         /// <param name="height"></param>
         /// <param name="op"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static void CopyGraphics(this Graphics g, Graphics gxDest, int width, int height, RasterOp op)
         {
             var srcDc = g.GetHdc();
@@ -456,7 +456,7 @@
         /// <param name="rect"></param>
         /// <param name="color"></param>
         /// <param name="op"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static void FillColor(this Graphics g, Rectangle rect, Color color, RasterOp op)
         {
             var hdc = g.GetHdc();
@@ -479,7 +479,7 @@
         /// <param name="endColor"></param>
         /// <param name="fillDir"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static bool GradientFill(this Graphics gr, Rectangle rc, Color startColor, Color endColor, FillDirection fillDir)
         {
             if (DesignMode.IsTrue)
@@ -541,7 +541,7 @@
         /// <param name="transparency"></param>
         /// <param name="x"></param>
         /// <param name="y"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static void DrawAlpha(this Graphics g, Image image, byte transparency, int x, int y)
         {
             using (var gSrc = Graphics.FromImage(image))
@@ -569,7 +569,7 @@
         /// <param name="g"></param>
         /// <param name="image"></param>
         /// <param name="destRect"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static void DrawImageTransparent(this Graphics g, Image image, Rectangle destRect)
         {
             using (var imageAttr = new ImageAttributes())

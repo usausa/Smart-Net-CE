@@ -32,7 +32,7 @@
         /// <param name="filter"></param>
         /// <param name="filterCriteria"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static Type[] FindInterfaces(this Type type, TypeFilter filter, object filterCriteria)
         {
             if (filter == null)
@@ -78,7 +78,7 @@
         /// <param name="filter"></param>
         /// <param name="filterCriteria"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Extensions")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Compatibility")]
         public static MemberInfo[] FindMembers(this Type type, MemberTypes memberType, BindingFlags bindingAttr, MemberFilter filter, object filterCriteria)
         {

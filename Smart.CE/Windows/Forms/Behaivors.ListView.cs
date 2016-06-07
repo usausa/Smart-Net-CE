@@ -21,7 +21,7 @@
         public SortListBewBeaivors(IEnumerable<Func<ListViewItem, ListViewItem, bool, int>> sortFunctions)
         {
             this.sortFunctions = sortFunctions.ToArray();
-            this.ascendings = new bool[this.sortFunctions.Length];
+            ascendings = new bool[this.sortFunctions.Length];
         }
 
         /// <summary>
@@ -123,7 +123,7 @@
             /// <returns></returns>
             public int Compare(ListViewItem x, ListViewItem y)
             {
-                return this.sortFunction(x, y, this.ascending);
+                return sortFunction(x, y, ascending);
             }
         }
     }

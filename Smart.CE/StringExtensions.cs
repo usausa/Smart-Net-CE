@@ -24,7 +24,7 @@
         /// <param name="value"></param>
         /// <param name="count"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Ignore")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Ignore")]
         public static string Repeat(this string value, int count)
         {
             var sb = new StringBuilder(value.Length * count);

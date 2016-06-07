@@ -84,7 +84,7 @@
         ///
         /// </summary>
         /// <param name="graphics"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:パブリック メソッドの引数の検証", Justification = "Performance")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Performance")]
         public void Render(Graphics graphics)
         {
             if (memoryBitmap != null)
