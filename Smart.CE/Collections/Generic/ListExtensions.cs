@@ -202,5 +202,44 @@
 
             return 0;
         }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="TValue"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="selector"></param>
+        /// <param name="comparer"></param>
+        /// <param name="descending"></param>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists", Justification = "Ignore")]
+        public static void Sort<T, TValue>(this List<T> source, Func<T, TValue> selector, IComparer<TValue> comparer, bool descending)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+
+            if (comparer == null)
+            {
+                comparer = Comparer<TValue>.Default;
+            }
+
+            var itemComparer = new ProjectionComparer<T, TValue>(selector, comparer);
+            source.Sort(descending ? itemComparer.Reverse() : itemComparer);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="TValue"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="selector"></param>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists", Justification = "Ignore")]
+        public static void Sort<T, TValue>(this List<T> source, Func<T, TValue> selector)
+        {
+            Sort(source, selector, null, false);
+        }
     }
 }
