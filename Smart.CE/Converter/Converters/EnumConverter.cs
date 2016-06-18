@@ -30,7 +30,7 @@
         {
             if (value == null)
             {
-                return DefaultValue.Of(targetType);
+                return targetType.GetDefaultValue();
             }
 
             var str = value as string;
@@ -42,7 +42,7 @@
                 }
                 catch (ArgumentException)
                 {
-                    return DefaultValue.Of(targetType);
+                    return targetType.GetDefaultValue();
                 }
             }
 

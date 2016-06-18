@@ -27,7 +27,7 @@
         /// <returns></returns>
         public object Convert(object value, Type targetType, ObjectConverter converter)
         {
-            return DefaultValue.Of(targetType);
+            return targetType.GetDefaultValue();
         }
     }
 }

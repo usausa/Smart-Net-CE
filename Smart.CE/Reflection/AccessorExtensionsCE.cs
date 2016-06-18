@@ -32,7 +32,7 @@
             if (pi.PropertyType.IsValueType)
             {
                 var accessorType = typeof(ValueTypeDelegateAccsessor<,>).MakeGenericType(pi.DeclaringType, pi.PropertyType);
-                return (IAccessor)ActivatorEx.CreateInstance(accessorType, pi, pi.PropertyType, getter, setter, DefaultValue.Of(pi.PropertyType));
+                return (IAccessor)ActivatorEx.CreateInstance(accessorType, pi, pi.PropertyType, getter, setter, pi.PropertyType.GetDefaultValue());
             }
             else
             {

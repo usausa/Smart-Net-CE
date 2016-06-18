@@ -34,7 +34,7 @@
                 return null;
             }
 
-            var valueType = targetType.GetValueType();
+            var valueType = Nullable.GetUnderlyingType(targetType);
             var convertedValue = converter.Convert(value, valueType);
 #if WindowsCE
             return convertedValue != null ? ActivatorEx.CreateInstance(targetType, new[] { convertedValue }) : null;

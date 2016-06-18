@@ -16,6 +16,59 @@
     /// </summary>
     public static class TypeExtensions
     {
+        private static readonly Type NullableType = typeof(Nullable<>);
+
+        private static readonly Dictionary<Type, object> DefaultValues = new Dictionary<Type, object>
+        {
+            { typeof(bool), false },
+            { typeof(byte), 0 },
+            { typeof(sbyte), 0 },
+            { typeof(short), 0 },
+            { typeof(ushort), 0 },
+            { typeof(int), 0 },
+            { typeof(uint), 0U },
+            { typeof(long), 0L },
+            { typeof(ulong), 0UL },
+            { typeof(IntPtr), IntPtr.Zero },
+            { typeof(UIntPtr), UIntPtr.Zero },
+            { typeof(char), '\0' },
+            { typeof(double), 0.0 },
+            { typeof(float), 0.0f }
+        };
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
+        public static object GetDefaultValue(this Type type)
+        {
+            if (type.IsValueType && !(type.IsGenericType && type.GetGenericTypeDefinition() == NullableType))
+            {
+                object value;
+                if (DefaultValues.TryGetValue(type, out value))
+                {
+                    return value;
+                }
+
+                return Activator.CreateInstance(type);
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
+        public static bool IsNullableType(this Type type)
+        {
+            return type.IsGenericType && (type.GetGenericTypeDefinition() == NullableType);
+        }
+
         /// <summary>
         ///
         /// </summary>
@@ -30,29 +83,6 @@
                 (type.Name.StartsWith("<>", StringComparison.Ordinal) || type.Name.StartsWith("VB$", StringComparison.Ordinal)) &&
                 ((type.Attributes & TypeAttributes.NotPublic) == TypeAttributes.NotPublic) &&
                 ((type.Attributes & TypeAttributes.Sealed) == TypeAttributes.Sealed);
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        /// <param name="type"></param>
-        /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
-        public static bool IsNullableType(this Type type)
-        {
-            return type.IsGenericType && (type.GetGenericTypeDefinition() == typeof(Nullable<>));
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        /// <param name="type"></param>
-        /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
-        public static Type GetValueType(this Type type)
-        {
-            var pi = type.GetProperty("Value");
-            return pi.PropertyType;
         }
 
         /// <summary>

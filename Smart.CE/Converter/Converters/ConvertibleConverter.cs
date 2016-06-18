@@ -30,7 +30,7 @@
         {
             if ((value == null) || (value == DBNull.Value))
             {
-                return DefaultValue.Of(targetType);
+                return targetType.GetDefaultValue();
             }
 
 #if WindowsCE

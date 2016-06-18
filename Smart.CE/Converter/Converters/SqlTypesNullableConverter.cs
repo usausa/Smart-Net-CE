@@ -42,7 +42,8 @@
                 return targetType.InvokeMember("Null", BindingFlags.GetField, null, null, null);
             }
 
-            var paramType = targetType.GetValueType();
+            // [MEMO] to cache?
+            var paramType = targetType.GetProperty("Value").PropertyType;
 #if WindowsCE
             return ActivatorEx.CreateInstance(targetType, new[] { System.Convert.ChangeType(value, paramType, null) });
 #else
