@@ -16,7 +16,9 @@
 
         private static readonly Type CompilerGeneratedAttributeType = typeof(CompilerGeneratedAttribute);
 
-        private static readonly Type EnumerableType = typeof(IEnumerable<>);
+        private static readonly Type GenericEnumerableType = typeof(IEnumerable<>);
+
+        private static readonly Type EnumerableType = typeof(IEnumerable);
 
         private static readonly Type ObjectType = typeof(object);
 
@@ -111,18 +113,18 @@
                 return type.GetElementType();
             }
 
-            if (type.IsGenericType && type.GetGenericTypeDefinition() == EnumerableType)
+            if (type.IsGenericType && type.GetGenericTypeDefinition() == GenericEnumerableType)
             {
                 return type.GetGenericArguments()[0];
             }
 
-            var enumerableType = type.GetInterfaces().FirstOrDefault(t => t.IsGenericType && t.GetGenericTypeDefinition() == EnumerableType);
+            var enumerableType = type.GetInterfaces().FirstOrDefault(t => t.IsGenericType && t.GetGenericTypeDefinition() == GenericEnumerableType);
             if (enumerableType != null)
             {
                 return enumerableType.GetGenericArguments()[0];
             }
 
-            if (typeof(IEnumerable).IsAssignableFrom(type))
+            if (EnumerableType.IsAssignableFrom(type))
             {
                 return ObjectType;
             }
@@ -161,28 +163,6 @@
             }
 
             return null;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        /// <param name="type"></param>
-        /// <param name="interfaceType"></param>
-        /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
-        public static bool IsImplements(this Type type, Type interfaceType)
-        {
-            if (interfaceType == null)
-            {
-                throw new ArgumentNullException("interfaceType");
-            }
-
-            if (!interfaceType.IsInterface)
-            {
-                throw new ArgumentException("TInterface");
-            }
-
-            return type.GetInterfaces().Any(t => t == interfaceType);
         }
     }
 }
