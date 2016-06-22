@@ -111,11 +111,7 @@
         {
             var str = collection[key];
             bool ret;
-#if WindowsCE
             if (String.IsNullOrEmpty(str) || !TryParse(str, out ret))
-#else
-            if (String.IsNullOrEmpty(str) || !Boolean.TryParse(str, out ret))
-#endif
             {
                 return false;
             }
@@ -134,11 +130,7 @@
         {
             var str = collection[key];
             bool ret;
-#if WindowsCE
             if (String.IsNullOrEmpty(str) || !TryParse(str, out ret))
-#else
-            if (String.IsNullOrEmpty(str) || !Boolean.TryParse(str, out ret))
-#endif
             {
                 return value;
             }
@@ -157,11 +149,7 @@
         {
             var str = collection[key];
             bool ret;
-#if WindowsCE
             if (String.IsNullOrEmpty(str) || !TryParse(str, out ret))
-#else
-            if (String.IsNullOrEmpty(str) || !Boolean.TryParse(str, out ret))
-#endif
             {
                 return valueFactory();
             }
@@ -180,11 +168,7 @@
         {
             var str = collection[key];
             bool ret;
-#if WindowsCE
             if (String.IsNullOrEmpty(str) || !TryParse(str, out ret))
-#else
-            if (String.IsNullOrEmpty(str) || !Boolean.TryParse(str, out ret))
-#endif
             {
                 collection[key] = value.ToString(CultureInfo.InvariantCulture);
                 return value;
@@ -204,11 +188,7 @@
         {
             var str = collection[key];
             bool ret;
-#if WindowsCE
             if (String.IsNullOrEmpty(str) || !TryParse(str, out ret))
-#else
-            if (String.IsNullOrEmpty(str) || !Boolean.TryParse(str, out ret))
-#endif
             {
                 var value = valueFactory();
                 collection[key] = value.ToString(CultureInfo.InvariantCulture);
@@ -240,11 +220,7 @@
         {
             var str = collection[key];
             bool ret;
-#if WindowsCE
             if (String.IsNullOrEmpty(str) || !TryParse(str, out ret))
-#else
-            if (String.IsNullOrEmpty(str) || !Boolean.TryParse(str, out ret))
-#endif
             {
                 return null;
             }
@@ -263,11 +239,7 @@
         {
             var str = collection[key];
             bool ret;
-#if WindowsCE
             if (String.IsNullOrEmpty(str) || !TryParse(str, out ret))
-#else
-            if (String.IsNullOrEmpty(str) || !Boolean.TryParse(str, out ret))
-#endif
             {
                 return value;
             }
@@ -286,11 +258,7 @@
         {
             var str = collection[key];
             bool ret;
-#if WindowsCE
             if (String.IsNullOrEmpty(str) || !TryParse(str, out ret))
-#else
-            if (String.IsNullOrEmpty(str) || !Boolean.TryParse(str, out ret))
-#endif
             {
                 return valueFactory();
             }
@@ -309,11 +277,7 @@
         {
             var str = collection[key];
             bool ret;
-#if WindowsCE
             if (String.IsNullOrEmpty(str) || !TryParse(str, out ret))
-#else
-            if (String.IsNullOrEmpty(str) || !Boolean.TryParse(str, out ret))
-#endif
             {
                 collection[key] = value.HasValue ? value.Value.ToString(CultureInfo.InvariantCulture) : string.Empty;
                 return value;
@@ -333,11 +297,7 @@
         {
             var str = collection[key];
             bool ret;
-#if WindowsCE
             if (String.IsNullOrEmpty(str) || !TryParse(str, out ret))
-#else
-            if (String.IsNullOrEmpty(str) || !Boolean.TryParse(str, out ret))
-#endif
             {
                 var value = valueFactory();
                 collection[key] = value.HasValue ? value.Value.ToString(CultureInfo.InvariantCulture) : string.Empty;
@@ -369,11 +329,7 @@
         {
             var str = collection[key];
             int ret;
-#if WindowsCE
             if (String.IsNullOrEmpty(str) || !TryParse(str, out ret))
-#else
-            if (String.IsNullOrEmpty(str) || !Boolean.TryParse(str, out ret))
-#endif
             {
                 return 0;
             }
@@ -392,11 +348,7 @@
         {
             var str = collection[key];
             int ret;
-#if WindowsCE
             if (String.IsNullOrEmpty(str) || !TryParse(str, out ret))
-#else
-            if (String.IsNullOrEmpty(str) || !Boolean.TryParse(str, out ret))
-#endif
             {
                 return value;
             }
@@ -415,11 +367,7 @@
         {
             var str = collection[key];
             int ret;
-#if WindowsCE
             if (String.IsNullOrEmpty(str) || !TryParse(str, out ret))
-#else
-            if (String.IsNullOrEmpty(str) || !Boolean.TryParse(str, out ret))
-#endif
             {
                 return valueFactory();
             }
@@ -438,11 +386,7 @@
         {
             var str = collection[key];
             int ret;
-#if WindowsCE
             if (String.IsNullOrEmpty(str) || !TryParse(str, out ret))
-#else
-            if (String.IsNullOrEmpty(str) || !Boolean.TryParse(str, out ret))
-#endif
             {
                 collection[key] = value.ToString(CultureInfo.InvariantCulture);
                 return value;
@@ -462,11 +406,7 @@
         {
             var str = collection[key];
             int ret;
-#if WindowsCE
             if (String.IsNullOrEmpty(str) || !TryParse(str, out ret))
-#else
-            if (String.IsNullOrEmpty(str) || !Boolean.TryParse(str, out ret))
-#endif
             {
                 var value = valueFactory();
                 collection[key] = value.ToString(CultureInfo.InvariantCulture);
@@ -498,11 +438,7 @@
         {
             var str = collection[key];
             int ret;
-#if WindowsCE
             if (String.IsNullOrEmpty(str) || !TryParse(str, out ret))
-#else
-            if (String.IsNullOrEmpty(str) || !Boolean.TryParse(str, out ret))
-#endif
             {
                 return null;
             }
@@ -521,11 +457,7 @@
         {
             var str = collection[key];
             int ret;
-#if WindowsCE
             if (String.IsNullOrEmpty(str) || !TryParse(str, out ret))
-#else
-            if (String.IsNullOrEmpty(str) || !Boolean.TryParse(str, out ret))
-#endif
             {
                 return value;
             }
@@ -544,11 +476,7 @@
         {
             var str = collection[key];
             int ret;
-#if WindowsCE
             if (String.IsNullOrEmpty(str) || !TryParse(str, out ret))
-#else
-            if (String.IsNullOrEmpty(str) || !Boolean.TryParse(str, out ret))
-#endif
             {
                 return valueFactory();
             }
@@ -567,11 +495,7 @@
         {
             var str = collection[key];
             int ret;
-#if WindowsCE
             if (String.IsNullOrEmpty(str) || !TryParse(str, out ret))
-#else
-            if (String.IsNullOrEmpty(str) || !Boolean.TryParse(str, out ret))
-#endif
             {
                 collection[key] = value.HasValue ? value.Value.ToString(CultureInfo.InvariantCulture) : string.Empty;
                 return value;
@@ -591,11 +515,7 @@
         {
             var str = collection[key];
             int ret;
-#if WindowsCE
             if (String.IsNullOrEmpty(str) || !TryParse(str, out ret))
-#else
-            if (String.IsNullOrEmpty(str) || !Boolean.TryParse(str, out ret))
-#endif
             {
                 var value = valueFactory();
                 collection[key] = value.HasValue ? value.Value.ToString(CultureInfo.InvariantCulture) : string.Empty;
@@ -616,7 +536,6 @@
             collection[key] = value.HasValue ? value.Value.ToString(CultureInfo.InvariantCulture) : string.Empty;
         }
 
-#if WindowsCE
         /// <summary>
         ///
         /// </summary>
@@ -656,6 +575,5 @@
                 return false;
             }
         }
-#endif
     }
 }
