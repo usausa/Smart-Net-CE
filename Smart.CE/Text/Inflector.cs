@@ -1,4 +1,4 @@
-﻿namespace Smart
+﻿namespace Smart.Text
 {
     using System;
     using System.Globalization;
@@ -33,9 +33,9 @@
         ///
         /// </summary>
         /// <param name="word"></param>
-        /// <param name="isUpper"></param>
+        /// <param name="toUpper"></param>
         /// <returns></returns>
-        public static string Camelize(string word, bool isUpper)
+        public static string Camelize(string word, bool toUpper)
         {
             if (String.IsNullOrEmpty(word))
             {
@@ -47,14 +47,14 @@
             {
                 if (c == '_')
                 {
-                    isUpper = true;
+                    toUpper = true;
                 }
                 else
                 {
-                    if (isUpper)
+                    if (toUpper)
                     {
                         sb.Append(Char.ToUpper(c, CultureInfo.InvariantCulture));
-                        isUpper = false;
+                        toUpper = false;
                     }
                     else
                     {
@@ -73,6 +73,17 @@
         /// <returns></returns>
         public static string Underscore(string word)
         {
+            return Underscore(word, false);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="word"></param>
+        /// <param name="toUpper"></param>
+        /// <returns></returns>
+        public static string Underscore(string word, bool toUpper)
+        {
             if (String.IsNullOrEmpty(word))
             {
                 return word;
@@ -84,37 +95,12 @@
                 if (Char.IsUpper(c) && (sb.Length > 0))
                 {
                     sb.Append("_");
-                    sb.Append(Char.ToLower(c, CultureInfo.InvariantCulture));
                 }
-                else
-                {
-                    sb.Append(Char.ToLower(c, CultureInfo.InvariantCulture));
-                }
+
+                sb.Append(toUpper ? Char.ToUpper(c, CultureInfo.InvariantCulture) : Char.ToLower(c, CultureInfo.InvariantCulture));
             }
 
             return sb.ToString();
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        /// <param name="word"></param>
-        /// <returns></returns>
-        public static string Pluralize(string word)
-        {
-            if (String.IsNullOrEmpty(word))
-            {
-                return word;
-            }
-            if (word[word.Length - 1] == 's')
-            {
-                return word;
-            }
-            if (word[word.Length - 1] != 'y')
-            {
-                return string.Format(CultureInfo.InvariantCulture, "{0}s", word);
-            }
-            return string.Format(CultureInfo.InvariantCulture, "{0}ies", word.Substring(0, word.Length - 1));
         }
     }
 }

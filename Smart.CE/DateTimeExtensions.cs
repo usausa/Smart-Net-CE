@@ -94,26 +94,6 @@
         /// <summary>
         ///
         /// </summary>
-        /// <param name="time"></param>
-        /// <returns></returns>
-        public static DateTime Midnight(this DateTime time)
-        {
-            return new DateTime(time.Year, time.Month, time.Day, 0, 0, 0);
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        /// <param name="time"></param>
-        /// <returns></returns>
-        public static DateTime Noon(this DateTime time)
-        {
-            return new DateTime(time.Year, time.Month, time.Day, 12, 0, 0);
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
         /// <param name="date"></param>
         /// <param name="hour"></param>
         /// <param name="minute"></param>
