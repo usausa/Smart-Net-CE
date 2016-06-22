@@ -10,21 +10,6 @@
     public static partial class EnumerableExtensions
     {
         //--------------------------------------------------------------------------------
-        // Safe
-        //--------------------------------------------------------------------------------
-
-        /// <summary>
-        ///
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="source"></param>
-        /// <returns></returns>
-        public static IEnumerable<T> Safe<T>(this IEnumerable<T> source)
-        {
-            return source ?? Enumerable.Empty<T>();
-        }
-
-        //--------------------------------------------------------------------------------
         // Append
         //--------------------------------------------------------------------------------
 

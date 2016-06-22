@@ -83,6 +83,7 @@
     <Compile Include="Collections\Generic\Comparers.ProjectionEquality.cs" />
     <Compile Include="Collections\Generic\Comparers.Reverse.cs" />
     <Compile Include="Collections\Generic\DictionaryExtensions.cs" />
+    <Compile Include="Collections\Generic\EnumerableExtensions.cs" />
     <Compile Include="Collections\Generic\KeyedList.cs" />
     <Compile Include="Collections\Generic\LinkedHashMap.cs" />
     <Compile Include="Collections\Generic\ListExtensions.cs" />
@@ -122,7 +123,6 @@
     <Compile Include="Diagnostics\DebugMessage.cs" />
     <Compile Include="Diagnostics\FileVersionInfo.cs" />
     <Compile Include="Diagnostics\NativeMethods.cs" />
-    <Compile Include="DisposableExtensions.cs" />
     <Compile Include="Drawing\Border3DStyle.cs" />
     <Compile Include="Drawing\Border3DStyleExtensions.cs" />
     <Compile Include="Drawing\CaptureScreen.cs" />

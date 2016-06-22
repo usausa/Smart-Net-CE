@@ -81,7 +81,8 @@
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static bool IsStruct(this Type type)
         {
-            return type.IsValueType && !type.IsEnum && !type.IsPrimitive;
+            return type.IsValueType && !type.IsEnum && !type.IsPrimitive &&
+                !(type.IsGenericType && (type.GetGenericTypeDefinition() == NullableType));
         }
 
         /// <summary>
