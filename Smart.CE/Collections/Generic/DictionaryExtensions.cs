@@ -112,5 +112,43 @@
 
             return ret;
         }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <typeparam name="TKey"></typeparam>
+        /// <typeparam name="TValue"></typeparam>
+        /// <param name="src"></param>
+        /// <param name="dst"></param>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
+        public static void CopyTo<TKey, TValue>(this IDictionary<TKey, TValue> src, IDictionary<TKey, TValue> dst)
+        {
+            CopyTo(src, dst, false);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <typeparam name="TKey"></typeparam>
+        /// <typeparam name="TValue"></typeparam>
+        /// <param name="src"></param>
+        /// <param name="dst"></param>
+        /// <param name="replace"></param>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
+        public static void CopyTo<TKey, TValue>(this IDictionary<TKey, TValue> src, IDictionary<TKey, TValue> dst, bool replace)
+        {
+            if (dst == null)
+            {
+                throw new ArgumentNullException("dst");
+            }
+
+            foreach (var key in src.Keys)
+            {
+                if (replace || !dst.ContainsKey(key))
+                {
+                    dst[key] = src[key];
+                }
+            }
+        }
     }
 }
