@@ -143,6 +143,7 @@
     <Compile Include="EnumEx.cs" />
     <Compile Include="EnumExtensions.cs" />
     <Compile Include="EventHandlerExtensions.cs" />
+    <Compile Include="Reflection\NonNullableDelegateAccsessor.cs" />
     <Compile Include="Text\Inflector.cs" />
     <Compile Include="IO\BinaryReaderExtensions.cs" />
     <Compile Include="IO\ByteBuffer.cs" />
@@ -204,11 +205,11 @@
     <Compile Include="Range.cs" />
     <Compile Include="Ref.cs" />
     <Compile Include="Reflection\AccessorExtensionsCE.cs" />
-    <Compile Include="Reflection\DelegateAccsessor.cs" />
+    <Compile Include="Reflection\NullableDelegateAccsessor.cs" />
     <Compile Include="Reflection\DelegateMethodGenerator.cs" />
     <Compile Include="Reflection\IAccessor.cs" />
     <Compile Include="Reflection\MemberInfoExtensions.cs" />
-    <Compile Include="Reflection\ReflectionAccessor.cs" />
+    <Compile Include="Reflection\ReflectionFieldAccessor.cs" />
     <Compile Include="Reflection\TypeExtensions.cs" />
     <Compile Include="Reflection\TypeInformation.cs" />
     <Compile Include="Reflection\TypeInformationFactory.cs" />

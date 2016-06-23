@@ -13,9 +13,9 @@
         /// <summary>
         ///
         /// </summary>
-        public MemberInfo MemberInfo
+        public string Name
         {
-            get { return fieldInfo; }
+            get { return fieldInfo.Name; }
         }
 
         /// <summary>

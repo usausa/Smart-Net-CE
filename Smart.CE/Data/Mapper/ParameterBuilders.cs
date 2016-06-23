@@ -141,7 +141,7 @@
             foreach (var accessor in metadataFactory.Create(param.GetType()).GetParameterAccessors())
             {
                 var parameter = cmd.CreateParameter();
-                parameter.ParameterName = accessor.MemberInfo.Name;
+                parameter.ParameterName = accessor.Name;
                 var value = accessor.GetValue(param) ?? DBNull.Value;
                 if (value != DBNull.Value)
                 {

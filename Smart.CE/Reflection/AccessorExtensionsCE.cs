@@ -31,12 +31,12 @@
 
             if (pi.PropertyType.IsValueType)
             {
-                var accessorType = typeof(ValueTypeDelegateAccsessor<,>).MakeGenericType(pi.DeclaringType, pi.PropertyType);
+                var accessorType = typeof(NonNullableDelegateAccsessor<,>).MakeGenericType(pi.DeclaringType, pi.PropertyType);
                 return (IAccessor)ActivatorEx.CreateInstance(accessorType, pi, pi.PropertyType, getter, setter, pi.PropertyType.GetDefaultValue());
             }
             else
             {
-                var accessorType = typeof(DelegateAccsessor<,>).MakeGenericType(pi.DeclaringType, pi.PropertyType);
+                var accessorType = typeof(NullableDelegateAccsessor<,>).MakeGenericType(pi.DeclaringType, pi.PropertyType);
                 return (IAccessor)ActivatorEx.CreateInstance(accessorType, pi, pi.PropertyType, getter, setter);
             }
         }
