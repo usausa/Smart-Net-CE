@@ -1,4 +1,4 @@
-﻿namespace Smart.Text
+﻿namespace Smart.Text.Japanease
 {
     using System;
     using System.Text;

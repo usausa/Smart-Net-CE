@@ -236,9 +236,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="StringExtensions.cs" />
-    <Compile Include="Text\HexHelper.cs" />
-    <Compile Include="Text\SjisHelper.cs" />
-    <Compile Include="Text\StringAlignment.cs" />
+    <Compile Include="Text\HexEncorder.cs" />
+    <Compile Include="Text\Japanease\SjisHelper.cs" />
+    <Compile Include="Text\Japanease\StringAlignment.cs" />
     <Compile Include="Text\StringBuilderExtensions.cs" />
     <Compile Include="Threading\AtomicBoolean.cs" />
     <Compile Include="Threading\AtomicInteger.cs" />
