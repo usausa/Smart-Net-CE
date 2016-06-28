@@ -1,4 +1,4 @@
-﻿namespace Smart.Text
+﻿namespace Smart.Text.Japanease
 {
     /// <summary>
     ///
