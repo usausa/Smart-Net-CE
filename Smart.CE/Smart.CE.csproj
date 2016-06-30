@@ -330,6 +330,9 @@
     <Compile Include="Windows\Forms\GraphicalControl.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Windows\Forms\GraphicalLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Windows\Forms\GraphicalToggle.cs">
       <SubType>Component</SubType>
     </Compile>
