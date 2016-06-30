@@ -90,6 +90,7 @@
         public GraphicalLabel()
         {
             DoubleBuffered = true;
+            TabStop = false;
         }
 
         /// <summary>
