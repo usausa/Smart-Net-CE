@@ -8,7 +8,7 @@
     /// <summary>
     ///
     /// </summary>
-    public class SortListBewBeaivors : IBehaivor<ListView>
+    public class SortListBewBeaviors : IBehavior<ListView>
     {
         private readonly Func<ListViewItem, ListViewItem, bool, int>[] sortFunctions;
 
@@ -18,7 +18,7 @@
         ///
         /// </summary>
         /// <param name="sortFunctions"></param>
-        public SortListBewBeaivors(IEnumerable<Func<ListViewItem, ListViewItem, bool, int>> sortFunctions)
+        public SortListBewBeaviors(IEnumerable<Func<ListViewItem, ListViewItem, bool, int>> sortFunctions)
         {
             this.sortFunctions = sortFunctions.ToArray();
             ascendings = new bool[this.sortFunctions.Length];

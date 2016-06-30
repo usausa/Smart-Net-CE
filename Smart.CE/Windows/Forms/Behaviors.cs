@@ -8,7 +8,7 @@
     ///
     /// </summary>
     /// <typeparam name="TControl"></typeparam>
-    public interface IBehaivor<TControl> where TControl : Control
+    public interface IBehavior<TControl> where TControl : Control
     {
         /// <summary>
         ///
@@ -26,7 +26,7 @@
     /// <summary>
     ///
     /// </summary>
-    public static class BehaivorExtensions
+    public static class BehaviorExtensions
     {
         /// <summary>
         ///
@@ -34,7 +34,7 @@
         /// <typeparam name="TControl"></typeparam>
         /// <param name="control"></param>
         /// <param name="behaivors"></param>
-        public static void AddBehaivor<TControl>(this TControl control, params IBehaivor<TControl>[] behaivors) where TControl : Control
+        public static void AddBehavior<TControl>(this TControl control, params IBehavior<TControl>[] behaivors) where TControl : Control
         {
             if (behaivors == null)
             {
@@ -51,14 +51,14 @@
     /// <summary>
     ///
     /// </summary>
-    public class ClearKeyBehaivor : IBehaivor<Control>
+    public class ClearKeyBehavior : IBehavior<Control>
     {
-        private static readonly ClearKeyBehaivor Singleton = new ClearKeyBehaivor(new[] { Keys.Escape, Keys.Delete });
+        private static readonly ClearKeyBehavior Singleton = new ClearKeyBehavior(new[] { Keys.Escape, Keys.Delete });
 
         /// <summary>
         ///
         /// </summary>
-        public static ClearKeyBehaivor Default
+        public static ClearKeyBehavior Default
         {
             get
             {
@@ -72,7 +72,7 @@
         ///
         /// </summary>
         /// <param name="clearKeys"></param>
-        public ClearKeyBehaivor(params Keys[] clearKeys)
+        public ClearKeyBehavior(params Keys[] clearKeys)
         {
             this.clearKeys = clearKeys;
         }
@@ -124,7 +124,7 @@
     /// <summary>
     ///
     /// </summary>
-    public class KeyDownHandledBehaivor : IBehaivor<Control>
+    public class KeyDownHandledBehavior : IBehavior<Control>
     {
         private readonly Keys[] handledKeys;
 
@@ -132,7 +132,7 @@
         ///
         /// </summary>
         /// <param name="handledKeys"></param>
-        public KeyDownHandledBehaivor(params Keys[] handledKeys)
+        public KeyDownHandledBehavior(params Keys[] handledKeys)
         {
             this.handledKeys = handledKeys;
         }
@@ -182,14 +182,14 @@
     /// <summary>
     ///
     /// </summary>
-    public class KeyPressHandledBehaivor : IBehaivor<Control>
+    public class KeyPressHandledBehavior : IBehavior<Control>
     {
-        private static readonly KeyPressHandledBehaivor DisableBeepSingleton = new KeyPressHandledBehaivor((char)Keys.Enter, (char)Keys.Escape);
+        private static readonly KeyPressHandledBehavior DisableBeepSingleton = new KeyPressHandledBehavior((char)Keys.Enter, (char)Keys.Escape);
 
         /// <summary>
         ///
         /// </summary>
-        public static KeyPressHandledBehaivor DisableBeep
+        public static KeyPressHandledBehavior DisableBeep
         {
             get
             {
@@ -203,7 +203,7 @@
         ///
         /// </summary>
         /// <param name="handledKeys"></param>
-        public KeyPressHandledBehaivor(params char[] handledKeys)
+        public KeyPressHandledBehavior(params char[] handledKeys)
         {
             this.handledKeys = handledKeys;
         }

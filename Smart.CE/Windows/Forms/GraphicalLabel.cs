@@ -129,7 +129,6 @@
                     g.DrawLine(pen, rect.Right - 1, rect.Top, rect.Right - 1, rect.Bottom - 1);
                 }
             }
-
         }
     }
 }

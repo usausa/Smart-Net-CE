@@ -10,7 +10,7 @@
     /// <summary>
     ///
     /// </summary>
-    public class ExtendComboBoxBeaivors : IBehaivor<ComboBox>
+    public class ExtendComboBoxBeaviors : IBehavior<ComboBox>
     {
         public event EventHandler<EventArgs> DropDownOpend;
         public event EventHandler<EventArgs> DropDownClosed;

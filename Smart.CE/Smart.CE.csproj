@@ -367,12 +367,12 @@
     </Compile>
     <Compile Include="Windows\Forms\SipEventArgs.cs" />
     <Compile Include="Windows\Forms\SystemInformationEx.cs" />
-    <Compile Include="Windows\Forms\Behaivors.TextBox.cs" />
+    <Compile Include="Windows\Forms\Behaviors.TextBox.cs" />
     <Compile Include="Windows\Forms\TextBoxExtensions.cs" />
     <Compile Include="Windows\Forms\WndProcCallback.cs" />
-    <Compile Include="Windows\Forms\Behaivors.cs" />
-    <Compile Include="Windows\Forms\Behaivors.ComboBox.cs" />
-    <Compile Include="Windows\Forms\Behaivors.ListView.cs" />
+    <Compile Include="Windows\Forms\Behaviors.cs" />
+    <Compile Include="Windows\Forms\Behaviors.ComboBox.cs" />
+    <Compile Include="Windows\Forms\Behaviors.ListView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DesignTimeAttributes.xmta" />
