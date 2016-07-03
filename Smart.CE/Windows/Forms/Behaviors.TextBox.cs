@@ -13,7 +13,7 @@
     /// <summary>
     ///
     /// </summary>
-    public class FocusWithSelectTextBoxBehavior : IBehaivor<TextBox>
+    public class FocusWithSelectTextBoxBehavior : IBehavior<TextBox>
     {
         private static readonly FocusWithSelectTextBoxBehavior Singleton = new FocusWithSelectTextBoxBehavior();
 
@@ -75,7 +75,7 @@
     /// <summary>
     ///
     /// </summary>
-    public class FocusColorTextBoxBehavior : IBehaivor<TextBox>
+    public class FocusColorTextBoxBehavior : IBehavior<TextBox>
     {
         private readonly Color focusColor;
 
@@ -161,9 +161,68 @@
     }
 
     /// <summary>
+    /// 
+    /// </summary>
+    public class DefaultIfEmptyTextBoxBehavior : IBehavior<TextBox>
+    {
+        private readonly string defaultValue;
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="defaultValue"></param>
+        public DefaultIfEmptyTextBoxBehavior(string defaultValue)
+        {
+            this.defaultValue = defaultValue;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="control"></param>
+        public void Attach(TextBox control)
+        {
+            if (control == null)
+            {
+                throw new ArgumentNullException("control");
+            }
+
+            control.LostFocus += ControlOnLostFocus;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="control"></param>
+        public void Detach(TextBox control)
+        {
+            if (control == null)
+            {
+                throw new ArgumentNullException("control");
+            }
+
+            control.LostFocus -= ControlOnLostFocus;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void ControlOnLostFocus(object sender, EventArgs args)
+        {
+            var control = (TextBox)sender;
+            if (String.IsNullOrEmpty(control.Text))
+            {
+                control.Text = defaultValue;
+            }
+        }
+    }
+
+    /// <summary>
     ///
     /// </summary>
-    public class NumberInputBehavior : IBehaivor<TextBox>
+    public class NumberInputBehavior : IBehavior<TextBox>
     {
         private static readonly NumberInputBehavior DefaultSingleton = new NumberInputBehavior(false);
 
@@ -325,7 +384,7 @@
     /// <summary>
     ///
     /// </summary>
-    public class ExtendTextBoxBehavior : IBehaivor<TextBox>
+    public class ExtendTextBoxBehavior : IBehavior<TextBox>
     {
         public event EventHandler<EventArgs> StartComposition;
         public event EventHandler<EventArgs> EndComposition;
