@@ -237,8 +237,8 @@
     </Compile>
     <Compile Include="StringExtensions.cs" />
     <Compile Include="Text\HexEncorder.cs" />
-    <Compile Include="Text\Japanease\SjisHelper.cs" />
-    <Compile Include="Text\Japanease\StringAlignment.cs" />
+    <Compile Include="Text\Japanese\SjisEncoding.cs" />
+    <Compile Include="Text\Japanese\FixedAlignment.cs" />
     <Compile Include="Text\StringBuilderExtensions.cs" />
     <Compile Include="Threading\AtomicBoolean.cs" />
     <Compile Include="Threading\AtomicInteger.cs" />
