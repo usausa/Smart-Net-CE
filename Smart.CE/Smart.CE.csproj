@@ -237,6 +237,8 @@
     </Compile>
     <Compile Include="StringExtensions.cs" />
     <Compile Include="Text\HexEncorder.cs" />
+    <Compile Include="Text\Japanese\KanaConverter.cs" />
+    <Compile Include="Text\Japanese\KanaOption.cs" />
     <Compile Include="Text\Japanese\SjisEncoding.cs" />
     <Compile Include="Text\Japanese\FixedAlignment.cs" />
     <Compile Include="Text\StringBuilderExtensions.cs" />
