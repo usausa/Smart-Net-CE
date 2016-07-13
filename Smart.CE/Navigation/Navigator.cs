@@ -356,7 +356,7 @@
         /// <param name="id">画面ID</param>
         public void PopOrForward(object id)
         {
-            PopOrForward(id, 1, null);
+            PopOrForward(id, stacked.Count, null);
         }
 
         /// <summary>
@@ -376,7 +376,7 @@
         /// <param name="parameters">パラメータ</param>
         public void PopOrForward(object id, IViewParameters parameters)
         {
-            PopOrForward(id, 1, parameters);
+            PopOrForward(id, stacked.Count, parameters);
         }
 
         /// <summary>
@@ -387,7 +387,7 @@
         /// <param name="parameters">パラメータ</param>
         public void PopOrForward(object id, int level, IViewParameters parameters)
         {
-            if (level < 1)
+            if (level < 0)
             {
                 throw new ArgumentOutOfRangeException("level");
             }
