@@ -392,7 +392,7 @@
                 throw new ArgumentOutOfRangeException("level");
             }
 
-            if (stacked.Count - 1 < level)
+            if (stacked.Count < level)
             {
                 InternalPop(level, parameters);
             }
