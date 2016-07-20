@@ -1,4 +1,4 @@
-﻿namespace Smart.Text.Japanease
+﻿namespace Smart.Text.Japanese
 {
     using System;
     using System.Text;
@@ -6,18 +6,16 @@
     /// <summary>
     ///
     /// </summary>
-    public static class SjisHelper
+    public static class SjisEncoding
     {
-        private static readonly Encoding Encode = Encoding.GetEncoding("Shift_JIS");
+        private static readonly Encoding Singleton = Encoding.GetEncoding("Shift_JIS");
 
         /// <summary>
-        ///
+        /// 
         /// </summary>
-        /// <param name="str"></param>
-        /// <returns></returns>
-        public static int GetSjisByteCount(string str)
+        public static Encoding Instance
         {
-            return Encode.GetByteCount(str);
+            get { return Singleton; }
         }
 
         /// <summary>
@@ -25,9 +23,19 @@
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
-        public static byte[] GetSjisBytes(string str)
+        public static int GetByteCount(string str)
         {
-            return Encode.GetBytes(str);
+            return Instance.GetByteCount(str);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static byte[] GetBytes(string str)
+        {
+            return Instance.GetBytes(str);
         }
 
         /// <summary>
@@ -37,9 +45,9 @@
         /// <param name="index"></param>
         /// <param name="count"></param>
         /// <returns></returns>
-        public static string GetSjisString(byte[] bytes, int index, int count)
+        public static string GetString(byte[] bytes, int index, int count)
         {
-            return Encode.GetString(bytes, index, count);
+            return Instance.GetString(bytes, index, count);
         }
 
         /// <summary>
@@ -50,9 +58,9 @@
         /// <param name="alignment"></param>
         /// <param name="padding"></param>
         /// <returns></returns>
-        public static byte[] GetSjisFixedBytes(string str, int length, StringAlignment alignment, byte padding)
+        public static byte[] GetFixedBytes(string str, int length, FixedAlignment alignment, byte padding)
         {
-            var bytes = Encode.GetBytes(str);
+            var bytes = Instance.GetBytes(str);
             if (bytes.Length == length)
             {
                 return bytes;
@@ -72,13 +80,14 @@
                 {
                     Buffer.BlockCopy(bytes, 0, newBytes, 0, length);
                 }
+
                 return newBytes;
             }
             else
             {
                 // パディング
                 var newBytes = new byte[length];
-                if (alignment == StringAlignment.Left)
+                if (alignment == FixedAlignment.Left)
                 {
                     Buffer.BlockCopy(bytes, 0, newBytes, 0, bytes.Length);
                     for (var i = bytes.Length; i < length; i++)
@@ -86,13 +95,14 @@
                         newBytes[i] = padding;
                     }
                 }
-                else if (alignment == StringAlignment.Right)
+                else if (alignment == FixedAlignment.Right)
                 {
                     var i = 0;
                     for (; i < length - bytes.Length; i++)
                     {
                         newBytes[i] = padding;
                     }
+
                     Buffer.BlockCopy(bytes, 0, newBytes, i, bytes.Length);
                 }
                 else
@@ -102,12 +112,14 @@
                     {
                         newBytes[i] = padding;
                     }
+
                     Buffer.BlockCopy(bytes, 0, newBytes, i, bytes.Length);
                     for (i = i + bytes.Length; i < length; i++)
                     {
                         newBytes[i] = padding;
                     }
                 }
+
                 return newBytes;
             }
         }
@@ -119,9 +131,9 @@
         /// <param name="length"></param>
         /// <param name="alignment"></param>
         /// <returns></returns>
-        public static byte[] GetSjisFixedBytes(string str, int length, StringAlignment alignment)
+        public static byte[] GetFixedBytes(string str, int length, FixedAlignment alignment)
         {
-            return GetSjisFixedBytes(str, length, alignment, 0x20);
+            return GetFixedBytes(str, length, alignment, 0x20);
         }
 
         /// <summary>
@@ -131,9 +143,9 @@
         /// <param name="length"></param>
         /// <param name="padding"></param>
         /// <returns></returns>
-        public static byte[] GetSjisFixedBytes(string str, int length, byte padding)
+        public static byte[] GetFixedBytes(string str, int length, byte padding)
         {
-            return GetSjisFixedBytes(str, length, StringAlignment.Left, padding);
+            return GetFixedBytes(str, length, FixedAlignment.Left, padding);
         }
 
         /// <summary>
@@ -142,9 +154,9 @@
         /// <param name="str"></param>
         /// <param name="length"></param>
         /// <returns></returns>
-        public static byte[] GetSjisFixedBytes(string str, int length)
+        public static byte[] GetFixedBytes(string str, int length)
         {
-            return GetSjisFixedBytes(str, length, StringAlignment.Left, 0x20);
+            return GetFixedBytes(str, length, FixedAlignment.Left, 0x20);
         }
     }
 }

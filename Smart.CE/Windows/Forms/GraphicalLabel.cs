@@ -2,8 +2,6 @@
 {
     using System.Drawing;
 
-    using Smart.Drawing;
-
     /// <summary>
     ///
     /// </summary>
