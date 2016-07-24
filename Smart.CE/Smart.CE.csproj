@@ -344,6 +344,8 @@
     </Compile>
     <Compile Include="Windows\Forms\IMessageFilter.cs" />
     <Compile Include="Windows\Forms\InactivityFilter.cs" />
+    <Compile Include="Windows\Forms\ITemplateConverter.cs" />
+    <Compile Include="Windows\Forms\ITemplateListDesignData.cs" />
     <Compile Include="Windows\Forms\KeyboardHook.cs" />
     <Compile Include="Windows\Forms\KeyDataEventArgs.cs" />
     <Compile Include="Windows\Forms\LinearGuage.cs">
@@ -370,6 +372,14 @@
     <Compile Include="Windows\Forms\SipEventArgs.cs" />
     <Compile Include="Windows\Forms\SystemInformationEx.cs" />
     <Compile Include="Windows\Forms\Behaviors.TextBox.cs" />
+    <Compile Include="Windows\Forms\TemplateAccessorCache.cs" />
+    <Compile Include="Windows\Forms\TemplateDrawContext.cs" />
+    <Compile Include="Windows\Forms\TemplateElement.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\TemplateList.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Windows\Forms\TextBoxExtensions.cs" />
     <Compile Include="Windows\Forms\WndProcCallback.cs" />
     <Compile Include="Windows\Forms\Behaviors.cs" />
