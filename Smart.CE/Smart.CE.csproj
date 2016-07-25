@@ -47,7 +47,7 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <RunCodeAnalysis>true</RunCodeAnalysis>
-    <CodeAnalysisRules>-Microsoft.Design#CA2210;-Microsoft.Design#CA1005;-Microsoft.Design#CA1020;-Microsoft.Design#CA1006;-Microsoft.Design#CA1008;-Microsoft.Design#CA1028;-Microsoft.Design#CA1004;-Microsoft.Usage#CA2205;-Microsoft.Naming#CA1702;-Microsoft.Naming#CA1709;-Microsoft.Naming#CA1704;-Microsoft.Naming#CA1720;-Microsoft.Naming#CA1707;-Microsoft.Naming#CA1726</CodeAnalysisRules>
+    <CodeAnalysisRules>-Microsoft.Design#CA2210;-Microsoft.Design#CA1005;-Microsoft.Design#CA1020;-Microsoft.Design#CA1006;-Microsoft.Design#CA1008;-Microsoft.Design#CA1028;-Microsoft.Design#CA1004;-Microsoft.Design#CA1034;-Microsoft.Usage#CA2205;-Microsoft.Naming#CA1702;-Microsoft.Naming#CA1709;-Microsoft.Naming#CA1704;-Microsoft.Naming#CA1720;-Microsoft.Naming#CA1707;-Microsoft.Naming#CA1726</CodeAnalysisRules>
     <NoWarn>0109</NoWarn>
   </PropertyGroup>
   <ItemGroup>
@@ -345,6 +345,8 @@
     <Compile Include="Windows\Forms\IMessageFilter.cs" />
     <Compile Include="Windows\Forms\InactivityFilter.cs" />
     <Compile Include="Windows\Forms\ITemplateConverter.cs" />
+    <Compile Include="Windows\Forms\ITemplateDesignData.cs">
+    </Compile>
     <Compile Include="Windows\Forms\ITemplateListDesignData.cs" />
     <Compile Include="Windows\Forms\KeyboardHook.cs" />
     <Compile Include="Windows\Forms\KeyDataEventArgs.cs" />
@@ -365,7 +367,6 @@
     <Compile Include="Windows\Forms\SipButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Windows\Forms\SipButtonCollection.cs" />
     <Compile Include="Windows\Forms\SipControl.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -374,7 +375,12 @@
     <Compile Include="Windows\Forms\Behaviors.TextBox.cs" />
     <Compile Include="Windows\Forms\TemplateAccessorCache.cs" />
     <Compile Include="Windows\Forms\TemplateDrawContext.cs" />
+    <Compile Include="Windows\Forms\TemplateDrawHelper.cs" />
     <Compile Include="Windows\Forms\TemplateElement.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\TemplateElementCollection.cs" />
+    <Compile Include="Windows\Forms\TemplateLabel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Windows\Forms\TemplateList.cs">

@@ -411,6 +411,42 @@
             DrawBorder(g, style, color, rect.X, rect.Y, rect.Width, rect.Height);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="g"></param>
+        /// <param name="color"></param>
+        /// <param name="rect"></param>
+        /// <param name="borderTop"></param>
+        /// <param name="borderBottom"></param>
+        /// <param name="borderLeft"></param>
+        /// <param name="borderRight"></param>
+        public static void DrawBorder(this Graphics g, Color color, Rectangle rect, bool borderTop, bool borderBottom, bool borderLeft, bool borderRight)
+        {
+            if (borderTop || borderBottom || borderLeft || borderRight)
+            {
+                using (var pen = new Pen(color))
+                {
+                    if (borderTop)
+                    {
+                        g.DrawLine(pen, rect.Left, rect.Top, rect.Right - 1, rect.Top);
+                    }
+                    if (borderBottom)
+                    {
+                        g.DrawLine(pen, rect.Left, rect.Bottom - 1, rect.Right, rect.Bottom - 1);
+                    }
+                    if (borderLeft)
+                    {
+                        g.DrawLine(pen, rect.Left, rect.Top, rect.Left, rect.Bottom - 1);
+                    }
+                    if (borderRight)
+                    {
+                        g.DrawLine(pen, rect.Right - 1, rect.Top, rect.Right - 1, rect.Bottom - 1);
+                    }
+                }
+            }
+        }
+
         //--------------------------------------------------------------------------------
         // CopyGraphics
         //--------------------------------------------------------------------------------

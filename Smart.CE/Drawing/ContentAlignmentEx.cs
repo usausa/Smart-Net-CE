@@ -97,6 +97,53 @@
         ///
         /// </summary>
         /// <param name="textAlign"></param>
+        /// <param name="sx"></param>
+        /// <param name="sy"></param>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <returns></returns>
+        public static RectangleF CalcTextRect(this ContentAlignmentEx textAlign, float sx, float sy, float x, float y, float width, float height)
+        {
+            if (textAlign.IsCenter())
+            {
+                x += (width - sx) / 2;
+            }
+            else if (textAlign.IsRight())
+            {
+                x += width - sx;
+            }
+
+            if (textAlign.IsMiddle())
+            {
+                y += (height - sy) / 2;
+            }
+            else if (textAlign.IsBottom())
+            {
+                y += height - sy;
+            }
+
+            return new RectangleF(x, y, sx, sy);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="textAlign"></param>
+        /// <param name="sx"></param>
+        /// <param name="sy"></param>
+        /// <param name="rect"></param>
+        /// <returns></returns>
+        public static RectangleF CalcTextRect(this ContentAlignmentEx textAlign, float sx, float sy, RectangleF rect)
+        {
+            return textAlign.CalcTextRect(sx, sy, rect.X, rect.Y, rect.Width, rect.Height);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="textAlign"></param>
         /// <param name="sizeText"></param>
         /// <param name="x"></param>
         /// <param name="y"></param>
@@ -105,25 +152,7 @@
         /// <returns></returns>
         public static RectangleF CalcTextRect(this ContentAlignmentEx textAlign, SizeF sizeText, float x, float y, float width, float height)
         {
-            if (textAlign.IsCenter())
-            {
-                x += (width - sizeText.Width) / 2;
-            }
-            else if (textAlign.IsRight())
-            {
-                x += width - sizeText.Width;
-            }
-
-            if (textAlign.IsMiddle())
-            {
-                y += (height - sizeText.Height) / 2;
-            }
-            else if (textAlign.IsBottom())
-            {
-                y += height - sizeText.Height;
-            }
-
-            return new RectangleF(x, y, sizeText.Width, sizeText.Height);
+            return textAlign.CalcTextRect(sizeText.Width, sizeText.Height, x, y, width, height);
         }
 
         /// <summary>
@@ -135,7 +164,7 @@
         /// <returns></returns>
         public static RectangleF CalcTextRect(this ContentAlignmentEx textAlign, SizeF sizeText, RectangleF rect)
         {
-            return textAlign.CalcTextRect(sizeText, rect.X, rect.Y, rect.Width, rect.Height);
+            return textAlign.CalcTextRect(sizeText.Width, sizeText.Height, rect.X, rect.Y, rect.Width, rect.Height);
         }
     }
 }

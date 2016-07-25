@@ -2,6 +2,7 @@
 {
     using System.ComponentModel;
     using System.Drawing;
+    using System.Windows.Forms;
 
     using Smart.Drawing;
 
@@ -10,7 +11,7 @@
     /// </summary>
     public class TemplateElement : Component
     {
-        internal TemplateList Parent { get; set; }
+        internal Control Parent { get; set; }
 
         private void ParentInvalidate()
         {
