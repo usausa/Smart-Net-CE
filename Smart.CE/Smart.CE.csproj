@@ -321,6 +321,9 @@
     <Compile Include="Windows\Forms\ControlExtensions.cs" />
     <Compile Include="Windows\Forms\CreateParams.cs" />
     <Compile Include="Windows\Forms\CursorChanger.cs" />
+    <Compile Include="Windows\Forms\CustomListBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Windows\Forms\FormExtensions.cs" />
     <Compile Include="Windows\Forms\GradationStyle.cs" />
     <Compile Include="Windows\Forms\GraphicalButton.cs">
@@ -354,6 +357,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Windows\Forms\ListBoxExtensions.cs" />
+    <Compile Include="Windows\Forms\ListSelectionMode.cs" />
     <Compile Include="Windows\Forms\MessageHook.cs" />
     <Compile Include="Windows\Forms\NativeMethods.cs" />
     <Compile Include="Windows\Forms\NativeWindow.cs" />

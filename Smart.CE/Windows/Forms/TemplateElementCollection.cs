@@ -36,6 +36,7 @@
             {
                 item.Parent = null;
             }
+
             list.Clear();
             owner.Invalidate();
         }

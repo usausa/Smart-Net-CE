@@ -9,17 +9,9 @@
     /// <summary>
     ///
     /// </summary>
-    public class TemplateList : ControlEx
+    public class TemplateList : CustomListBase
     {
-        public event EventHandler SelectedIndexChanged;
-
-        private bool updating;
-
-        private bool showScrollBar = true;
-
-        private readonly VScrollBar scroll = new VScrollBar();
-
-        private bool selectable;
+        private ListSelectionMode selectionMode;
 
         private int selectedIndex = -1;
 
@@ -64,57 +56,14 @@
         /// <summary>
         ///
         /// </summary>
-        public bool ShowScrollBar
+        public ListSelectionMode SelectionMode
         {
-            get { return showScrollBar; }
+            get { return selectionMode; }
             set
             {
-                showScrollBar = value;
-                UpdateLayout();
-            }
-        }
+                selectionMode = value;
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public int ScrollBarWidth
-        {
-            get { return scroll.Width; }
-            set
-            {
-                scroll.Width = value;
-                OnResize(EventArgs.Empty);
-            }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public bool ScrollBarVisible
-        {
-            get { return scroll.Visible; }
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public int TopIndex
-        {
-            get { return scroll.Value; }
-            set { scroll.Value = value; }
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool Selectable
-        {
-            get { return selectable; }
-            set
-            {
-                selectable = value;
-
-                if (!selectable)
+                if (selectionMode == ListSelectionMode.None)
                 {
                     selectedIndex = -1;
 
@@ -356,104 +305,13 @@
         /// </summary>
         public TemplateList()
         {
-            DoubleBuffered = true;
-
-            scroll.LargeChange = 1;
-            scroll.Maximum = 0;
-            scroll.ValueChanged += (sender, args) => Refresh();
-            scroll.Visible = false;
-            Controls.Add(scroll);
-
             elements = new TemplateElementCollection(this);
             items = new TemplateListItemCollection(this);
         }
 
         //--------------------------------------------------------------------------------
-        // Event
+        // Item
         //--------------------------------------------------------------------------------
-
-        /// <summary>
-        ///
-        /// </summary>
-        private void FireSelectedIndexChanged()
-        {
-            var handler = SelectedIndexChanged;
-            if (handler != null)
-            {
-                handler(this, EventArgs.Empty);
-            }
-        }
-
-        //--------------------------------------------------------------------------------
-        // Layout
-        //--------------------------------------------------------------------------------
-
-        /// <summary>
-        ///
-        /// </summary>
-        /// <param name="e"></param>
-        protected override void OnResize(EventArgs e)
-        {
-            scroll.Top = border ? 1 : 0;
-            scroll.Left = Width - scroll.Width - (border ? 1 : 0);
-            scroll.Height = Height - (border ? 2 : 0);
-            UpdateLayout();
-            base.OnResize(e);
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        /// <param name="index"></param>
-        public void EnsureVisible(int index)
-        {
-            if (index < scroll.Value)
-            {
-                scroll.Value = Math.Max(index, 0);
-            }
-            else if (index > scroll.Value)
-            {
-                scroll.Value = CalcFirstInRectFrom(index);
-            }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public void BeginUpdate()
-        {
-            updating = true;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public void EndUpdate()
-        {
-            updating = false;
-            UpdateLayout();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        private void UpdateLayout()
-        {
-            if ((Width == 0) || (Height == 0))
-            {
-                return;
-            }
-
-            if (updating)
-            {
-                return;
-            }
-
-            scroll.Maximum = items.Count == 0 ? 0 : CalcFirstInRectFrom(items.Count - 1);
-            scroll.Visible = ShowScrollBar || (scroll.Maximum > 0);
-
-            Invalidate();
-        }
 
         /// <summary>
         ///
@@ -501,30 +359,6 @@
         }
 
         //--------------------------------------------------------------------------------
-        // Focus
-        //--------------------------------------------------------------------------------
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="e"></param>
-        protected override void OnGotFocus(EventArgs e)
-        {
-            Invalidate();
-            base.OnGotFocus(e);
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        /// <param name="e"></param>
-        protected override void OnLostFocus(EventArgs e)
-        {
-            Invalidate();
-            base.OnLostFocus(e);
-        }
-
-        //--------------------------------------------------------------------------------
         // Key
         //--------------------------------------------------------------------------------
 
@@ -565,7 +399,7 @@
                 return;
             }
 
-            if (selectable)
+            if (selectionMode != ListSelectionMode.None)
             {
                 if (selectedIndex < 0)
                 {
@@ -583,9 +417,9 @@
             }
             else
             {
-                if (scroll.Value > 0)
+                if (TopIndex > 0)
                 {
-                    scroll.Value--;
+                    TopIndex--;
                 }
             }
         }
@@ -600,7 +434,7 @@
                 return;
             }
 
-            if (selectable)
+            if (selectionMode != ListSelectionMode.None)
             {
                 if (selectedIndex < 0)
                 {
@@ -618,9 +452,9 @@
             }
             else
             {
-                if (scroll.Value < scroll.Maximum)
+                if (TopIndex < ScrollBarMaximum)
                 {
-                    scroll.Value++;
+                    TopIndex++;
                 }
             }
         }
@@ -635,7 +469,7 @@
                 return;
             }
 
-            if (selectable)
+            if (selectionMode != ListSelectionMode.None)
             {
                 if (selectedIndex < 0)
                 {
@@ -659,13 +493,13 @@
             }
             else
             {
-                var index = CalcFirstInRectFrom(scroll.Value);
-                if ((scroll.Value > 0) && (scroll.Value == index))
+                var index = CalcFirstInRectFrom(TopIndex);
+                if ((TopIndex > 0) && (TopIndex == index))
                 {
                     index--;
                 }
 
-                scroll.Value = index;
+                TopIndex = index;
             }
         }
 
@@ -679,7 +513,7 @@
                 return;
             }
 
-            if (selectable)
+            if (selectionMode != ListSelectionMode.None)
             {
                 // Calc page range
                 var current = selectedIndex < 0 ? 0 : selectedIndex;
@@ -698,13 +532,13 @@
             }
             else
             {
-                var index = CalcLastInRectFrom(scroll.Value);
-                if ((scroll.Value < scroll.Maximum) && (scroll.Value == index))
+                var index = CalcLastInRectFrom(TopIndex);
+                if ((TopIndex < ScrollBarMaximum) && (TopIndex == index))
                 {
                     index++;
                 }
 
-                scroll.Value = index;
+                TopIndex = index;
             }
         }
 
@@ -718,7 +552,7 @@
                 return;
             }
 
-            if (selectable)
+            if (selectionMode != ListSelectionMode.None)
             {
                 if (selectedIndex == 0)
                 {
@@ -729,7 +563,7 @@
             }
             else
             {
-                scroll.Value = 0;
+                TopIndex = 0;
             }
         }
 
@@ -743,7 +577,7 @@
                 return;
             }
 
-            if (selectable)
+            if (selectionMode != ListSelectionMode.None)
             {
                 if (selectedIndex == items.Count - 1)
                 {
@@ -754,7 +588,7 @@
             }
             else
             {
-                scroll.Value = scroll.Maximum;
+                TopIndex = ScrollBarMaximum;
             }
         }
 
@@ -765,7 +599,7 @@
         private void SelectTo(int index)
         {
             // Need scroll ?
-            if ((index < scroll.Value) || (index > CalcLastInRectFrom(scroll.Value)))
+            if ((index < TopIndex) || (index > CalcLastInRectFrom(TopIndex)))
             {
                 selectedIndex = index;
 
@@ -791,7 +625,7 @@
         {
             base.OnMouseDown(e);
 
-            if (!selectable)
+            if (selectionMode == ListSelectionMode.None)
             {
                 return;
             }
@@ -834,21 +668,18 @@
         /// 
         /// </summary>
         /// <returns></returns>
-        private Rectangle CalcListRect()
+        protected override int CalcItemCount()
         {
-            var rect = ClientRectangle;
+            return items.Count;
+        }
 
-            if (border)
-            {
-                rect.Inflate(-1, -1);
-            }
-
-            if (scroll.Visible)
-            {
-                rect.Width -= scroll.Width;
-            }
-
-            return rect;
+        /// <summary>
+        ///
+        /// </summary>
+        /// <returns></returns>
+        protected override int CalcBorderWidth()
+        {
+            return border ? 1 : 0;
         }
 
         /// <summary>
@@ -856,7 +687,7 @@
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
-        private int CalcFirstInRectFrom(int index)
+        protected override int CalcFirstInRectFrom(int index)
         {
             var rect = CalcListRect();
 
@@ -880,7 +711,7 @@
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
-        private int CalcLastInRectFrom(int index)
+        protected override int CalcLastInRectFrom(int index)
         {
             var rect = CalcListRect();
 
@@ -910,7 +741,7 @@
             var rect = CalcListRect();
 
             var baseY = rect.Top;
-            var i = scroll.Value;
+            var i = TopIndex;
             while ((baseY < rect.Bottom) && (i < items.Count))
             {
                 var height = itemHeight + (splitter ? 1 : 0);
@@ -934,32 +765,8 @@
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="e"></param>
-        protected override void OnPaintBackground(PaintEventArgs e)
-        {
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="e"></param>
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            if (updating)
-            {
-                return;
-            }
-
-            var g = GetPresentationMedium(e.Graphics);
-            OnDraw(g);
-            NotifyPaintingComplete(e);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
         /// <param name="g"></param>
-        private void OnDraw(Graphics g)
+        protected override void OnDraw(Graphics g)
         {
             // Elements
             var rect = CalcListRect();
@@ -976,7 +783,7 @@
             var baseY = rect.Top;
             var source = designData as ITemplateListDesignData;
             var list = designMode && source != null ? (IList)source.Create() : items;
-            var i = designMode ? 0 : scroll.Value;
+            var i = designMode ? 0 : TopIndex;
             var max = designMode && list != null ? list.Count : items.Count;
 
             if (list != null)
@@ -1095,12 +902,12 @@
                 owner.UpdateLayout();
             }
 
-            bool IList.Contains(object value)
+            public bool Contains(object value)
             {
                 return list.Contains(value);
             }
 
-            int IList.IndexOf(object value)
+            public int IndexOf(object value)
             {
                 return list.IndexOf(value);
             }
@@ -1135,7 +942,7 @@
                 get { return false; }
             }
 
-            object IList.this[int index]
+            public object this[int index]
             {
                 get { return list[index]; }
                 set
