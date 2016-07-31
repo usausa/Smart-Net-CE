@@ -73,6 +73,7 @@
     <Compile Include="ArrayExtensions.cs" />
     <Compile Include="Bcd.cs" />
     <Compile Include="BetweenExtensions.cs" />
+    <Compile Include="Collections\Generic\BinarySearch.cs" />
     <Compile Include="Collections\Generic\CollectionExtensions.cs" />
     <Compile Include="Collections\Generic\Comparers.Chain.cs" />
     <Compile Include="Collections\Generic\Comparers.Comparison.cs" />
