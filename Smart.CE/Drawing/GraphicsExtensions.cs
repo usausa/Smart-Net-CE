@@ -38,23 +38,27 @@
                     var str = line;
                     while (str.Length > 0)
                     {
-                        for (var i = str.Length; i > 0; i--)
+                        var count = 0;
+                        for (var i = 1; i <= str.Length; i++)
                         {
                             var substr = str.Substring(0, i);
                             var size = g.MeasureString(substr, font);
-                            if (size.Width <= width)
+
+                            if (size.Width > width)
                             {
-                                lines.Add(substr);
-                                str = str.Substring(i);
                                 break;
                             }
 
-                            if (i == 1)
-                            {
-                                lines.Add(str.Substring(0, 1));
-                                str = str.Substring(1);
-                            }
+                            count++;
                         }
+
+                        if (count == 0)
+                        {
+                            count = 1;
+                        }
+
+                        lines.Add(str.Substring(0, count));
+                        str = str.Substring(count);
                     }
                 }
             }
