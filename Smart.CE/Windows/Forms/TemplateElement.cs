@@ -67,6 +67,17 @@
             }
         }
 
+        private bool multiline;
+        public bool Multiline
+        {
+            get { return multiline; }
+            set
+            {
+                multiline = value;
+                ParentInvalidate();
+            }
+        }
+
         private bool borderTop;
         public bool BorderTop
         {

@@ -393,7 +393,7 @@
 
                 if (mask != ShadowMask.None)
                 {
-                    g.DrawShadow(text, font, shadow, (int)rc.X, (int)rc.Y, mask);
+                    g.DrawShadow(text, font, shadow, rc.X, rc.Y, mask);
                 }
 
                 using (var brush = new SolidBrush(color))
@@ -404,17 +404,12 @@
             else
             {
                 var texts = g.GetMultilineText(text, font, rect.Width);
-
                 var textSize = g.CalcMultilineTextSize(texts, font);
-                if (mask.IsTop() || mask.IsBottom())
-                {
-                    textSize.Height += texts.Length;
-                }
 
                 var rc = alignment.CalcTextRect(textSize, rect);
                 using (var brush = new SolidBrush(color))
                 {
-                    var top = (int)rc.Top;
+                    var top = rc.Top;
                     foreach (var line in texts)
                     {
                         var size = g.MeasureString(String.IsNullOrEmpty(line) ? " " : line, font);
@@ -422,16 +417,12 @@
 
                         if (mask != ShadowMask.None)
                         {
-                            g.DrawShadow(text, font, shadow, (int)rcLine.X, (int)rcLine.Y, mask);
+                            g.DrawShadow(text, font, shadow, rcLine.X, rcLine.Y, mask);
                         }
 
                         g.DrawString(line, font, brush, rcLine.X, rcLine.Y);
 
-                        top += (int)rcLine.Height;
-                        if (mask.IsTop() || mask.IsBottom())
-                        {
-                            top++;
-                        }
+                        top += rcLine.Height;
                     }
                 }
             }

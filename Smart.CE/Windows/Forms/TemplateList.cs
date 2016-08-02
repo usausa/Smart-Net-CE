@@ -29,7 +29,7 @@
 
         private Color selectedBackColor = SystemColors.Highlight;
 
-        private Color inactiveSelectedForeColor = SystemColors.WindowText;
+        private Color inactiveSelectedForeColor = SystemColors.HighlightText;
 
         private Color inactiveSelectedBackColor = SystemColors.Highlight;
 

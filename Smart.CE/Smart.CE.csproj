@@ -148,6 +148,7 @@
     <Compile Include="EnumExtensions.cs" />
     <Compile Include="EventHandlerExtensions.cs" />
     <Compile Include="Reflection\NonNullableDelegateAccsessor.cs" />
+    <Compile Include="StringEx.cs" />
     <Compile Include="Text\Inflector.cs" />
     <Compile Include="IO\BinaryReaderExtensions.cs" />
     <Compile Include="IO\ByteBuffer.cs" />
@@ -319,6 +320,9 @@
     <Compile Include="Windows\Forms\ButtonState.cs" />
     <Compile Include="Windows\Forms\CheckBoxExtensions.cs" />
     <Compile Include="Windows\Forms\ComboBoxExtensions.cs" />
+    <Compile Include="Windows\Forms\Converters.ConcatConverter.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Windows\Forms\ControlEx.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -351,7 +355,7 @@
     </Compile>
     <Compile Include="Windows\Forms\IMessageFilter.cs" />
     <Compile Include="Windows\Forms\InactivityFilter.cs" />
-    <Compile Include="Windows\Forms\ITemplateConverter.cs" />
+    <Compile Include="Windows\Forms\Converters.cs" />
     <Compile Include="Windows\Forms\ITemplateDesignData.cs">
     </Compile>
     <Compile Include="Windows\Forms\ITemplateListDesignData.cs" />
@@ -399,6 +403,9 @@
     <Compile Include="Windows\Forms\Behaviors.cs" />
     <Compile Include="Windows\Forms\Behaviors.ComboBox.cs" />
     <Compile Include="Windows\Forms\Behaviors.ListView.cs" />
+    <Compile Include="Windows\Forms\Converters.FormatConverter.cs">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="DesignTimeAttributes.xmta" />

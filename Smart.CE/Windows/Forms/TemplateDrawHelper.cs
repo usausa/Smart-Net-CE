@@ -64,7 +64,7 @@
                         color = context.BaseForeColor;
                     }
 
-                    var font = ResolveValue(item, element.Font, element.FontProperty, element.FontConverter);
+                    var font = ResolveValue(item, element.Font, element.FontProperty, element.FontConverter) ?? context.Font;
 
                     var textRect = elementRect;
                     textRect.X += element.Padding.Width;
@@ -76,11 +76,35 @@
                         textRect.Inflate(-1, -1);
                     }
 
-                    var rc = element.TextAlign.CalcTextRect(g.MeasureString(text, font ?? context.Font), textRect);
-
-                    using (var br = new SolidBrush(color))
+                    if (element.Multiline)
                     {
-                        g.DrawString(text, font ?? context.Font, br, rc);
+                        var texts = g.GetMultilineText(text, font, textRect.Width);
+                        var textSize = g.CalcMultilineTextSize(texts, font);
+
+                        var rc = element.TextAlign.CalcTextRect(textSize, textRect);
+
+                        using (var br = new SolidBrush(color))
+                        {
+                            var top = rc.Top;
+                            foreach (var line in texts)
+                            {
+                                var size = g.MeasureString(String.IsNullOrEmpty(line) ? " " : line, font);
+                                var rcLine = element.TextAlign.CalcTextRect(size, rc.Left, top, rc.Width, size.Height);
+
+                                g.DrawString(line, font, br, rcLine.X, rcLine.Y);
+
+                                top += rcLine.Height;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        var rc = element.TextAlign.CalcTextRect(g.MeasureString(text, font), textRect);
+
+                        using (var br = new SolidBrush(color))
+                        {
+                            g.DrawString(text, font, br, rc);
+                        }
                     }
                 }
 

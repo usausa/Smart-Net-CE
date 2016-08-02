@@ -76,14 +76,14 @@
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static SizeF CalcMultilineTextSize(this Graphics g, string[] texts, Font font)
         {
-            var totalWidth = 0;
-            var totalHeight = 0;
+            var totalWidth = 0d;
+            var totalHeight = 0d;
             foreach (var line in texts)
             {
                 var size = g.MeasureString(String.IsNullOrEmpty(line) ? " " : line, font);
 
-                var width = (int)Math.Ceiling(size.Width);
-                var height = (int)Math.Ceiling(size.Height);
+                var width = Math.Ceiling(size.Width);
+                var height = Math.Ceiling(size.Height);
 
                 if (width > totalWidth)
                 {
@@ -92,7 +92,7 @@
                 totalHeight += height;
             }
 
-            return new SizeF(totalWidth, totalHeight);
+            return new SizeF((float)totalWidth, (float)totalHeight);
         }
 
         //--------------------------------------------------------------------------------
@@ -203,7 +203,7 @@
         public static void DrawShadow(this Graphics g, string text, Font font, Color color, RectangleF rect, ContentAlignmentEx textAlign, ShadowMask mask)
         {
             var rc = textAlign.CalcTextRect(g.MeasureString(text, font), rect);
-            DrawShadow(g, text, font, color, (int)rc.X, (int)rc.Y, mask);
+            DrawShadow(g, text, font, color, rc.X, rc.Y, mask);
         }
 
         //--------------------------------------------------------------------------------

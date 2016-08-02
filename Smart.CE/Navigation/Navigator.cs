@@ -148,6 +148,14 @@
             }
         }
 
+        /// <summary>
+        ///
+        /// </summary>
+        public int StackedCount
+        {
+            get { return stacked.Count; }
+        }
+
         #endregion
 
         //--------------------------------------------------------------------------------
