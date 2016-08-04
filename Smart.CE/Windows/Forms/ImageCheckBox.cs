@@ -478,7 +478,7 @@
             }
 
             var textSize = g.MeasureString(Text, Font);
-            var textTop = (ClientRectangle.Height - (int)textSize.Height) / 2;
+            var textTop = (int)((ClientRectangle.Height - textSize.Height) / 2);
             var imageTop = (ClientRectangle.Height - imageSize.Height) / 2;
 
             Rectangle imageRect;

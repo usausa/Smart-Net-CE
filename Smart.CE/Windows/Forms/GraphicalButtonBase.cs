@@ -102,8 +102,7 @@
                 {
                     borderWidth = 0;
                 }
-                if ((borderStyle == BorderStyle.Fixed3D) &&
-                    (borderWidth != 1) && (borderWidth != 2))
+                if ((borderStyle == BorderStyle.Fixed3D) && (borderWidth != 2))
                 {
                     borderWidth = 2;
                 }
@@ -124,8 +123,7 @@
                 {
                     borderStyle = BorderStyle.None;
                 }
-                if ((borderStyle == BorderStyle.Fixed3D) &&
-                    (borderWidth != 1) && (borderWidth != 2))
+                if ((borderStyle == BorderStyle.Fixed3D) && (borderWidth != 2))
                 {
                     borderWidth = 2;
                 }
@@ -620,36 +618,45 @@
                 return;
             }
 
-            Color borderColor;
-            switch (ResolveButtonState())
-            {
-                case ButtonState.Focused:
-                    borderColor = focusedBackColor;
-                    break;
-                case ButtonState.Pressed:
-                    borderColor = pressedBackColor;
-                    break;
-                case ButtonState.Disabled:
-                    borderColor = disabledBackColor;
-                    break;
-                default:
-                    borderColor = BackColor;
-                    break;
-            }
-
             if (BorderStyle == BorderStyle.FixedSingle)
             {
+                Color borderColor;
+                switch (ResolveButtonState())
+                {
+                    case ButtonState.Focused:
+                        borderColor = focusedBackColor;
+                        break;
+                    case ButtonState.Pressed:
+                        borderColor = pressedBackColor;
+                        break;
+                    case ButtonState.Disabled:
+                        borderColor = disabledBackColor;
+                        break;
+                    default:
+                        borderColor = BackColor;
+                        break;
+                }
+
                 g.DrawBorder(Border3DStyle.Flat, borderColor, rect);
             }
             else if (BorderStyle == BorderStyle.Fixed3D)
             {
-                if (BorderWidth == 1)
+                using (var br1 = new SolidBrush(IsPressed ? SystemColors.ControlDarkDark : SystemColors.ControlDark))
+                using (var br2 = new SolidBrush(IsPressed ? SystemColors.ControlDarkDark : SystemColors.ControlLight))
+                using (var br3 = new SolidBrush(IsPressed ? SystemColors.ControlLight : SystemColors.ControlDark))
+                using (var br4 = new SolidBrush(IsPressed ? SystemColors.ControlLightLight : SystemColors.ControlDarkDark))
                 {
-                    g.DrawBorder(IsPressed ? Border3DStyle.SunkenOuter : Border3DStyle.RaisedInner, borderColor, rect);
-                }
-                else
-                {
-                    g.DrawBorder(IsPressed ? Border3DStyle.Sunken : Border3DStyle.Raised, borderColor, rect);
+                    g.FillRectangle(br1, rect.Left, rect.Top, 1, rect.Height - 1);
+                    g.FillRectangle(br1, rect.Left, rect.Top, rect.Width - 1, 1);
+
+                    g.FillRectangle(br2, rect.Left + 1, rect.Top + 1, 1, rect.Height - 3);
+                    g.FillRectangle(br2, rect.Left + 1, rect.Top + 1, rect.Width - 3, 1);
+
+                    g.FillRectangle(br3, rect.Right - 2, rect.Top + 1, 1, rect.Height - 2);
+                    g.FillRectangle(br3, rect.Left + 1, rect.Bottom - 2, rect.Width - 2, 1);
+
+                    g.FillRectangle(br4, rect.Right - 1, rect.Top, 1, rect.Height);
+                    g.FillRectangle(br4, rect.Left, rect.Bottom - 1, rect.Width, 1);
                 }
             }
         }

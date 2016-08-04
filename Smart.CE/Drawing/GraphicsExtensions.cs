@@ -38,23 +38,27 @@
                     var str = line;
                     while (str.Length > 0)
                     {
-                        for (var i = str.Length; i > 0; i--)
+                        var count = 0;
+                        for (var i = 1; i <= str.Length; i++)
                         {
                             var substr = str.Substring(0, i);
                             var size = g.MeasureString(substr, font);
-                            if (size.Width <= width)
+
+                            if (size.Width > width)
                             {
-                                lines.Add(substr);
-                                str = str.Substring(i);
                                 break;
                             }
 
-                            if (i == 1)
-                            {
-                                lines.Add(str.Substring(0, 1));
-                                str = str.Substring(1);
-                            }
+                            count++;
                         }
+
+                        if (count == 0)
+                        {
+                            count = 1;
+                        }
+
+                        lines.Add(str.Substring(0, count));
+                        str = str.Substring(count);
                     }
                 }
             }
@@ -72,14 +76,14 @@
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static SizeF CalcMultilineTextSize(this Graphics g, string[] texts, Font font)
         {
-            var totalWidth = 0;
-            var totalHeight = 0;
+            var totalWidth = 0d;
+            var totalHeight = 0d;
             foreach (var line in texts)
             {
                 var size = g.MeasureString(String.IsNullOrEmpty(line) ? " " : line, font);
 
-                var width = (int)Math.Ceiling(size.Width);
-                var height = (int)Math.Ceiling(size.Height);
+                var width = Math.Ceiling(size.Width);
+                var height = Math.Ceiling(size.Height);
 
                 if (width > totalWidth)
                 {
@@ -88,7 +92,7 @@
                 totalHeight += height;
             }
 
-            return new SizeF(totalWidth, totalHeight);
+            return new SizeF((float)totalWidth, (float)totalHeight);
         }
 
         //--------------------------------------------------------------------------------
@@ -199,7 +203,7 @@
         public static void DrawShadow(this Graphics g, string text, Font font, Color color, RectangleF rect, ContentAlignmentEx textAlign, ShadowMask mask)
         {
             var rc = textAlign.CalcTextRect(g.MeasureString(text, font), rect);
-            DrawShadow(g, text, font, color, (int)rc.X, (int)rc.Y, mask);
+            DrawShadow(g, text, font, color, rc.X, rc.Y, mask);
         }
 
         //--------------------------------------------------------------------------------
@@ -409,6 +413,42 @@
         public static void DrawBorder(this Graphics g, Border3DStyle style, Color color, Rectangle rect)
         {
             DrawBorder(g, style, color, rect.X, rect.Y, rect.Width, rect.Height);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="g"></param>
+        /// <param name="color"></param>
+        /// <param name="rect"></param>
+        /// <param name="borderTop"></param>
+        /// <param name="borderBottom"></param>
+        /// <param name="borderLeft"></param>
+        /// <param name="borderRight"></param>
+        public static void DrawBorder(this Graphics g, Color color, Rectangle rect, bool borderTop, bool borderBottom, bool borderLeft, bool borderRight)
+        {
+            if (borderTop || borderBottom || borderLeft || borderRight)
+            {
+                using (var pen = new Pen(color))
+                {
+                    if (borderTop)
+                    {
+                        g.DrawLine(pen, rect.Left, rect.Top, rect.Right - 1, rect.Top);
+                    }
+                    if (borderBottom)
+                    {
+                        g.DrawLine(pen, rect.Left, rect.Bottom - 1, rect.Right, rect.Bottom - 1);
+                    }
+                    if (borderLeft)
+                    {
+                        g.DrawLine(pen, rect.Left, rect.Top, rect.Left, rect.Bottom - 1);
+                    }
+                    if (borderRight)
+                    {
+                        g.DrawLine(pen, rect.Right - 1, rect.Top, rect.Right - 1, rect.Bottom - 1);
+                    }
+                }
+            }
         }
 
         //--------------------------------------------------------------------------------

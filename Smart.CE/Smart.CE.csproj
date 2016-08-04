@@ -47,7 +47,7 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <RunCodeAnalysis>true</RunCodeAnalysis>
-    <CodeAnalysisRules>-Microsoft.Design#CA2210;-Microsoft.Design#CA1005;-Microsoft.Design#CA1020;-Microsoft.Design#CA1006;-Microsoft.Design#CA1008;-Microsoft.Design#CA1028;-Microsoft.Design#CA1004;-Microsoft.Usage#CA2205;-Microsoft.Naming#CA1702;-Microsoft.Naming#CA1709;-Microsoft.Naming#CA1704;-Microsoft.Naming#CA1720;-Microsoft.Naming#CA1707;-Microsoft.Naming#CA1726</CodeAnalysisRules>
+    <CodeAnalysisRules>-Microsoft.Design#CA2210;-Microsoft.Design#CA1005;-Microsoft.Design#CA1020;-Microsoft.Design#CA1006;-Microsoft.Design#CA1008;-Microsoft.Design#CA1028;-Microsoft.Design#CA1004;-Microsoft.Design#CA1034;-Microsoft.Usage#CA2205;-Microsoft.Naming#CA1702;-Microsoft.Naming#CA1709;-Microsoft.Naming#CA1704;-Microsoft.Naming#CA1720;-Microsoft.Naming#CA1707;-Microsoft.Naming#CA1726</CodeAnalysisRules>
     <NoWarn>0109</NoWarn>
   </PropertyGroup>
   <ItemGroup>
@@ -57,7 +57,10 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SqlClient, Version=3.0.3600.0, Culture=neutral, PublicKeyToken=3be235df1c8d2ad3, processorArchitecture=MSIL" />
-    <Reference Include="System.Data.SqlServerCe, Version=3.5.0.0, Culture=neutral, PublicKeyToken=3be235df1c8d2ad3, processorArchitecture=MSIL" />
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=3be235df1c8d2ad3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -70,6 +73,7 @@
     <Compile Include="ArrayExtensions.cs" />
     <Compile Include="Bcd.cs" />
     <Compile Include="BetweenExtensions.cs" />
+    <Compile Include="Collections\Generic\BinarySearch.cs" />
     <Compile Include="Collections\Generic\CollectionExtensions.cs" />
     <Compile Include="Collections\Generic\Comparers.Chain.cs" />
     <Compile Include="Collections\Generic\Comparers.Comparison.cs" />
@@ -144,6 +148,7 @@
     <Compile Include="EnumExtensions.cs" />
     <Compile Include="EventHandlerExtensions.cs" />
     <Compile Include="Reflection\NonNullableDelegateAccsessor.cs" />
+    <Compile Include="StringEx.cs" />
     <Compile Include="Text\Inflector.cs" />
     <Compile Include="IO\BinaryReaderExtensions.cs" />
     <Compile Include="IO\ByteBuffer.cs" />
@@ -315,12 +320,18 @@
     <Compile Include="Windows\Forms\ButtonState.cs" />
     <Compile Include="Windows\Forms\CheckBoxExtensions.cs" />
     <Compile Include="Windows\Forms\ComboBoxExtensions.cs" />
+    <Compile Include="Windows\Forms\Converters.ConcatConverter.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Windows\Forms\ControlEx.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Windows\Forms\ControlExtensions.cs" />
     <Compile Include="Windows\Forms\CreateParams.cs" />
     <Compile Include="Windows\Forms\CursorChanger.cs" />
+    <Compile Include="Windows\Forms\CustomListBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Windows\Forms\FormExtensions.cs" />
     <Compile Include="Windows\Forms\GradationStyle.cs" />
     <Compile Include="Windows\Forms\GraphicalButton.cs">
@@ -344,12 +355,17 @@
     </Compile>
     <Compile Include="Windows\Forms\IMessageFilter.cs" />
     <Compile Include="Windows\Forms\InactivityFilter.cs" />
+    <Compile Include="Windows\Forms\Converters.cs" />
+    <Compile Include="Windows\Forms\ITemplateDesignData.cs">
+    </Compile>
+    <Compile Include="Windows\Forms\ITemplateListDesignData.cs" />
     <Compile Include="Windows\Forms\KeyboardHook.cs" />
     <Compile Include="Windows\Forms\KeyDataEventArgs.cs" />
     <Compile Include="Windows\Forms\LinearGuage.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Windows\Forms\ListBoxExtensions.cs" />
+    <Compile Include="Windows\Forms\ListSelectionMode.cs" />
     <Compile Include="Windows\Forms\MessageHook.cs" />
     <Compile Include="Windows\Forms\NativeMethods.cs" />
     <Compile Include="Windows\Forms\NativeWindow.cs" />
@@ -363,18 +379,33 @@
     <Compile Include="Windows\Forms\SipButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Windows\Forms\SipButtonCollection.cs" />
     <Compile Include="Windows\Forms\SipControl.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Windows\Forms\SipEventArgs.cs" />
     <Compile Include="Windows\Forms\SystemInformationEx.cs" />
     <Compile Include="Windows\Forms\Behaviors.TextBox.cs" />
+    <Compile Include="Windows\Forms\TemplateAccessorCache.cs" />
+    <Compile Include="Windows\Forms\TemplateDrawContext.cs" />
+    <Compile Include="Windows\Forms\TemplateDrawHelper.cs" />
+    <Compile Include="Windows\Forms\TemplateElement.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\TemplateElementCollection.cs" />
+    <Compile Include="Windows\Forms\TemplateLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\TemplateList.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Windows\Forms\TextBoxExtensions.cs" />
     <Compile Include="Windows\Forms\WndProcCallback.cs" />
     <Compile Include="Windows\Forms\Behaviors.cs" />
     <Compile Include="Windows\Forms\Behaviors.ComboBox.cs" />
     <Compile Include="Windows\Forms\Behaviors.ListView.cs" />
+    <Compile Include="Windows\Forms\Converters.FormatConverter.cs">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="DesignTimeAttributes.xmta" />
