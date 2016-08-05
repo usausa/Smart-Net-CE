@@ -5,7 +5,7 @@
     /// <summary>
     /// Controlビューベースクラス
     /// </summary>
-    public class ControlViewBase : UserControl, INavigatorAware, IViewEventSupport, IViewNotifySupport
+    public class ControlViewBase : UserControl, INavigatorAware, IViewConfirmSupport, IViewEventSupport, IViewNotifySupport
     {
         /// <summary>
         /// ナビゲーター
@@ -19,6 +19,15 @@
         public void SetNavigator(Navigator navigator)
         {
             Navigator = navigator;
+        }
+
+        /// <summary>
+        /// ビュー確認
+        /// </summary>
+        /// <param name="args"></param>
+        public virtual void OnViewConfirm(ViewConfirmEventArgs args)
+        {
+            // please override
         }
 
         /// <summary>

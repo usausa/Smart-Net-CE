@@ -147,6 +147,8 @@
     <Compile Include="EnumEx.cs" />
     <Compile Include="EnumExtensions.cs" />
     <Compile Include="EventHandlerExtensions.cs" />
+    <Compile Include="Navigation\IViewConfirmSupport.cs" />
+    <Compile Include="Navigation\ViewConfirmEventArgs.cs" />
     <Compile Include="Reflection\NonNullableDelegateAccsessor.cs" />
     <Compile Include="StringEx.cs" />
     <Compile Include="Text\Inflector.cs" />
