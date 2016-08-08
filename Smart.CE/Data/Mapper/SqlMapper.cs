@@ -202,7 +202,7 @@
 
                     var result = cmd.ExecuteScalar();
 
-                    return (T)Converter.Convert(result, typeof(T));
+                    return result == DBNull.Value ? default(T) : (T)Converter.Convert(result, typeof(T));
                 }
                 finally
                 {

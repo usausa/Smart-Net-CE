@@ -419,7 +419,7 @@
         /// <param name="parameters"></param>
         private void InternalForward(object id, IViewParameters parameters)
         {
-            if (!ConfirmNavigate())
+            if (!ConfirmNavigate(true))
             {
                 return;
             }
@@ -454,7 +454,7 @@
         /// <param name="parameters"></param>
         private void InternalPush(object id, IViewParameters parameters)
         {
-            if (!ConfirmNavigate())
+            if (!ConfirmNavigate(false))
             {
                 return;
             }
@@ -516,7 +516,7 @@
         /// <param name="parameters"></param>
         private void InternalPop(int level, IViewParameters parameters)
         {
-            if (!ConfirmNavigate())
+            if (!ConfirmNavigate(true))
             {
                 return;
             }
@@ -560,10 +560,11 @@
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="isClosing"></param>
         /// <returns></returns>
-        private bool ConfirmNavigate()
+        private bool ConfirmNavigate(bool isClosing)
         {
-            var args = new ViewConfirmEventArgs();
+            var args = new ViewConfirmEventArgs(isClosing);
 
             var view = CurrentView;
             if (view != null)
