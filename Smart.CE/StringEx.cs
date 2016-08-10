@@ -1,5 +1,7 @@
 ﻿namespace Smart
 {
+    using System;
+    using System.Linq;
     using System.Text;
 
     /// <summary>
@@ -29,6 +31,16 @@
             }
 
             return sb.ToString();
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static bool IsNullOrWhiteSpace(string value)
+        {
+            return (value == null) || value.All(Char.IsWhiteSpace);
         }
     }
 }
