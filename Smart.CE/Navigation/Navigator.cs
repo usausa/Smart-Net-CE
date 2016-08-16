@@ -76,6 +76,8 @@
 
         #region <イベント>
 
+        public event EventHandler<ViewConfirmEventArgs> Confirm;
+
         public event EventHandler<ViewForwardEventArgs> Forwarding;
 
         public event EventHandler<ViewExitEventArgs> Exited;
@@ -417,6 +419,11 @@
         /// <param name="parameters"></param>
         private void InternalForward(object id, IViewParameters parameters)
         {
+            if (!ConfirmNavigate(true))
+            {
+                return;
+            }
+
             ViewInfo info;
             if (!idToViewType.TryGetValue(id, out info))
             {
@@ -447,6 +454,11 @@
         /// <param name="parameters"></param>
         private void InternalPush(object id, IViewParameters parameters)
         {
+            if (!ConfirmNavigate(false))
+            {
+                return;
+            }
+
             ViewInfo info;
             if (!idToViewType.TryGetValue(id, out info))
             {
@@ -504,6 +516,11 @@
         /// <param name="parameters"></param>
         private void InternalPop(int level, IViewParameters parameters)
         {
+            if (!ConfirmNavigate(true))
+            {
+                return;
+            }
+
             InternalNavigate(parameters, () =>
             {
                 // 前画面破棄
@@ -538,6 +555,42 @@
             {
                 DoInternalNavigate(parameters, updateStack, postProcess);
             }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="isClosing"></param>
+        /// <returns></returns>
+        private bool ConfirmNavigate(bool isClosing)
+        {
+            var args = new ViewConfirmEventArgs(isClosing);
+
+            var view = CurrentView;
+            if (view != null)
+            {
+                var target = provider.ResolveEventTarget(view);
+                var support = target as IViewConfirmSupport;
+                if (support != null)
+                {
+                    support.OnViewConfirm(args);
+                    if (args.Cancel)
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            if (Confirm != null)
+            {
+                Confirm(this, args);
+                if (args.Cancel)
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         /// <summary>

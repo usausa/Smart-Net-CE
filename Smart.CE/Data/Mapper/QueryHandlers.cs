@@ -67,16 +67,11 @@
             {
                 var entity = (IDictionary<string, object>)factory();
 
-                foreach (var column in columns)
+                for (var i = 0; i < columns.Length; i++)
                 {
-                    var value = reader[column];
+                    var column = columns[i];
 
-                    if (value == DBNull.Value)
-                    {
-                        value = null;
-                    }
-
-                    entity[column] = value;
+                    entity[column] = reader.IsDBNull(i) ? null : reader[column];
                 }
 
                 yield return (T)entity;
@@ -145,14 +140,20 @@
                             continue;
                         }
 
-                        var value = reader[columns[i]];
-
-                        if (accessor.Type != value.GetType())
+                        if (reader.IsDBNull(i))
                         {
-                            value = converter.Convert(value, accessor.Type);
+                            accessor.SetValue(entity, accessor.Type.GetDefaultValue());
                         }
+                        else
+                        {
+                            var value = reader[columns[i]];
+                            if (accessor.Type != value.GetType())
+                            {
+                                value = converter.Convert(value, accessor.Type);
+                            }
 
-                        accessor.SetValue(entity, value);
+                            accessor.SetValue(entity, value);
+                        }
                     }
 
                     yield return entity;
