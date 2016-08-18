@@ -9,7 +9,7 @@
     /// <typeparam name="T1"></typeparam>
     /// <typeparam name="T2"></typeparam>
     [Serializable]
-    public sealed class Tuple<T1, T2>
+    public struct Tuple<T1, T2> : IEquatable<Tuple<T1, T2>>
     {
         private readonly T1 item1;
         private readonly T2 item2;
@@ -42,6 +42,26 @@
             hash = (hash * 23) + (Equals(item2, default(T2)) ? 0 : item2.GetHashCode());
             return hash;
         }
+
+        public static bool operator ==(Tuple<T1, T2> left, Tuple<T1, T2> right)
+        {
+            return Equals(left, right);
+        }
+
+        public static bool operator !=(Tuple<T1, T2> left, Tuple<T1, T2> right)
+        {
+            return !Equals(left, right);
+        }
+
+        public override bool Equals(object obj)
+        {
+            return !ReferenceEquals(null, obj) && obj.GetType() == GetType() && Equals((Tuple<T1, T2>)obj);
+        }
+
+        public bool Equals(Tuple<T1, T2> other)
+        {
+            return Item1.Equals(other.Item1) && Item2.Equals(other.Item2);
+        }
     }
 
     /// <summary>
@@ -51,7 +71,7 @@
     /// <typeparam name="T2"></typeparam>
     /// <typeparam name="T3"></typeparam>
     [Serializable]
-    public sealed class Tuple<T1, T2, T3>
+    public struct Tuple<T1, T2, T3> : IEquatable<Tuple<T1, T2, T3>>
     {
         private readonly T1 item1;
         private readonly T2 item2;
@@ -92,6 +112,26 @@
             hash = (hash * 23) + (Equals(item3, default(T3)) ? 0 : item3.GetHashCode());
             return hash;
         }
+
+        public static bool operator ==(Tuple<T1, T2, T3> left, Tuple<T1, T2, T3> right)
+        {
+            return Equals(left, right);
+        }
+
+        public static bool operator !=(Tuple<T1, T2, T3> left, Tuple<T1, T2, T3> right)
+        {
+            return !Equals(left, right);
+        }
+
+        public override bool Equals(object obj)
+        {
+            return !ReferenceEquals(null, obj) && obj.GetType() == GetType() && Equals((Tuple<T1, T2, T3>)obj);
+        }
+
+        public bool Equals(Tuple<T1, T2, T3> other)
+        {
+            return Item1.Equals(other.Item1) && Item2.Equals(other.Item2) && Item3.Equals(other.Item3);
+        }
     }
 
     /// <summary>
@@ -102,7 +142,7 @@
     /// <typeparam name="T3"></typeparam>
     /// <typeparam name="T4"></typeparam>
     [Serializable]
-    public sealed class Tuple<T1, T2, T3, T4>
+    public struct Tuple<T1, T2, T3, T4> : IEquatable<Tuple<T1, T2, T3, T4>>
     {
         private readonly T1 item1;
         private readonly T2 item2;
@@ -150,6 +190,26 @@
             hash = (hash * 23) + (Equals(item3, default(T3)) ? 0 : item3.GetHashCode());
             hash = (hash * 23) + (Equals(item4, default(T4)) ? 0 : item4.GetHashCode());
             return hash;
+        }
+
+        public static bool operator ==(Tuple<T1, T2, T3, T4> left, Tuple<T1, T2, T3, T4> right)
+        {
+            return Equals(left, right);
+        }
+
+        public static bool operator !=(Tuple<T1, T2, T3, T4> left, Tuple<T1, T2, T3, T4> right)
+        {
+            return !Equals(left, right);
+        }
+
+        public override bool Equals(object obj)
+        {
+            return !ReferenceEquals(null, obj) && obj.GetType() == GetType() && Equals((Tuple<T1, T2, T3, T4>)obj);
+        }
+
+        public bool Equals(Tuple<T1, T2, T3, T4> other)
+        {
+            return Item1.Equals(other.Item1) && Item2.Equals(other.Item2) && Item3.Equals(other.Item3) && Item4.Equals(other.Item4);
         }
     }
 }

@@ -570,10 +570,10 @@
             if (view != null)
             {
                 var target = provider.ResolveEventTarget(view);
-                var support = target as IViewConfirmSupport;
-                if (support != null)
+                var confirm = target as IViewConfirmRequest;
+                if (confirm != null)
                 {
-                    support.OnViewConfirm(args);
+                    confirm.OnViewConfirm(args);
                     if (args.Cancel)
                     {
                         return false;

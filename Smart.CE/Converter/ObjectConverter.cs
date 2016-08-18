@@ -5,12 +5,19 @@
     using System.Globalization;
     using System.Linq;
 
+    using Smart.Collections.Generic;
+    using Smart.Converter.Converters;
+
     /// <summary>
     ///
     /// </summary>
     public class ObjectConverter
     {
         private static readonly ObjectConverter Instance = new ObjectConverter();
+
+        private readonly Dictionary<TypePair, Func<TypePair, object, object>> converterCache = new Dictionary<TypePair, Func<TypePair, object, object>>();
+
+        private IList<IConverterFactory> factories;
 
         /// <summary>
         ///
@@ -23,31 +30,34 @@
         /// <summary>
         ///
         /// </summary>
-        private IList<IObjectConverter> converters;
-
-        /// <summary>
-        ///
-        /// </summary>
         public ObjectConverter()
         {
-            ResetConverters();
+            ResetFactories();
         }
 
         /// <summary>
         ///
         /// </summary>
         /// <param name="list"></param>
-        public void SetConverters(IList<IObjectConverter> list)
+        public void SetFactories(IList<IConverterFactory> list)
         {
-            converters = list;
+            factories = list;
+            lock (converterCache)
+            {
+                converterCache.Clear();
+            }
         }
 
         /// <summary>
         ///
         /// </summary>
-        public void ResetConverters()
+        public void ResetFactories()
         {
-            converters = DefaultObjectConverters.Create();
+            factories = DefaultObjectFactories.Create();
+            lock (converterCache)
+            {
+                converterCache.Clear();
+            }
         }
 
         /// <summary>
@@ -71,13 +81,33 @@
         {
             try
             {
-                var converter = converters.FirstOrDefault(_ => _.IsMatch(value, targetType));
-                if (converter == null)
+                if (value == null)
                 {
-                    throw new ObjectConverterException(String.Format(CultureInfo.InvariantCulture, "Type {0} can't convert to {1}", value == null ? "null" : value.GetType().ToString(), targetType));
+                    return targetType.GetDefaultValue();
                 }
 
-                return converter.Convert(value, targetType, this);
+                var sourceType = value.GetType();
+                if (sourceType == (targetType.IsNullableType() ? Nullable.GetUnderlyingType(targetType) : targetType))
+                {
+                    return value;
+                }
+
+                var typePair = new TypePair(sourceType, targetType);
+                Func<TypePair, object, object> converter;
+                lock (converterCache)
+                {
+                    if (!converterCache.TryGetValue(typePair, out converter))
+                    {
+                        converter = factories.Select(_ => _.GetConverter(typePair)).FirstOrDefault(_ => _ != null);
+                        converterCache[typePair] = converter;
+                    }
+                }
+                if (converter == null)
+                {
+                    throw new ObjectConverterException(String.Format(CultureInfo.InvariantCulture, "Type {0} can't convert to {1}", value.GetType().ToString(), targetType));
+                }
+
+                return converter(typePair, value);
             }
             catch (Exception ex)
             {

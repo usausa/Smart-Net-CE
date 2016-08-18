@@ -5,7 +5,7 @@
     /// <summary>
     /// Controlビューベースクラス
     /// </summary>
-    public class ControlViewBase : UserControl, INavigatorAware, IViewConfirmSupport, IViewEventSupport, IViewNotifySupport
+    public class ControlViewBase : UserControl, INavigatorAware, IViewConfirmRequest, IViewEventSupport, IViewNotifySupport
     {
         /// <summary>
         /// ナビゲーター
