@@ -21,10 +21,15 @@
         /// <param name="context"></param>
         public static void DrawElements(Graphics g, Rectangle rect, object item, IList elements, TemplateDrawContext context)
         {
+            var current = g.Clip;
+
             foreach (TemplateElement element in elements)
             {
                 var elementRect = new Rectangle(rect.X + element.Point.X, rect.Y + element.Point.Y, element.Size.Width, element.Size.Height);
+                var elementRegion = new Region(elementRect);
                 var hasBorder = element.BorderTop || element.BorderBottom || element.BorderLeft || element.BorderRight;
+
+                g.Clip = elementRegion;
 
                 // Background
                 if (!context.PreferBaseBackColor)
@@ -103,7 +108,11 @@
 
                         using (var br = new SolidBrush(color))
                         {
+                            g.Clip = new Region(textRect);
+
                             g.DrawString(text, font, br, rc);
+
+                            g.Clip = elementRegion;
                         }
                     }
                 }
@@ -120,6 +129,8 @@
                     g.DrawBorder(color, elementRect, element.BorderTop, element.BorderBottom, element.BorderLeft, element.BorderRight);
                 }
             }
+
+            g.Clip = current;
         }
 
         /// <summary>
