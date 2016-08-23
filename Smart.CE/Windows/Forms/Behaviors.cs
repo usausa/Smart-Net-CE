@@ -43,7 +43,9 @@
 
             foreach (var behaivor in behaivors)
             {
+                var tempBehavior = behaivor;
                 behaivor.Attach(control);
+                control.Disposed += (sender, args) => tempBehavior.Detach(control);
             }
         }
     }
