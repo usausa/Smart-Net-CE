@@ -1,6 +1,7 @@
 ﻿namespace Smart.Text.Japanese
 {
     using System;
+    using System.Collections.Generic;
     using System.Text;
 
     /// <summary>
@@ -157,6 +158,69 @@
         public static byte[] GetFixedBytes(string str, int length)
         {
             return GetFixedBytes(str, length, FixedAlignment.Left, 0x20);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="length"></param>
+        /// <returns></returns>
+        public static string GetLimitString(string str, int length)
+        {
+            var bytes = Singleton.GetBytes(str);
+            if (bytes.Length <= length)
+            {
+                return str;
+            }
+
+            if (((bytes[length - 1] >= 0x81) && (bytes[length - 1] <= 0x9f)) ||
+                ((bytes[length - 1] >= 0xe0) && (bytes[length - 1] <= 0xfc)))
+            {
+                length = length - 1;
+            }
+
+            return Singleton.GetString(bytes, 0, length);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="length"></param>
+        /// <returns></returns>
+        public static string[] SplitLimitString(string str, int length)
+        {
+            var bytes = Singleton.GetBytes(str);
+            if (bytes.Length <= length)
+            {
+                return new[] { str };
+            }
+
+            var list = new List<string>();
+            var start = 0;
+            while (start < bytes.Length)
+            {
+                var left = bytes.Length - start;
+                int count;
+                if (left < length)
+                {
+                    count = left;
+                }
+                else
+                {
+                    var offset = start + length - 1;
+                    count = ((bytes[offset] >= 0x81) && (bytes[offset] <= 0x9f)) ||
+                            ((bytes[offset] >= 0xe0) && (bytes[offset] <= 0xfc))
+                        ? length - 1
+                        : length;
+                }
+
+                list.Add(Singleton.GetString(bytes, start, count));
+                start += count;
+            }
+
+            return list.ToArray();
         }
     }
 }

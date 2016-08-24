@@ -3,7 +3,7 @@
     /// <summary>
     /// 
     /// </summary>
-    public interface IViewConfirmSupport
+    public interface IViewConfirmRequest
     {
         /// <summary>
         /// 
