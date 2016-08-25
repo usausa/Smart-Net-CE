@@ -65,7 +65,7 @@
         /// </summary>
         /// <param name="processId"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Interoperability", "CA1404:CallGetLastErrorImmediatelyAfterPInvoke", Justification = "No problem")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Interoperability", "CA1404:CallGetLastErrorImmediatelyAfterPInvoke", Justification = "Ignore")]
         public static ModuleEntry[] GetModules(uint processId)
         {
             var handle = NativeMethods.CreateToolhelp32Snapshot(CreateToolhelp32Flags.SNAPMODULE, processId);

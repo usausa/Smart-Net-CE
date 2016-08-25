@@ -22,7 +22,7 @@
         ///
         /// </summary>
         /// <param name="handle"></param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Interoperability", "CA1404:CallGetLastErrorImmediatelyAfterPInvoke", Justification = "No problem")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Interoperability", "CA1404:CallGetLastErrorImmediatelyAfterPInvoke", Justification = "Ignore")]
         private EventWaitHandleEx(IntPtr handle)
         {
             if (handle == IntPtr.Zero)
@@ -62,7 +62,7 @@
         /// <param name="name"></param>
         /// <param name="createdNew"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters", Justification = "Compatibility")]
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Interoperability", "CA1404:CallGetLastErrorImmediatelyAfterPInvoke", Justification = "No problem")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Interoperability", "CA1404:CallGetLastErrorImmediatelyAfterPInvoke", Justification = "Ignore")]
         public EventWaitHandleEx(bool initialState, EventResetMode mode, string name, out bool createdNew)
         {
             var handle = NativeMethods.CreateEvent(IntPtr.Zero, mode == EventResetMode.ManualReset, initialState, name);

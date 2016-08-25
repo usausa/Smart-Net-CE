@@ -228,7 +228,7 @@
         /// <param name="timeout"></param>
         /// <param name="options"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Interoperability", "CA1404:CallGetLastErrorImmediatelyAfterPInvoke", Justification = "No problem")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Interoperability", "CA1404:CallGetLastErrorImmediatelyAfterPInvoke", Justification = "Ignore")]
         private PingReply InternalSend(IPAddress address, byte[] buffer, int timeout, PingOptions options)
         {
             if (handle == IntPtr.Zero)

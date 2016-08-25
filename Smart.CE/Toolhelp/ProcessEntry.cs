@@ -68,7 +68,7 @@
         ///
         /// </summary>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Interoperability", "CA1404:CallGetLastErrorImmediatelyAfterPInvoke", Justification = "No problem")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Interoperability", "CA1404:CallGetLastErrorImmediatelyAfterPInvoke", Justification = "Ignore")]
         public static ProcessEntry[] GetProcesses()
         {
             var handle = NativeMethods.CreateToolhelp32Snapshot(CreateToolhelp32Flags.SNAPNOHEAPS | CreateToolhelp32Flags.SNAPPROCESS, 0);

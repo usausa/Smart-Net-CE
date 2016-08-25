@@ -7,7 +7,7 @@
     /// <summary>
     ///
     /// </summary>
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1049:TypesThatOwnNativeResourcesShouldBeDisposable", Justification = "No problem")]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1049:TypesThatOwnNativeResourcesShouldBeDisposable", Justification = "Ignore")]
     public class MessageHook
     {
         private static readonly Dictionary<IntPtr, MessageHook> Hooks = new Dictionary<IntPtr, MessageHook>();
