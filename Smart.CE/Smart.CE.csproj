@@ -92,8 +92,11 @@
     <Compile Include="Collections\Generic\LinkedHashMap.cs" />
     <Compile Include="Collections\Generic\ListExtensions.cs" />
     <Compile Include="Collections\Specialized\NameValueCollectionExtensions.cs" />
+    <Compile Include="ComponentModel\ComponentContainer.cs" />
     <Compile Include="ComponentModel\ComponentExtensions.cs" />
     <Compile Include="ComponentModel\DataAnnotations\DisplayAttribute.cs" />
+    <Compile Include="ComponentModel\DisposableObject.cs" />
+    <Compile Include="ComponentModel\IComponentContainer.cs" />
     <Compile Include="Configuration\AppSettingsSection.cs" />
     <Compile Include="Configuration\Configuration.cs" />
     <Compile Include="Configuration\ConfigurationManager.cs" />

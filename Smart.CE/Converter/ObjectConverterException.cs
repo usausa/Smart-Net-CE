@@ -1,16 +1,11 @@
 ﻿namespace Smart.Converter
 {
     using System;
-#if !PCL
-    using System.Runtime.Serialization;
-#endif
 
     /// <summary>
     ///
     /// </summary>
-#if !PCL
     [Serializable]
-#endif
     public class ObjectConverterException : Exception
     {
         /// <summary>
