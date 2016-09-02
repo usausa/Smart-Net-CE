@@ -282,7 +282,7 @@
         /// <param name="id">画面ID</param>
         public void Forward(object id)
         {
-            Forward(id, null);
+            InternalForward(id, null);
         }
 
         /// <summary>
@@ -301,7 +301,7 @@
         /// <param name="id">画面ID</param>
         public void Push(object id)
         {
-            Push(id, null);
+            InternalPush(id, null);
         }
 
         /// <summary>
@@ -319,7 +319,7 @@
         /// </summary>
         public void Pop()
         {
-            Pop(1, null);
+            InternalPop(1, null);
         }
 
         /// <summary>
@@ -328,7 +328,7 @@
         /// <param name="parameters">パラメータ</param>
         public void Pop(IViewParameters parameters)
         {
-            Pop(1, parameters);
+            InternalPop(1, parameters);
         }
 
         /// <summary>
@@ -337,7 +337,7 @@
         /// <param name="level">ポップ数</param>
         public void Pop(int level)
         {
-            Pop(level, null);
+            InternalPop(level, null);
         }
 
         /// <summary>
@@ -347,69 +347,47 @@
         /// <param name="parameters">パラメータ</param>
         public void Pop(int level, IViewParameters parameters)
         {
-            if (level < 1)
-            {
-                throw new ArgumentOutOfRangeException("level");
-            }
-
-            if (stacked.Count - 1 < level)
-            {
-                return;
-            }
-
             InternalPop(level, parameters);
         }
 
         /// <summary>
-        /// スタック型画面遷移(ポップ or フォワード)
+        /// スタック型画面遷移(ポップフォワード)
         /// </summary>
         /// <param name="id">画面ID</param>
-        public void PopOrForward(object id)
+        public void PopAndForward(object id)
         {
-            PopOrForward(id, stacked.Count, null);
+            InternalPopAndForward(id, stacked.Count, null);
         }
 
         /// <summary>
-        /// スタック型画面遷移(ポップ or フォワード)
+        /// スタック型画面遷移(ポップフォワード)
         /// </summary>
         /// <param name="id">画面ID</param>
         /// <param name="level">ポップ数</param>
-        public void PopOrForward(object id, int level)
+        public void PopAndForward(object id, int level)
         {
-            PopOrForward(id, level, null);
+            InternalPopAndForward(id, level, null);
         }
 
         /// <summary>
-        /// スタック型画面遷移(ポップ or フォワード)
+        /// スタック型画面遷移(ポップフォワード)
         /// </summary>
         /// <param name="id">画面ID</param>
         /// <param name="parameters">パラメータ</param>
-        public void PopOrForward(object id, IViewParameters parameters)
+        public void PopAndForward(object id, IViewParameters parameters)
         {
-            PopOrForward(id, stacked.Count, parameters);
+            InternalPopAndForward(id, stacked.Count, parameters);
         }
 
         /// <summary>
-        /// スタック型画面遷移(ポップ or フォワード)
+        /// スタック型画面遷移(ポップフォワード)
         /// </summary>
         /// <param name="id">画面ID</param>
         /// <param name="level">ポップ数</param>
         /// <param name="parameters">パラメータ</param>
-        public void PopOrForward(object id, int level, IViewParameters parameters)
+        public void PopAndForward(object id, int level, IViewParameters parameters)
         {
-            if (level < 0)
-            {
-                throw new ArgumentOutOfRangeException("level");
-            }
-
-            if (stacked.Count < level)
-            {
-                InternalPop(level, parameters);
-            }
-            else
-            {
-                InternalForward(id, parameters);
-            }
+            InternalPopAndForward(id, level, parameters);
         }
 
         /// <summary>
@@ -516,6 +494,11 @@
         /// <param name="parameters"></param>
         private void InternalPop(int level, IViewParameters parameters)
         {
+            if ((level < 1) || (level > stacked.Count - 1))
+            {
+                throw new ArgumentOutOfRangeException("level");
+            }
+
             if (!ConfirmNavigate(true))
             {
                 return;
@@ -536,6 +519,51 @@
                 stacked.RemoveRange(stacked.Count - level, level);
 
                 return true;
+            }, DisposeView);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="level"></param>
+        /// <param name="parameters"></param>
+        private void InternalPopAndForward(object id, int level, IViewParameters parameters)
+        {
+            if ((level < 1) || (level > stacked.Count))
+            {
+                throw new ArgumentOutOfRangeException("level");
+            }
+
+            if (!ConfirmNavigate(true))
+            {
+                return;
+            }
+
+            ViewInfo info;
+            if (!idToViewType.TryGetValue(id, out info))
+            {
+                return;
+            }
+
+            InternalNavigate(parameters, () =>
+            {
+                // 前画面破棄
+                ViewClose(CurrentView);
+
+                // 中間スタック破棄
+                for (var i = stacked.Count - 2; i >= stacked.Count - level; i--)
+                {
+                    ViewClose(stacked[i].View);
+                    DisposeView(stacked[i].View);
+                }
+
+                stacked.RemoveRange(stacked.Count - level, level);
+
+                // 新規スタック
+                stacked.Add(new StackInfo(info, CreateView(info.Type)));
+
+                return false;
             }, DisposeView);
         }
 
