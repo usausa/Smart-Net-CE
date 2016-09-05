@@ -108,8 +108,16 @@
                 return DbType.Object;
             }
 
-            var type = value.GetType();
+            return LookupDbType(value.GetType());
+        }
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        public DbType LookupDbType(Type type)
+        {
             var nullUnderlyingType = Nullable.GetUnderlyingType(type);
             if (nullUnderlyingType != null)
             {

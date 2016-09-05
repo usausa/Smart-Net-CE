@@ -143,10 +143,7 @@
                 var parameter = cmd.CreateParameter();
                 parameter.ParameterName = accessor.Name;
                 var value = accessor.GetValue(param) ?? DBNull.Value;
-                if (value != DBNull.Value)
-                {
-                    parameter.DbType = dbTypeMap.LookupDbType(value);
-                }
+                parameter.DbType = dbTypeMap.LookupDbType(accessor.Type);
                 parameter.Value = value;
 
                 cmd.Parameters.Add(parameter);
