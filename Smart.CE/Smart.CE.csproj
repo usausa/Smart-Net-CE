@@ -163,8 +163,10 @@
     <Compile Include="Resolver\Bindings\BindingMetadata.cs" />
     <Compile Include="Resolver\Bindings\IBinding.cs" />
     <Compile Include="Resolver\Bindings\IBindingMetadata.cs" />
+    <Compile Include="Resolver\Bindings\IBindingResolver.cs" />
     <Compile Include="Resolver\Bindings\IBindingRoot.cs" />
     <Compile Include="Resolver\Bindings\IBindingSyntax.cs" />
+    <Compile Include="Resolver\Bindings\StandardBindingResolver.cs" />
     <Compile Include="Resolver\Constraints\ChainConstraint.cs" />
     <Compile Include="Resolver\Constraints\IConstraint.cs" />
     <Compile Include="Resolver\Constraints\NameConstraint.cs" />

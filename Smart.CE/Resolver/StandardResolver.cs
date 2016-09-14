@@ -11,7 +11,6 @@
     using Smart.Resolver.Constraints;
     using Smart.Resolver.Injectors;
     using Smart.Resolver.Metadatas;
-    using Smart.Resolver.Providers;
     using Smart.Resolver.Scopes;
 
     /// <summary>
@@ -232,13 +231,18 @@
                 IList<IBinding> list;
                 if (!bindings.TryGetValue(type, out list))
                 {
-                    var binding = new Binding(type, new BindingMetadata())
-                    {
-                        Provider = new StandardProvider(type)
-                    };
                     list = new List<IBinding>();
                     bindings[type] = list;
-                    list.Add(binding);
+
+                    var resolver = components.Get<IBindingResolver>();
+                    if (resolver != null)
+                    {
+                        var binding = resolver.Resolve(type);
+                        if (binding != null)
+                        {
+                            list.Add(binding);
+                        }
+                    }
                 }
 
                 return list;
