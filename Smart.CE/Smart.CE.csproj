@@ -166,7 +166,9 @@
     <Compile Include="Resolver\Bindings\IBindingResolver.cs" />
     <Compile Include="Resolver\Bindings\IBindingRoot.cs" />
     <Compile Include="Resolver\Bindings\IBindingSyntax.cs" />
-    <Compile Include="Resolver\Bindings\StandardBindingResolver.cs" />
+    <Compile Include="Resolver\Bindings\IMissingPipeline.cs" />
+    <Compile Include="Resolver\Bindings\MissingPipeline.cs" />
+    <Compile Include="Resolver\Bindings\SelfBindingResolver.cs" />
     <Compile Include="Resolver\Constraints\ChainConstraint.cs" />
     <Compile Include="Resolver\Constraints\IConstraint.cs" />
     <Compile Include="Resolver\Constraints\NameConstraint.cs" />
