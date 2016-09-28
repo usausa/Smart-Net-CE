@@ -161,7 +161,6 @@
         /// <param name="src"></param>
         /// <param name="option"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Ignore")]
         public static string Convert(string src, KanaOption option)
         {
             if (String.IsNullOrEmpty(src))
