@@ -148,6 +148,7 @@
     <Compile Include="EnumEx.cs" />
     <Compile Include="EnumExtensions.cs" />
     <Compile Include="EventHandlerExtensions.cs" />
+    <Compile Include="Functionals\Maybe.cs" />
     <Compile Include="Navigation\IViewConfirmRequest.cs" />
     <Compile Include="Navigation\ViewConfirmEventArgs.cs" />
     <Compile Include="Reflection\NonNullableDelegateAccsessor.cs" />
