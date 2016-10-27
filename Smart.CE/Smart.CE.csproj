@@ -148,7 +148,7 @@
     <Compile Include="EnumEx.cs" />
     <Compile Include="EnumExtensions.cs" />
     <Compile Include="EventHandlerExtensions.cs" />
-    <Compile Include="Functionals\Maybe.cs" />
+    <Compile Include="Functional\Maybe.cs" />
     <Compile Include="Navigation\IViewConfirmRequest.cs" />
     <Compile Include="Navigation\ViewConfirmEventArgs.cs" />
     <Compile Include="Reflection\NonNullableDelegateAccsessor.cs" />
@@ -259,7 +259,7 @@
     <Compile Include="Net\Sntp\SntpClient.cs" />
     <Compile Include="Net\SocketExtensions.cs" />
     <Compile Include="NumberExtension.cs" />
-    <Compile Include="ObjectExtensions.cs" />
+    <Compile Include="Functional\ObjectExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Range.cs" />
     <Compile Include="Ref.cs" />
