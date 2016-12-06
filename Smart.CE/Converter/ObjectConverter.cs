@@ -5,7 +5,6 @@
     using System.Globalization;
     using System.Linq;
 
-    using Smart.Collections.Generic;
     using Smart.Converter.Converters;
 
     /// <summary>

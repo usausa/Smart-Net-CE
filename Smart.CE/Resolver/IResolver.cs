@@ -16,6 +16,23 @@
         /// <param name="type"></param>
         /// <param name="constraint"></param>
         /// <returns></returns>
+        bool CanResolve(Type type, IConstraint constraint);
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="constraint"></param>
+        /// <param name="result"></param>
+        /// <returns></returns>
+        object TryResolve(Type type, IConstraint constraint, out bool result);
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="constraint"></param>
+        /// <returns></returns>
         object Resolve(Type type, IConstraint constraint);
 
         /// <summary>

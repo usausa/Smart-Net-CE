@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Reflection;
 
     using Smart.Reflection;
     using Smart.Resolver.Attributes;
@@ -13,17 +14,9 @@
     /// </summary>
     public class MetadataFactory : IMetadataFactory
     {
+        private static readonly Type InjectType = typeof(InjectAttribute);
+
         private readonly Dictionary<Type, TypeMetadata> metadatas = new Dictionary<Type, TypeMetadata>();
-
-        public ISelector Selector { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public MetadataFactory()
-        {
-            Selector = new Selector();
-        }
 
         /// <summary>
         ///
@@ -41,21 +34,47 @@
                     return metadata;
                 }
 
-                var constructor = Selector.SelectConstructor(type);
-                    var constructorConstraint = constructor == null ? null : constructor.GetParameters()
-                    .Select(_ => CreateConstraint((ConstraintAttribute[])Attribute.GetCustomAttributes(_, typeof(ConstraintAttribute))))
+                var constructors = type.GetConstructors()
+                    .OrderByDescending(_ => _.IsDefined(InjectType, true) ? 1 : 0)
+                    .ThenByDescending(_ => _.GetParameters().Length)
+                    .Select(_ => CreateConstructorMetadata(_))
                     .ToList();
 
-                var properties = Selector.SelectProperties(type)
-                    .Select(_ => new PropertyMetadata(_.ToAccessor(), CreateConstraint((ConstraintAttribute[])Attribute.GetCustomAttributes(_, typeof(ConstraintAttribute)))))
+                var properties = type.GetProperties()
+                    .Where(_ => _.IsDefined(InjectType, true))
+                    .Select(_ => CreatePropertyMetadata(_))
                     .ToList();
 
-                metadata = new TypeMetadata(new ConstructorMetadata(constructor, constructorConstraint), properties);
+                metadata = new TypeMetadata(constructors, properties);
 
                 metadatas[type] = metadata;
 
                 return metadata;
             }
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="ci"></param>
+        /// <returns></returns>
+        private static ConstructorMetadata CreateConstructorMetadata(ConstructorInfo ci)
+        {
+            var constraints = ci.GetParameters()
+                .Select(_ => CreateConstraint((ConstraintAttribute[])Attribute.GetCustomAttributes(_, typeof(ConstraintAttribute))))
+                .ToList();
+
+            return new ConstructorMetadata(ci, constraints);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="pi"></param>
+        /// <returns></returns>
+        private static PropertyMetadata CreatePropertyMetadata(PropertyInfo pi)
+        {
+            return new PropertyMetadata(pi.ToAccessor(), CreateConstraint((ConstraintAttribute[])Attribute.GetCustomAttributes(pi, typeof(ConstraintAttribute))));
         }
 
         /// <summary>

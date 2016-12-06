@@ -26,6 +26,8 @@
 
         private readonly Dictionary<Type, IList<IBinding>> bindings = new Dictionary<Type, IList<IBinding>>();
 
+        private readonly IResolverContext resolverContext;
+
         /// <summary>
         ///
         /// </summary>
@@ -40,9 +42,12 @@
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:DisposeObjectsBeforeLosingScope", Justification = "Ignore")]
         public StandardResolver()
         {
+            resolverContext = new ResolverContext(bindings);
+
             components.Register<IMetadataFactory>(new MetadataFactory());
             components.Register<IMissingPipeline>(new MissingPipeline(
-                new SelfBindingResolver()));
+                new SelfBindingResolver(),
+                new OpenGenericBindingResolver()));
             components.Register<IActivatePipeline>(new ActivatePipeline(
                 new InitializeActivator()));
             components.Register<IInjectPipeline>(new InjectPipeline(
@@ -149,6 +154,52 @@
         /// <param name="type"></param>
         /// <param name="constraint"></param>
         /// <returns></returns>
+        public bool CanResolve(Type type, IConstraint constraint)
+        {
+            if (type == null)
+            {
+                throw new ArgumentNullException("type");
+            }
+
+            if (ResolverType.IsAssignableFrom(type))
+            {
+                return true;
+            }
+
+            return FindBinding(type, constraint) != null;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="constraint"></param>
+        /// <param name="result"></param>
+        /// <returns></returns>
+        public object TryResolve(Type type, IConstraint constraint, out bool result)
+        {
+            if (type == null)
+            {
+                throw new ArgumentNullException("type");
+            }
+
+            if (ResolverType.IsAssignableFrom(type))
+            {
+                result = true;
+                return this;
+            }
+
+            var binding = FindBinding(type, constraint);
+            result = binding != null;
+            return result ? Resolve(binding) : null;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="constraint"></param>
+        /// <returns></returns>
         public object Resolve(Type type, IConstraint constraint)
         {
             if (type == null)
@@ -161,47 +212,14 @@
                 return this;
             }
 
-            var list = GetBindings(type);
-            IBinding target = null;
-
-            if (constraint == null)
-            {
-                if (list.Count == 1)
-                {
-                    target = list[0];
-                }
-                else if (list.Count > 1)
-                {
-                    throw new InvalidOperationException(
-                        String.Format(CultureInfo.InvariantCulture, "More than one component matched. type = {0}", type.Name));
-                }
-            }
-            else
-            {
-                foreach (var binding in list)
-                {
-                    if (!constraint.Match(binding.Metadata))
-                    {
-                        continue;
-                    }
-
-                    if (target != null)
-                    {
-                        throw new InvalidOperationException(
-                            String.Format(CultureInfo.InvariantCulture, "More than one component matched. type = {0}", type.Name));
-                    }
-
-                    target = binding;
-                }
-            }
-
-            if (target == null)
+            var binding = FindBinding(type, constraint);
+            if (binding == null)
             {
                 throw new InvalidOperationException(
                     String.Format(CultureInfo.InvariantCulture, "No such component registerd. type = {0}", type.Name));
             }
 
-            return Resolve(target);
+            return Resolve(binding);
         }
 
         /// <summary>
@@ -217,8 +235,37 @@
                 return new[] { this };
             }
 
-            return (constraint != null ? GetBindings(type).Where(_ => constraint.Match(_.Metadata)) : GetBindings(type))
-                    .Select(_ => Resolve(_));
+            return (constraint != null ? GetBindings(type).Where(_ => constraint.Match(_.Metadata)) : GetBindings(type)).Select(_ => Resolve(_));
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="constraint"></param>
+        /// <returns></returns>
+        private IBinding FindBinding(Type type, IConstraint constraint)
+        {
+            var list = GetBindings(type);
+            if (list.Count == 0)
+            {
+                return null;
+            }
+
+            if (constraint == null)
+            {
+                return list[list.Count - 1];
+            }
+
+            for (var i = list.Count - 1; i >= 0; i--)
+            {
+                if (constraint.Match(list[i].Metadata))
+                {
+                    return list[i];
+                }
+            }
+
+            return null;
         }
 
         /// <summary>
@@ -239,7 +286,7 @@
                     var pipeline = components.Get<IMissingPipeline>();
                     if (pipeline != null)
                     {
-                        foreach (var binding in pipeline.Resolve(type))
+                        foreach (var binding in pipeline.Resolve(resolverContext, type))
                         {
                             list.Add(binding);
                         }

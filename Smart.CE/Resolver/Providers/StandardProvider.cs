@@ -3,7 +3,6 @@
     using System;
     using System.Collections.Generic;
     using System.Globalization;
-    using System.Linq;
 
     using Smart.Resolver.Bindings;
     using Smart.Resolver.Injectors;
@@ -20,7 +19,10 @@
 
         private static readonly Type ListType = typeof(IList<>);
 
-        private readonly Type type;
+        /// <summary>
+        ///
+        /// </summary>
+        public Type TargetType { get; private set; }
 
         /// <summary>
         ///
@@ -33,7 +35,7 @@
                 throw new ArgumentNullException("type");
             }
 
-            this.type = type;
+            TargetType = type;
         }
 
         /// <summary>
@@ -46,77 +48,103 @@
         public object Create(IKernel kernel, IBinding binding)
         {
             var metadataFactory = kernel.Components.Get<IMetadataFactory>();
-            var metadata = metadataFactory.GetMetadata(type);
-            var constructor = metadata.TargetConstructor.Constructor;
-            if (constructor == null)
+            var metadata = metadataFactory.GetMetadata(TargetType);
+
+            if (metadata.TargetConstructors.Count == 0)
             {
                 throw new InvalidOperationException(
-                    String.Format(CultureInfo.InvariantCulture, "No constructor avaiable. type = {0}", type.Name));
+                    String.Format(CultureInfo.InvariantCulture, "No constructor avaiable. type = {0}", TargetType.Name));
             }
 
-            object instance;
-            if (constructor.GetParameters().Length > 0)
+            for (var i = 0; i < metadata.TargetConstructors.Count; i++)
             {
-                var arguments = new object[constructor.GetParameters().Length];
-                for (var i = 0; i < constructor.GetParameters().Length; i++)
+                var constructor = metadata.TargetConstructors[i];
+
+                bool result;
+                var arguments = TryResolveParameters(kernel, binding, constructor, out result);
+                if (result)
                 {
-                    var pi = constructor.GetParameters()[i];
-                    var parameter = binding.GetConstructorArgument(pi.Name);
-                    if (parameter != null)
+                    var instance = constructor.Constructor.Invoke(arguments);
+
+                    var pipeline = kernel.Components.Get<IInjectPipeline>();
+                    if (pipeline != null)
                     {
-                        arguments[i] = parameter.Resolve(kernel);
-                        continue;
+                        pipeline.Inject(kernel, binding, metadata, instance);
                     }
 
-                    if (pi.ParameterType.IsArray)
-                    {
-                        var elementType = pi.ParameterType.GetElementType();
-                        arguments[i] = ConvertArray(elementType, kernel.ResolveAll(elementType, metadata.TargetConstructor.Constraints[i]));
-                        continue;
-                    }
-
-                    if (pi.ParameterType.IsGenericType)
-                    {
-                        var genericType = pi.ParameterType.GetGenericTypeDefinition();
-                        if ((genericType == EnumerableType) || (genericType == CollectionType) || (genericType == ListType))
-                        {
-                            var elementType = pi.ParameterType.GetGenericArguments()[0];
-                            arguments[i] = ConvertArray(elementType, kernel.ResolveAll(elementType, metadata.TargetConstructor.Constraints[i]));
-                            continue;
-                        }
-                    }
-
-                    arguments[i] = kernel.Resolve(pi.ParameterType, metadata.TargetConstructor.Constraints[i]);
+                    return instance;
                 }
-
-                instance = constructor.Invoke(arguments);
-            }
-            else
-            {
-                instance = constructor.Invoke(null);
             }
 
-            var pipeline = kernel.Components.Get<IInjectPipeline>();
-            if (pipeline != null)
-            {
-                pipeline.Inject(kernel, binding, metadata, instance);
-            }
-
-            return instance;
+            throw new InvalidOperationException(
+                String.Format(CultureInfo.InvariantCulture, "Constructor parameter unresolved. type = {0}", TargetType.Name));
         }
 
         /// <summary>
         ///
         /// </summary>
-        /// <param name="elementType"></param>
-        /// <param name="source"></param>
+        /// <param name="kernel"></param>
+        /// <param name="binding"></param>
+        /// <param name="cm"></param>
+        /// <param name="result"></param>
         /// <returns></returns>
-        private static Array ConvertArray(Type elementType, IEnumerable<object> source)
+        private static object[] TryResolveParameters(IKernel kernel, IBinding binding, ConstructorMetadata cm, out bool result)
         {
-            var sourceArray = source.ToArray();
-            var array = Array.CreateInstance(elementType, sourceArray.Length);
-            Array.Copy(sourceArray, 0, array, 0, sourceArray.Length);
-            return array;
+            var parameters = cm.Constructor.GetParameters();
+            if (parameters.Length == 0)
+            {
+                result = true;
+                return null;
+            }
+
+            var arguments = new object[parameters.Length];
+            for (var i = 0; i < parameters.Length; i++)
+            {
+                var pi = parameters[i];
+
+                // Constructor argument
+                var parameter = binding.GetConstructorArgument(pi.Name);
+                if (parameter != null)
+                {
+                    arguments[i] = parameter.Resolve(kernel);
+                    continue;
+                }
+
+                // Array
+                if (pi.ParameterType.IsArray)
+                {
+                    var elementType = pi.ParameterType.GetElementType();
+                    arguments[i] = ResolverHelper.ConvertArray(elementType, kernel.ResolveAll(elementType, cm.Constraints[i]));
+                    continue;
+                }
+
+                // IEnumerable type
+                if (pi.ParameterType.IsGenericType)
+                {
+                    var genericType = pi.ParameterType.GetGenericTypeDefinition();
+                    if ((genericType == EnumerableType) || (genericType == CollectionType) || (genericType == ListType))
+                    {
+                        var elementType = pi.ParameterType.GetGenericArguments()[0];
+                        arguments[i] = ResolverHelper.ConvertArray(elementType, kernel.ResolveAll(elementType, cm.Constraints[i]));
+                        continue;
+                    }
+                }
+
+                // Resolve
+                bool resolve;
+                var obj = kernel.TryResolve(pi.ParameterType, cm.Constraints[i], out resolve);
+                if (resolve)
+                {
+                    arguments[i] = obj;
+                    continue;
+                }
+
+                result = false;
+                return null;
+            }
+
+            result = true;
+            return arguments;
         }
     }
 }
