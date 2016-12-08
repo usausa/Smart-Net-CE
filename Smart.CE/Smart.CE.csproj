@@ -246,6 +246,7 @@
     <Compile Include="Resolver\Metadatas\MetadataFactory.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Resolver\Metadatas\ParameterMetadata.cs" />
     <Compile Include="Resolver\Metadatas\PropertyMetadata.cs">
       <SubType>Code</SubType>
     </Compile>

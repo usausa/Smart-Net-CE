@@ -16,6 +16,12 @@
     {
         private static readonly Type InjectType = typeof(InjectAttribute);
 
+        private static readonly Type EnumerableType = typeof(IEnumerable<>);
+
+        private static readonly Type CollectionType = typeof(ICollection<>);
+
+        private static readonly Type ListType = typeof(IList<>);
+
         private readonly Dictionary<Type, TypeMetadata> metadatas = new Dictionary<Type, TypeMetadata>();
 
         /// <summary>
@@ -60,11 +66,41 @@
         /// <returns></returns>
         private static ConstructorMetadata CreateConstructorMetadata(ConstructorInfo ci)
         {
+            var parameters = ci.GetParameters()
+                .Select(_ => CreateParameterMetadata(_))
+                .ToList();
+
             var constraints = ci.GetParameters()
                 .Select(_ => CreateConstraint((ConstraintAttribute[])Attribute.GetCustomAttributes(_, typeof(ConstraintAttribute))))
                 .ToList();
 
-            return new ConstructorMetadata(ci, constraints);
+            return new ConstructorMetadata(ci, parameters, constraints);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="pi"></param>
+        /// <returns></returns>
+        private static ParameterMetadata CreateParameterMetadata(ParameterInfo pi)
+        {
+            // Array
+            if (pi.ParameterType.IsArray)
+            {
+                return new ParameterMetadata(pi, pi.ParameterType.GetElementType());
+            }
+
+            // IEnumerable type
+            if (pi.ParameterType.IsGenericType)
+            {
+                var genericType = pi.ParameterType.GetGenericTypeDefinition();
+                if ((genericType == EnumerableType) || (genericType == CollectionType) || (genericType == ListType))
+                {
+                    return new ParameterMetadata(pi, pi.ParameterType.GetGenericArguments()[0]);
+                }
+            }
+
+            return new ParameterMetadata(pi, null);
         }
 
         /// <summary>
