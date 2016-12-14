@@ -26,7 +26,7 @@
             var type = source.GetType();
 
             var sb = new StringBuilder();
-            foreach (var accessor in Properties.Split(',').Select(_ => TemplateAccessorCache.GetAccessor(type, _.Trim())).Where(_ => (_ != null) && _.CanRead))
+            foreach (var accessor in Properties.Split(',').Select(x => TemplateAccessorCache.GetAccessor(type, x.Trim())).Where(x => (x != null) && x.CanRead))
             {
                 sb.Append(accessor.GetValue(source));
             }

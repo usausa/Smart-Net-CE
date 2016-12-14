@@ -97,7 +97,7 @@
                 {
                     if (!converterCache.TryGetValue(typePair, out converter))
                     {
-                        converter = factories.Select(_ => _.GetConverter(typePair)).FirstOrDefault(_ => _ != null);
+                        converter = factories.Select(f => f.GetConverter(typePair)).FirstOrDefault(c => c != null);
                         converterCache[typePair] = converter;
                     }
                 }

@@ -235,7 +235,7 @@
                 return new[] { this };
             }
 
-            return (constraint != null ? GetBindings(type).Where(_ => constraint.Match(_.Metadata)) : GetBindings(type)).Select(_ => Resolve(_));
+            return (constraint != null ? GetBindings(type).Where(b => constraint.Match(b.Metadata)) : GetBindings(type)).Select(b => Resolve(b));
         }
 
         /// <summary>

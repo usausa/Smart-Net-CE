@@ -47,7 +47,7 @@
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static void RemoveWhere<T>(this ICollection<T> source, Predicate<T> predicate)
         {
-            var deleteItems = source.Where(_ => predicate(_)).ToList();
+            var deleteItems = source.Where(x => predicate(x)).ToList();
             foreach (var item in deleteItems)
             {
                 source.Remove(item);

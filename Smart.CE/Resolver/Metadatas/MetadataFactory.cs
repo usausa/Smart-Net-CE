@@ -41,14 +41,14 @@
                 }
 
                 var constructors = type.GetConstructors()
-                    .OrderByDescending(_ => _.IsDefined(InjectType, true) ? 1 : 0)
-                    .ThenByDescending(_ => _.GetParameters().Length)
-                    .Select(_ => CreateConstructorMetadata(_))
+                    .OrderByDescending(c => c.IsDefined(InjectType, true) ? 1 : 0)
+                    .ThenByDescending(c => c.GetParameters().Length)
+                    .Select(c => CreateConstructorMetadata(c))
                     .ToList();
 
                 var properties = type.GetProperties()
-                    .Where(_ => _.IsDefined(InjectType, true))
-                    .Select(_ => CreatePropertyMetadata(_))
+                    .Where(p => p.IsDefined(InjectType, true))
+                    .Select(p => CreatePropertyMetadata(p))
                     .ToList();
 
                 metadata = new TypeMetadata(constructors, properties);
@@ -67,11 +67,11 @@
         private static ConstructorMetadata CreateConstructorMetadata(ConstructorInfo ci)
         {
             var parameters = ci.GetParameters()
-                .Select(_ => CreateParameterMetadata(_))
+                .Select(p => CreateParameterMetadata(p))
                 .ToList();
 
             var constraints = ci.GetParameters()
-                .Select(_ => CreateConstraint((ConstraintAttribute[])Attribute.GetCustomAttributes(_, typeof(ConstraintAttribute))))
+                .Select(p => CreateConstraint((ConstraintAttribute[])Attribute.GetCustomAttributes(p, typeof(ConstraintAttribute))))
                 .ToList();
 
             return new ConstructorMetadata(ci, parameters, constraints);
@@ -121,7 +121,7 @@
         private static IConstraint CreateConstraint(IEnumerable<ConstraintAttribute> attributes)
         {
             var constraints = attributes
-                .Select(_ => _.CreateConstraint())
+                .Select(a => a.CreateConstraint())
                 .ToArray();
 
             if (constraints.Length == 0)

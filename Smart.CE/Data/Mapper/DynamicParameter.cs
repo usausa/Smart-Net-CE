@@ -54,7 +54,7 @@
         /// </summary>
         public IEnumerable<string> ParameterNames
         {
-            get { return parameters.Select(_ => _.Key); }
+            get { return parameters.Select(x => x.Key); }
         }
 
         /// <summary>

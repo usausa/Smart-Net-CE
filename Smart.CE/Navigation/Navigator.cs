@@ -449,11 +449,11 @@
             var last = -1;
             if ((info.Domain != null) && !Equals(CurrentViewDomain, info.Domain))
             {
-                first = stacked.FindIndex(_ => Equals(_.ViewInfo.Domain, info.Domain));
+                first = stacked.FindIndex(x => Equals(x.ViewInfo.Domain, info.Domain));
                 if (first >= 0)
                 {
-                    last = stacked.FindLastIndex(_ => Equals(_.ViewInfo.Domain, info.Domain));
-                    exist = stacked.Skip(first).Take(last - first + 1).Any(_ => Equals(_.ViewInfo.Id, info.Id));
+                    last = stacked.FindLastIndex(x => Equals(x.ViewInfo.Domain, info.Domain));
+                    exist = stacked.Skip(first).Take(last - first + 1).Any(x => Equals(x.ViewInfo.Id, info.Id));
                 }
             }
 

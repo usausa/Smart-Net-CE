@@ -113,7 +113,7 @@
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static Control GetFocused(this Control parent)
         {
-            return parent.Focused ? parent : parent.Controls.Cast<Control>().Select(c => GetFocused(c)).FirstOrDefault(_ => _ != null);
+            return parent.Focused ? parent : parent.Controls.Cast<Control>().Select(c => GetFocused(c)).FirstOrDefault(c => c != null);
         }
 
         /// <summary>

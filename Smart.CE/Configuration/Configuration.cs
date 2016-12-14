@@ -66,14 +66,14 @@
                 doc.Load(FilePath);
             }
 
-            var configuration = doc.ChildNodes.Cast<XmlNode>().FirstOrDefault(_ => _.Name == "configuration");
+            var configuration = doc.ChildNodes.Cast<XmlNode>().FirstOrDefault(x => x.Name == "configuration");
             if (configuration == null)
             {
                 configuration = doc.CreateElement("configuration");
                 doc.AppendChild(configuration);
             }
 
-            var appSetting = configuration.ChildNodes.Cast<XmlNode>().FirstOrDefault(_ => _.Name == "appSettings");
+            var appSetting = configuration.ChildNodes.Cast<XmlNode>().FirstOrDefault(x => x.Name == "appSettings");
             if (appSetting == null)
             {
                 appSetting = doc.CreateElement("appSettings");

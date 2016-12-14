@@ -148,7 +148,7 @@
         /// <returns></returns>
         private static Control GetFocused(Control parent)
         {
-            return parent.Focused ? parent : parent.Controls.Cast<Control>().Select(c => GetFocused(c)).FirstOrDefault(_ => _ != null);
+            return parent.Focused ? parent : parent.Controls.Cast<Control>().Select(c => GetFocused(c)).FirstOrDefault(c => c != null);
         }
     }
 }

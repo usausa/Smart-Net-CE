@@ -105,7 +105,7 @@
 
             if (param != null)
             {
-                var builder = parameterBuilders.FirstOrDefault(_ => _.IsMatch(param));
+                var builder = parameterBuilders.FirstOrDefault(x => x.IsMatch(param));
                 if (builder == null)
                 {
                     throw new SqlMapperException("Parameter can't build.");
@@ -266,7 +266,7 @@
                 try
                 {
                     var type = typeof(T);
-                    var queryHandler = queryHandlers.FirstOrDefault(_ => _.IsMatch(type));
+                    var queryHandler = queryHandlers.FirstOrDefault(x => x.IsMatch(type));
                     if (queryHandler == null)
                     {
                         throw new SqlMapperException(String.Format(CultureInfo.InvariantCulture, "Type {0} can't handle", type.FullName));

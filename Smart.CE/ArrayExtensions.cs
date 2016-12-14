@@ -358,7 +358,7 @@
                 throw new ArgumentNullException("others");
             }
 
-            var result = new T[array.Length + others.Sum(_ => _.Length)];
+            var result = new T[array.Length + others.Sum(x => x.Length)];
 
             Buffer.BlockCopy(array, 0, result, 0, array.Length);
 
@@ -386,7 +386,7 @@
                 throw new ArgumentNullException("others");
             }
 
-            var result = new byte[array.Length + others.Sum(_ => _.Length)];
+            var result = new byte[array.Length + others.Sum(x => x.Length)];
 
             Buffer.BlockCopy(array, 0, result, 0, array.Length);
 
@@ -414,7 +414,7 @@
                 throw new ArgumentNullException("others");
             }
 
-            var result = new short[array.Length + others.Sum(_ => _.Length)];
+            var result = new short[array.Length + others.Sum(x => x.Length)];
 
             Buffer.BlockCopy(array, 0, result, 0, array.Length);
 
@@ -442,7 +442,7 @@
                 throw new ArgumentNullException("others");
             }
 
-            var result = new int[array.Length + others.Sum(_ => _.Length)];
+            var result = new int[array.Length + others.Sum(x => x.Length)];
 
             Buffer.BlockCopy(array, 0, result, 0, array.Length);
 
@@ -470,7 +470,7 @@
                 throw new ArgumentNullException("others");
             }
 
-            var result = new long[array.Length + others.Sum(_ => _.Length)];
+            var result = new long[array.Length + others.Sum(x => x.Length)];
 
             Buffer.BlockCopy(array, 0, result, 0, array.Length);
 
@@ -498,7 +498,7 @@
                 throw new ArgumentNullException("others");
             }
 
-            var result = new float[array.Length + others.Sum(_ => _.Length)];
+            var result = new float[array.Length + others.Sum(x => x.Length)];
 
             Buffer.BlockCopy(array, 0, result, 0, array.Length);
 
@@ -526,7 +526,7 @@
                 throw new ArgumentNullException("others");
             }
 
-            var result = new double[array.Length + others.Sum(_ => _.Length)];
+            var result = new double[array.Length + others.Sum(x => x.Length)];
 
             Buffer.BlockCopy(array, 0, result, 0, array.Length);
 
@@ -554,7 +554,7 @@
                 throw new ArgumentNullException("others");
             }
 
-            var result = new bool[array.Length + others.Sum(_ => _.Length)];
+            var result = new bool[array.Length + others.Sum(x => x.Length)];
 
             Buffer.BlockCopy(array, 0, result, 0, array.Length);
 
@@ -582,7 +582,7 @@
                 throw new ArgumentNullException("others");
             }
 
-            var result = new char[array.Length + others.Sum(_ => _.Length)];
+            var result = new char[array.Length + others.Sum(x => x.Length)];
 
             Buffer.BlockCopy(array, 0, result, 0, array.Length);
 
