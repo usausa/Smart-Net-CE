@@ -6,53 +6,66 @@
     using System.Linq;
 
     using Smart.ComponentModel;
-    using Smart.Resolver.Activators;
     using Smart.Resolver.Bindings;
     using Smart.Resolver.Constraints;
+    using Smart.Resolver.Handlers;
     using Smart.Resolver.Injectors;
     using Smart.Resolver.Metadatas;
-    using Smart.Resolver.Scopes;
+    using Smart.Resolver.Processors;
+    using Smart.Resolver.Providers;
 
     /// <summary>
     ///
     /// </summary>
-    public class StandardResolver : DisposableObject, IBindingRoot, IKernel
+    public class StandardResolver : DisposableObject, IKernel
     {
-        private static readonly Type ResolverType = typeof(IResolver);
+        private readonly BindingTable table = new BindingTable();
 
-        private static readonly BindingMetadata EmptyBindingMetadata = new BindingMetadata();
+        private readonly Func<Type, IBinding[]> bindingsFactory;
 
-        private readonly ComponentContainer components = new ComponentContainer();
+        private readonly Func<IBinding, object> instanceFactory;
 
-        private readonly Dictionary<Type, IList<IBinding>> bindings = new Dictionary<Type, IList<IBinding>>();
+        private readonly IMetadataFactory metadataFactory;
 
-        private readonly IResolverContext resolverContext;
+        private readonly IProcessor[] processors;
 
-        /// <summary>
-        ///
-        /// </summary>
-        public IComponentContainer Components
-        {
-            get { return components; }
-        }
+        private readonly IInjector[] injectors;
+
+        private readonly IMissingHandler[] handlers;
 
         /// <summary>
         ///
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:DisposeObjectsBeforeLosingScope", Justification = "Ignore")]
-        public StandardResolver()
-        {
-            resolverContext = new ResolverContext(bindings);
+        public IComponentContainer Components { get; private set; }
 
-            components.Register<IMetadataFactory>(new MetadataFactory());
-            components.Register<IMissingPipeline>(new MissingPipeline(
-                new SelfBindingResolver(),
-                new OpenGenericBindingResolver()));
-            components.Register<IActivatePipeline>(new ActivatePipeline(
-                new InitializeActivator()));
-            components.Register<IInjectPipeline>(new InjectPipeline(
-                new PropertyInjector()));
-            components.Register<ISingletonScopeStorage>(new SingletonScopeStorage());
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="config"></param>
+        public StandardResolver(IResolverConfig config)
+        {
+            if (config == null)
+            {
+                throw new ArgumentNullException("config");
+            }
+
+            bindingsFactory = CreateBindings;
+            instanceFactory = CreateInstance;
+
+            Components = config.CreateComponentContainer();
+
+            metadataFactory = Components.Get<IMetadataFactory>();
+            processors = Components.GetAll<IProcessor>().ToArray();
+            injectors = Components.GetAll<IInjector>().ToArray();
+            handlers = Components.GetAll<IMissingHandler>().ToArray();
+
+            foreach (var group in config.CreateBindings().GroupBy(b => b.Type))
+            {
+                table.Add(group.Key, group.ToArray());
+            }
+
+            var selfType = typeof(IResolver);
+            table.Add(selfType, new IBinding[] { new Binding(selfType, new ConstantProvider<IResolver>(this), null, null, null, null) });
         }
 
         /// <summary>
@@ -63,85 +76,10 @@
         {
             if (disposing)
             {
-                components.Dispose();
+                Components.Dispose();
             }
 
             base.Dispose(disposing);
-        }
-
-        // ------------------------------------------------------------
-        // Configuration
-        // ------------------------------------------------------------
-
-        /// <summary>
-        ///
-        /// </summary>
-        /// <param name="action"></param>
-        /// <returns></returns>
-        public StandardResolver Configure(Action<ComponentContainer> action)
-        {
-            if (action == null)
-            {
-                throw new ArgumentNullException("action");
-            }
-
-            action(components);
-            return this;
-        }
-
-        // ------------------------------------------------------------
-        // IBindingRoot
-        // ------------------------------------------------------------
-
-        /// <summary>
-        ///
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        public IBindingToSyntax<T> Bind<T>()
-        {
-            var type = typeof(T);
-
-            var metadata = new BindingMetadata();
-            var binding = new Binding(type, metadata);
-
-            AddBinding(binding);
-
-            return new BindingBuilder<T>(binding, metadata);
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        /// <param name="type"></param>
-        /// <returns></returns>
-        public IBindingToSyntax<object> Bind(Type type)
-        {
-            var metadata = new BindingMetadata();
-            var binding = new Binding(type, metadata);
-
-            AddBinding(binding);
-
-            return new BindingBuilder<object>(binding, metadata);
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        /// <param name="binding"></param>
-        private void AddBinding(IBinding binding)
-        {
-            lock (bindings)
-            {
-                IList<IBinding> list;
-                if (!bindings.TryGetValue(binding.Type, out list))
-                {
-                    list = new List<IBinding>();
-                    bindings[binding.Type] = list;
-                }
-
-                list.Add(binding);
-            }
         }
 
         // ------------------------------------------------------------
@@ -161,11 +99,6 @@
                 throw new ArgumentNullException("type");
             }
 
-            if (ResolverType.IsAssignableFrom(type))
-            {
-                return true;
-            }
-
             return FindBinding(type, constraint) != null;
         }
 
@@ -181,12 +114,6 @@
             if (type == null)
             {
                 throw new ArgumentNullException("type");
-            }
-
-            if (ResolverType.IsAssignableFrom(type))
-            {
-                result = true;
-                return this;
             }
 
             var binding = FindBinding(type, constraint);
@@ -207,11 +134,6 @@
                 throw new ArgumentNullException("type");
             }
 
-            if (ResolverType.IsAssignableFrom(type))
-            {
-                return this;
-            }
-
             var binding = FindBinding(type, constraint);
             if (binding == null)
             {
@@ -230,13 +152,20 @@
         /// <returns></returns>
         public IEnumerable<object> ResolveAll(Type type, IConstraint constraint)
         {
-            if (type == ResolverType)
+            if (constraint == null)
             {
-                return new[] { this };
+                return table.GetOrAdd(type, bindingsFactory)
+                    .Select(b => Resolve(b));
             }
 
-            return (constraint != null ? GetBindings(type).Where(b => constraint.Match(b.Metadata)) : GetBindings(type)).Select(b => Resolve(b));
+            return table.GetOrAdd(type, bindingsFactory)
+                .Where(b => constraint.Match(b.Metadata))
+                .Select(b => Resolve(b));
         }
+
+        // ------------------------------------------------------------
+        // Binding
+        // ------------------------------------------------------------
 
         /// <summary>
         ///
@@ -246,18 +175,18 @@
         /// <returns></returns>
         private IBinding FindBinding(Type type, IConstraint constraint)
         {
-            var list = GetBindings(type);
-            if (list.Count == 0)
+            var list = table.GetOrAdd(type, bindingsFactory);
+            if (list.Length == 0)
             {
                 return null;
             }
 
             if (constraint == null)
             {
-                return list[list.Count - 1];
+                return list[list.Length - 1];
             }
 
-            for (var i = list.Count - 1; i >= 0; i--)
+            for (var i = list.Length - 1; i >= 0; i--)
             {
                 if (constraint.Match(list[i].Metadata))
                 {
@@ -273,28 +202,18 @@
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
-        private IList<IBinding> GetBindings(Type type)
+        private IBinding[] CreateBindings(Type type)
         {
-            lock (bindings)
+            var list = new List<IBinding>();
+            for (var i = 0; i < handlers.Length; i++)
             {
-                IList<IBinding> list;
-                if (!bindings.TryGetValue(type, out list))
+                foreach (var binding in handlers[i].Handle(table, type))
                 {
-                    list = new List<IBinding>();
-                    bindings[type] = list;
-
-                    var pipeline = components.Get<IMissingPipeline>();
-                    if (pipeline != null)
-                    {
-                        foreach (var binding in pipeline.Resolve(resolverContext, type))
-                        {
-                            list.Add(binding);
-                        }
-                    }
+                    list.Add(binding);
                 }
-
-                return list;
             }
+
+            return list.ToArray();
         }
 
         /// <summary>
@@ -304,32 +223,27 @@
         /// <returns></returns>
         private object Resolve(IBinding binding)
         {
-            object instance;
-
-            lock (binding)
+            if (binding.Scope != null)
             {
-                var storage = binding.Scope != null ? binding.Scope.GetStorage(this) : null;
-                if (storage != null)
-                {
-                    instance = storage.TryGet(binding);
-                    if (instance != null)
-                    {
-                        return instance;
-                    }
-                }
-
-                instance = binding.Provider.Create(this, binding);
-
-                if (storage != null)
-                {
-                    storage.Remember(binding, instance);
-                }
+                var storage = binding.Scope.GetStorage(this);
+                return storage.GetOrAdd(binding, instanceFactory);
             }
 
-            var pipeline = components.Get<IActivatePipeline>();
-            if (pipeline != null)
+            return CreateInstance(binding);
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="binding"></param>
+        /// <returns></returns>
+        private object CreateInstance(IBinding binding)
+        {
+            var instance = binding.Provider.Create(this, binding);
+
+            for (var i = 0; i < processors.Length; i++)
             {
-                pipeline.Activate(instance);
+                processors[i].Initialize(instance);
             }
 
             return instance;
@@ -350,13 +264,12 @@
                 throw new ArgumentNullException("instance");
             }
 
-            var metadataFactory = components.Get<IMetadataFactory>();
             var metadata = metadataFactory.GetMetadata(instance.GetType());
+            var binding = new Binding(instance.GetType());
 
-            var pipeline = components.Get<IInjectPipeline>();
-            if (pipeline != null)
+            for (var i = 0; i < injectors.Length; i++)
             {
-                pipeline.Inject(this, new Binding(instance.GetType(), EmptyBindingMetadata), metadata, instance);
+                injectors[i].Inject(this, binding, metadata, instance);
             }
         }
     }

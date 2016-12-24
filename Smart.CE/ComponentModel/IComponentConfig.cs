@@ -1,4 +1,4 @@
-﻿namespace Smart.Resolver.Bindings
+﻿namespace Smart.ComponentModel
 {
     using System;
     using System.Collections.Generic;
@@ -6,13 +6,12 @@
     /// <summary>
     ///
     /// </summary>
-    public interface IResolverContext
+    public interface IComponentConfig
     {
         /// <summary>
         ///
         /// </summary>
-        /// <param name="type"></param>
         /// <returns></returns>
-        IEnumerable<IBinding> FindBindings(Type type);
+        IDictionary<Type, ComponentEntry[]> ToMappings();
     }
 }

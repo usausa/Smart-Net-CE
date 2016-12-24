@@ -1,12 +1,18 @@
 ﻿namespace Smart.Reflection
 {
     using System;
+    using System.Reflection;
 
     /// <summary>
     ///
     /// </summary>
     public interface IAccessor
     {
+        /// <summary>
+        ///
+        /// </summary>
+        PropertyInfo Source { get; }
+
         /// <summary>
         ///
         /// </summary>

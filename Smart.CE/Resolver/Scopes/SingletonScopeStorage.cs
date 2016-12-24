@@ -10,7 +10,7 @@
     /// <summary>
     ///
     /// </summary>
-    public class SingletonScopeStorage : DisposableObject, ISingletonScopeStorage
+    public class SingletonScopeStorage : DisposableObject, IScopeStorage
     {
         private readonly Dictionary<IBinding, object> cache = new Dictionary<IBinding, object>();
 
@@ -32,26 +32,21 @@
         ///
         /// </summary>
         /// <param name="binding"></param>
-        /// <param name="instance"></param>
-        public void Remember(IBinding binding, object instance)
-        {
-            lock (cache)
-            {
-                cache[binding] = instance;
-            }
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        /// <param name="binding"></param>
+        /// <param name="factory"></param>
         /// <returns></returns>
-        public object TryGet(IBinding binding)
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Framework only")]
+        public object GetOrAdd(IBinding binding, Func<IBinding, object> factory)
         {
             lock (cache)
             {
                 object instance;
-                return cache.TryGetValue(binding, out instance) ? instance : null;
+                if (!cache.TryGetValue(binding, out instance))
+                {
+                    instance = factory(binding);
+                    cache[binding] = instance;
+                }
+
+                return instance;
             }
         }
 

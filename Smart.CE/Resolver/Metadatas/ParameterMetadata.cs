@@ -8,15 +8,12 @@
     /// </summary>
     public class ParameterMetadata
     {
-        /// <summary>
-        ///
-        /// </summary>
-        public ParameterInfo Parameter { get; set; }
+        public ParameterInfo Parameter { get; private set; }
 
         /// <summary>
         ///
         /// </summary>
-        public Type ElementType { get; set; }
+        public Type ElementType { get; private set; }
 
         /// <summary>
         ///

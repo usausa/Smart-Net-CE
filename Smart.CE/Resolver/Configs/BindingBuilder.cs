@@ -1,7 +1,9 @@
-﻿namespace Smart.Resolver.Bindings
+﻿namespace Smart.Resolver.Configs
 {
     using System;
+    using System.Collections.Generic;
 
+    using Smart.Resolver.Bindings;
     using Smart.Resolver.Parameters;
     using Smart.Resolver.Providers;
     using Smart.Resolver.Scopes;
@@ -10,21 +12,29 @@
     ///
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class BindingBuilder<T> : IBindingToInNamedWithSyntax<T>
+    public class BindingBuilder<T> : IBindingFactory, IBindingToInNamedWithSyntax<T>
     {
-        protected Binding Binding { get; private set; }
+        private readonly Type targetType;
 
-        protected BindingMetadata Metadata { get; private set; }
+        private Func<IProvider> providerFactory;
+
+        private Func<IScope> scopeFactory;
+
+        private string metadataName;
+
+        private Dictionary<string, object> metadataValues;
+
+        private Dictionary<string, IParameter> constructorArguments;
+
+        private Dictionary<string, IParameter> propertyValues;
 
         /// <summary>
         ///
         /// </summary>
-        /// <param name="binding"></param>
-        /// <param name="metadata"></param>
-        public BindingBuilder(Binding binding, BindingMetadata metadata)
+        /// <param name="type"></param>
+        public BindingBuilder(Type type)
         {
-            Binding = binding;
-            Metadata = metadata;
+            targetType = type;
         }
 
         // ------------------------------------------------------------
@@ -33,7 +43,7 @@
 
         public IBindingInNamedWithSyntax ToProvider(IProvider provider)
         {
-            Binding.Provider = provider;
+            providerFactory = () => provider;
             return this;
         }
 
@@ -69,19 +79,19 @@
 
         public IBindingNamedWithSyntax InScope(IScope scope)
         {
-            Binding.Scope = scope;
+            scopeFactory = () => scope;
             return this;
         }
 
         public IBindingNamedWithSyntax InTransientScope()
         {
-            Binding.Scope = null;
+            InScope(null);
             return this;
         }
 
         public IBindingNamedWithSyntax InSingletonScope()
         {
-            Binding.Scope = new SingletonScope();
+            InScope(new SingletonScope());
             return this;
         }
 
@@ -91,7 +101,7 @@
 
         public IBindingWithSyntax Named(string name)
         {
-            Metadata.Name = name;
+            metadataName = name;
             return this;
         }
 
@@ -99,34 +109,81 @@
         // With
         // ------------------------------------------------------------
 
+        public IBindingWithSyntax WithMetadata(string key, object value)
+        {
+            if (metadataValues == null)
+            {
+                metadataValues = new Dictionary<string, object>();
+            }
+
+            metadataValues[key] = value;
+            return this;
+        }
+
+        public IBindingWithSyntax WithConstructorArgument(string name, IParameter parameter)
+        {
+            if (constructorArguments == null)
+            {
+                constructorArguments = new Dictionary<string, IParameter>();
+            }
+
+            constructorArguments[name] = parameter;
+            return this;
+        }
+
         public IBindingWithSyntax WithConstructorArgument(string name, object value)
         {
-            Binding.AddConstructorArgument(name, new ConstantParameter(value));
+            WithConstructorArgument(name, new ConstantParameter(value));
             return this;
         }
 
         public IBindingWithSyntax WithConstructorArgument(string name, Func<IKernel, object> factory)
         {
-            Binding.AddConstructorArgument(name, new CallbackParameter(factory));
+            WithConstructorArgument(name, new CallbackParameter(factory));
+            return this;
+        }
+
+        public IBindingWithSyntax WithPropertyValue(string name, IParameter parameter)
+        {
+            if (propertyValues == null)
+            {
+                propertyValues = new Dictionary<string, IParameter>();
+            }
+
+            propertyValues[name] = parameter;
             return this;
         }
 
         public IBindingWithSyntax WithPropertyValue(string name, object value)
         {
-            Binding.AddPropertyValue(name, new ConstantParameter(value));
+            WithPropertyValue(name, new ConstantParameter(value));
             return this;
         }
 
         public IBindingWithSyntax WithPropertyValue(string name, Func<IKernel, object> factory)
         {
-            Binding.AddPropertyValue(name, new CallbackParameter(factory));
+            WithPropertyValue(name, new CallbackParameter(factory));
             return this;
         }
 
-        public IBindingWithSyntax WithMetadata(string key, object value)
+        // ------------------------------------------------------------
+        // Factory
+        // ------------------------------------------------------------
+
+        IBinding IBindingFactory.CreateBinding()
         {
-            Metadata.Set(key, value);
-            return this;
+            return CreateBinding();
+        }
+
+        protected virtual IBinding CreateBinding()
+        {
+            return new Binding(
+                targetType,
+                providerFactory != null ? providerFactory.Invoke() : null,
+                scopeFactory != null ? scopeFactory.Invoke() : null,
+                new BindingMetadata(metadataName, metadataValues),
+                new ParameterMap(constructorArguments),
+                new ParameterMap(propertyValues));
         }
     }
 }

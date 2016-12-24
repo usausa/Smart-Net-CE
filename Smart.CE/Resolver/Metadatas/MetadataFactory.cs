@@ -44,12 +44,12 @@
                     .OrderByDescending(c => c.IsDefined(InjectType, true) ? 1 : 0)
                     .ThenByDescending(c => c.GetParameters().Length)
                     .Select(c => CreateConstructorMetadata(c))
-                    .ToList();
+                    .ToArray();
 
                 var properties = type.GetProperties()
                     .Where(p => p.IsDefined(InjectType, true))
                     .Select(p => CreatePropertyMetadata(p))
-                    .ToList();
+                    .ToArray();
 
                 metadata = new TypeMetadata(constructors, properties);
 
@@ -68,11 +68,11 @@
         {
             var parameters = ci.GetParameters()
                 .Select(p => CreateParameterMetadata(p))
-                .ToList();
+                .ToArray();
 
             var constraints = ci.GetParameters()
                 .Select(p => CreateConstraint((ConstraintAttribute[])Attribute.GetCustomAttributes(p, typeof(ConstraintAttribute))))
-                .ToList();
+                .ToArray();
 
             return new ConstructorMetadata(ci, parameters, constraints);
         }

@@ -3,19 +3,19 @@
     using System;
     using System.Reflection;
 
-    /// <summary>
-    ///
-    /// </summary>
-    internal class ReflectionFieldAccessor : IAccessor
+    internal class ReflectionAccessor : IAccessor
     {
-        private readonly FieldInfo fieldInfo;
+        /// <summary>
+        ///
+        /// </summary>
+        public PropertyInfo Source { get; private set; }
 
         /// <summary>
         ///
         /// </summary>
         public string Name
         {
-            get { return fieldInfo.Name; }
+            get { return Source.Name; }
         }
 
         /// <summary>
@@ -23,7 +23,7 @@
         /// </summary>
         public Type Type
         {
-            get { return fieldInfo.FieldType; }
+            get { return Source.PropertyType; }
         }
 
         /// <summary>
@@ -31,7 +31,7 @@
         /// </summary>
         public bool CanRead
         {
-            get { return true; }
+            get { return Source.CanRead; }
         }
 
         /// <summary>
@@ -39,16 +39,16 @@
         /// </summary>
         public bool CanWrite
         {
-            get { return true; }
+            get { return Source.CanWrite; }
         }
 
         /// <summary>
         ///
         /// </summary>
-        /// <param name="fieldInfo"></param>
-        public ReflectionFieldAccessor(FieldInfo fieldInfo)
+        /// <param name="source"></param>
+        public ReflectionAccessor(PropertyInfo source)
         {
-            this.fieldInfo = fieldInfo;
+            Source = source;
         }
 
         /// <summary>
@@ -58,7 +58,7 @@
         /// <returns></returns>
         public object GetValue(object target)
         {
-            return fieldInfo.GetValue(target);
+            return Source.GetValue(target, null);
         }
 
         /// <summary>
@@ -68,7 +68,7 @@
         /// <param name="value"></param>
         public void SetValue(object target, object value)
         {
-            fieldInfo.SetValue(target, value);
+            Source.SetValue(target, value, null);
         }
     }
 }

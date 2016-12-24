@@ -73,6 +73,7 @@
     <Compile Include="ArrayExtensions.cs" />
     <Compile Include="Bcd.cs" />
     <Compile Include="BetweenExtensions.cs" />
+    <Compile Include="Bytes.cs" />
     <Compile Include="Collections\Generic\BinarySearch.cs" />
     <Compile Include="Collections\Generic\CollectionExtensions.cs" />
     <Compile Include="Collections\Generic\Comparers.Chain.cs" />
@@ -92,10 +93,14 @@
     <Compile Include="Collections\Generic\LinkedHashMap.cs" />
     <Compile Include="Collections\Generic\ListExtensions.cs" />
     <Compile Include="Collections\Specialized\NameValueCollectionExtensions.cs" />
+    <Compile Include="ComponentModel\ComponentConfig.cs" />
+    <Compile Include="ComponentModel\ComponentConfigExtensions.cs" />
     <Compile Include="ComponentModel\ComponentContainer.cs" />
+    <Compile Include="ComponentModel\ComponentEntry.cs" />
     <Compile Include="ComponentModel\ComponentExtensions.cs" />
     <Compile Include="ComponentModel\DataAnnotations\DisplayAttribute.cs" />
     <Compile Include="ComponentModel\DisposableObject.cs" />
+    <Compile Include="ComponentModel\IComponentConfig.cs" />
     <Compile Include="ComponentModel\IComponentContainer.cs" />
     <Compile Include="Configuration\AppSettingsSection.cs" />
     <Compile Include="Configuration\Configuration.cs" />
@@ -123,6 +128,7 @@
     <Compile Include="Data\Mapper\TypeMetadata.cs" />
     <Compile Include="DateTimeExtensions.cs" />
     <Compile Include="DateTimeOffset.cs" />
+    <Compile Include="DebugMode.cs" />
     <Compile Include="DesignMode.cs" />
     <Compile Include="Diagnostics\DebugBreak.cs" />
     <Compile Include="Diagnostics\DebugMessage.cs" />
@@ -145,6 +151,7 @@
     <Compile Include="Drawing\NativeMethods.cs" />
     <Compile Include="Drawing\ShadowMask.cs" />
     <Compile Include="Drawing\Shape.cs" />
+    <Compile Include="Empty.cs" />
     <Compile Include="EnumEx.cs" />
     <Compile Include="EnumExtensions.cs" />
     <Compile Include="EventHandlerExtensions.cs" />
@@ -152,153 +159,64 @@
     <Compile Include="IInitializable.cs" />
     <Compile Include="Navigation\IViewConfirmRequest.cs" />
     <Compile Include="Navigation\ViewConfirmEventArgs.cs" />
-    <Compile Include="Reflection\NonNullableDelegateAccsessor.cs" />
-    <Compile Include="Resolver\Activators\ActivatePipeline.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Activators\IActivatePipeline.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Activators\IActivator.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Activators\InitializeActivator.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Attributes\ConstraintAttribute.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Attributes\InjectAttribute.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Attributes\NamedAttribute.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Bindings\Binding.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Bindings\BindingBuilder.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Bindings\BindingMetadata.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Bindings\IBinding.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Bindings\IBindingMetadata.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Bindings\IBindingResolver.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Bindings\IBindingRoot.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Bindings\IBindingSyntax.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Bindings\IMissingPipeline.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Bindings\IResolverContext.cs" />
-    <Compile Include="Resolver\Bindings\MissingPipeline.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Bindings\OpenGenericBindingResolver.cs" />
-    <Compile Include="Resolver\Bindings\ResolverContext.cs" />
-    <Compile Include="Resolver\Bindings\SelfBindingResolver.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Constraints\ChainConstraint.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Constraints\IConstraint.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Constraints\NameConstraint.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\IKernel.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Injectors\IInjector.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Injectors\IInjectPipeline.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Injectors\InjectPipeline.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Injectors\PropertyInjector.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\IResolver.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Metadatas\ConstructorMetadata.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Metadatas\IMetadataFactory.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Metadatas\MetadataFactory.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Reflection\AccessorExtensions.cs" />
+    <Compile Include="Reflection\ActivatorExtensions.cs" />
+    <Compile Include="Reflection\DelegateMethodGenerator.cs" />
+    <Compile Include="Reflection\DelegateNonNullableAccsessor.cs" />
+    <Compile Include="Reflection\DelegateNullableAccsessor.cs" />
+    <Compile Include="Reflection\IAccessor.cs" />
+    <Compile Include="Reflection\IActivator.cs" />
+    <Compile Include="Reflection\ReflectionAccessor.cs" />
+    <Compile Include="Reflection\ReflectionActivator.cs" />
+    <Compile Include="Resolver\Attributes\ConstraintAttribute.cs" />
+    <Compile Include="Resolver\Attributes\InjectAttribute.cs" />
+    <Compile Include="Resolver\Attributes\NamedAttribute.cs" />
+    <Compile Include="Resolver\Bindings\Binding.cs" />
+    <Compile Include="Resolver\Bindings\BindingMetadata.cs" />
+    <Compile Include="Resolver\Bindings\BindingTable.cs" />
+    <Compile Include="Resolver\Bindings\IBinding.cs" />
+    <Compile Include="Resolver\Bindings\IBindingMetadata.cs" />
+    <Compile Include="Resolver\Bindings\IBindingTable.cs" />
+    <Compile Include="Resolver\Configs\BindingBuilder.cs" />
+    <Compile Include="Resolver\Configs\IBindingFactory.cs" />
+    <Compile Include="Resolver\Configs\IBindingRoot.cs" />
+    <Compile Include="Resolver\Configs\IBindingSyntax.cs" />
+    <Compile Include="Resolver\Constraints\ChainConstraint.cs" />
+    <Compile Include="Resolver\Constraints\IConstraint.cs" />
+    <Compile Include="Resolver\Constraints\NameConstraint.cs" />
+    <Compile Include="Resolver\Handlers\IMissingHandlers.cs" />
+    <Compile Include="Resolver\Handlers\OpenGenericMissingHandler.cs" />
+    <Compile Include="Resolver\Handlers\SelfMissingHandler.cs" />
+    <Compile Include="Resolver\IKernel.cs" />
+    <Compile Include="Resolver\Injectors\IInjector.cs" />
+    <Compile Include="Resolver\Injectors\PropertyInjector.cs" />
+    <Compile Include="Resolver\IResolver.cs" />
+    <Compile Include="Resolver\IResolverConfig.cs" />
+    <Compile Include="Resolver\Metadatas\ConstructorMetadata.cs" />
+    <Compile Include="Resolver\Metadatas\IMetadataFactory.cs" />
+    <Compile Include="Resolver\Metadatas\MetadataFactory.cs" />
     <Compile Include="Resolver\Metadatas\ParameterMetadata.cs" />
-    <Compile Include="Resolver\Metadatas\PropertyMetadata.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Metadatas\TypeMetadata.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Parameters\CallbackParameter.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Parameters\ConstantParameter.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Parameters\IParameter.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Providers\CallbackProvider.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Providers\ConstantProvider.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Providers\IProvider.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Providers\StandardProvider.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\ResolverExtensions.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Resolver\Metadatas\PropertyMetadata.cs" />
+    <Compile Include="Resolver\Metadatas\TypeMetadata.cs" />
+    <Compile Include="Resolver\Parameters\CallbackParameter.cs" />
+    <Compile Include="Resolver\Parameters\ConstantParameter.cs" />
+    <Compile Include="Resolver\Parameters\IParameter.cs" />
+    <Compile Include="Resolver\Parameters\ParameterMap.cs" />
+    <Compile Include="Resolver\Processors\InitializeProcessor.cs" />
+    <Compile Include="Resolver\Processors\IProcessor.cs" />
+    <Compile Include="Resolver\Providers\CallbackProvider.cs" />
+    <Compile Include="Resolver\Providers\ConstantProvider.cs" />
+    <Compile Include="Resolver\Providers\IProvider.cs" />
+    <Compile Include="Resolver\Providers\StandardProvider.cs" />
+    <Compile Include="Resolver\ResolverConfig.cs" />
+    <Compile Include="Resolver\ResolverConfigExtensions.cs" />
+    <Compile Include="Resolver\ResolverExtensions.cs" />
     <Compile Include="Resolver\ResolverHelper.cs" />
-    <Compile Include="Resolver\Scopes\IScope.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Scopes\IScopeStorage.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Scopes\ISingletonScope.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Scopes\ISingletonScopeStorage.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Scopes\SingletonScope.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\Scopes\SingletonScopeStorage.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resolver\StandardResolver.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Resolver\Scopes\IScope.cs" />
+    <Compile Include="Resolver\Scopes\IScopeStorage.cs" />
+    <Compile Include="Resolver\Scopes\SingletonScope.cs" />
+    <Compile Include="Resolver\Scopes\SingletonScopeStorage.cs" />
+    <Compile Include="Resolver\StandardResolver.cs" />
     <Compile Include="StringEx.cs" />
     <Compile Include="Text\Inflector.cs" />
     <Compile Include="IO\BinaryReaderExtensions.cs" />
@@ -360,15 +278,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Range.cs" />
     <Compile Include="Ref.cs" />
-    <Compile Include="Reflection\AccessorExtensionsCE.cs" />
-    <Compile Include="Reflection\NullableDelegateAccsessor.cs" />
-    <Compile Include="Reflection\DelegateMethodGenerator.cs" />
-    <Compile Include="Reflection\IAccessor.cs" />
-    <Compile Include="Reflection\MemberInfoExtensions.cs" />
-    <Compile Include="Reflection\ReflectionFieldAccessor.cs" />
-    <Compile Include="Reflection\TypeExtensions.cs" />
-    <Compile Include="Reflection\TypeInformation.cs" />
-    <Compile Include="Reflection\TypeInformationFactory.cs" />
     <Compile Include="Runtime\InteropServices\MarshalEx.cs" />
     <Compile Include="Runtime\InteropServices\NativeMethods.cs" />
     <Compile Include="Security\Cryptography\CRC16.cs" />

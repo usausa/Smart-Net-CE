@@ -34,15 +34,11 @@
         /// <summary>
         ///
         /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        IParameter GetConstructorArgument(string name);
+        ParameterMap ConstructorArguments { get; }
 
         /// <summary>
         ///
         /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        IParameter GetPropertyValue(string name);
+        ParameterMap PropertyValues { get; }
     }
 }

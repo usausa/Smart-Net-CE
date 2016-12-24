@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Reflection;
 
     using Smart.Reflection;
 
@@ -31,16 +32,16 @@
         /// <param name="type"></param>
         public DefaultTypeMetadata(Type type)
         {
-            foreach (var mi in type.GetPublicAccessableMember())
+            foreach (var pi in type.GetProperties(BindingFlags.Instance | BindingFlags.Public))
             {
-                var accessor = mi.ToAccessor();
+                var accessor = pi.ToAccessor();
                 if (accessor.CanRead)
                 {
                     parameterAccessors.Add(accessor);
                 }
                 if (accessor.CanWrite)
                 {
-                    mapAccessors[mi.Name] = accessor;
+                    mapAccessors[pi.Name] = accessor;
                 }
             }
         }

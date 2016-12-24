@@ -1,17 +1,17 @@
 ﻿namespace Smart.Resolver.Metadatas
 {
-    using System.Collections.Generic;
-
     /// <summary>
     ///
     /// </summary>
     public class TypeMetadata
     {
-        public IList<ConstructorMetadata> TargetConstructors { get; private set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays", Justification = "Performance")]
+        public ConstructorMetadata[] TargetConstructors { get; private set; }
 
-        public IList<PropertyMetadata> TargetProperties { get; private set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays", Justification = "Performance")]
+        public PropertyMetadata[] TargetProperties { get; private set; }
 
-        public TypeMetadata(IList<ConstructorMetadata> targetConstructors, IList<PropertyMetadata> targetProperties)
+        public TypeMetadata(ConstructorMetadata[] targetConstructors, PropertyMetadata[] targetProperties)
         {
             TargetConstructors = targetConstructors;
             TargetProperties = targetProperties;

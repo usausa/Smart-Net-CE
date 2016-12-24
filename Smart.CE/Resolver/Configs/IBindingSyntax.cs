@@ -1,7 +1,8 @@
-﻿namespace Smart.Resolver.Bindings
+﻿namespace Smart.Resolver.Configs
 {
     using System;
 
+    using Smart.Resolver.Parameters;
     using Smart.Resolver.Providers;
     using Smart.Resolver.Scopes;
 
@@ -39,15 +40,19 @@
 
     public interface IBindingWithSyntax
     {
+        IBindingWithSyntax WithMetadata(string key, object value);
+
+        IBindingWithSyntax WithConstructorArgument(string name, IParameter parameter);
+
         IBindingWithSyntax WithConstructorArgument(string name, object value);
 
         IBindingWithSyntax WithConstructorArgument(string name, Func<IKernel, object> factory);
 
+        IBindingWithSyntax WithPropertyValue(string name, IParameter parameter);
+
         IBindingWithSyntax WithPropertyValue(string name, object value);
 
         IBindingWithSyntax WithPropertyValue(string name, Func<IKernel, object> factory);
-
-        IBindingWithSyntax WithMetadata(string key, object value);
     }
 
     public interface IBindingToInNamedWithSyntax<T> : IBindingToSyntax<T>, IBindingInNamedWithSyntax

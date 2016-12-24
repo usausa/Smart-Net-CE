@@ -1,29 +1,39 @@
 ﻿namespace Smart.Reflection
 {
     using System;
+    using System.Reflection;
 
     /// <summary>
     ///
     /// </summary>
     /// <typeparam name="TTarget"></typeparam>
     /// <typeparam name="TMember"></typeparam>
-    internal class NonNullableDelegateAccsessor<TTarget, TMember> : IAccessor
+    internal class DelegateNullableAccsessor<TTarget, TMember> : IAccessor
     {
         private readonly Func<TTarget, TMember> getter;
 
         private readonly Action<TTarget, TMember> setter;
 
-        private readonly TMember nullValue;
+        /// <summary>
+        ///
+        /// </summary>
+        public PropertyInfo Source { get; private set; }
 
         /// <summary>
         ///
         /// </summary>
-        public string Name { get; private set; }
+        public string Name
+        {
+            get { return Source.Name; }
+        }
 
         /// <summary>
         ///
         /// </summary>
-        public Type Type { get; private set; }
+        public Type Type
+        {
+            get { return Source.PropertyType; }
+        }
 
         /// <summary>
         ///
@@ -44,18 +54,14 @@
         /// <summary>
         ///
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="type"></param>
+        /// <param name="source"></param>
         /// <param name="getter"></param>
         /// <param name="setter"></param>
-        /// <param name="nullValue"></param>
-        public NonNullableDelegateAccsessor(string name, Type type, Func<TTarget, TMember> getter, Action<TTarget, TMember> setter, TMember nullValue)
+        public DelegateNullableAccsessor(PropertyInfo source, Func<TTarget, TMember> getter, Action<TTarget, TMember> setter)
         {
-            Name = name;
-            Type = type;
+            Source = source;
             this.getter = getter;
             this.setter = setter;
-            this.nullValue = nullValue;
         }
 
         /// <summary>
@@ -75,7 +81,7 @@
         /// <param name="value"></param>
         public void SetValue(object target, object value)
         {
-            setter((TTarget)target, value == null ? nullValue : (TMember)value);
+            setter((TTarget)target, (TMember)value);
         }
     }
 }

@@ -1,11 +1,15 @@
-﻿namespace Smart.Resolver.Activators
+﻿namespace Smart.Resolver.Processors
 {
     /// <summary>
     ///
     /// </summary>
-    public class InitializeActivator : IActivator
+    public class InitializeProcessor : IProcessor
     {
-        public void Activate(object instance)
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="instance"></param>
+        public void Initialize(object instance)
         {
             var initializable = instance as IInitializable;
             if (initializable != null)
