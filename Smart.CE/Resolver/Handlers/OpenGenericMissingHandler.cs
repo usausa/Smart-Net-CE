@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
 
+    using Smart.ComponentModel;
     using Smart.Resolver.Bindings;
     using Smart.Resolver.Providers;
 
@@ -15,11 +16,11 @@
         /// <summary>
         ///
         /// </summary>
+        /// <param name="components"></param>
         /// <param name="table"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Framework only")]
-        public IEnumerable<IBinding> Handle(IBindingTable table, Type type)
+        public IEnumerable<IBinding> Handle(IComponentContainer components, IBindingTable table, Type type)
         {
             if (!type.IsGenericType)
             {
@@ -29,7 +30,7 @@
             return table.FindBindings(type.GetGenericTypeDefinition())
                 .Select(b => (IBinding)new Binding(
                     type,
-                    new StandardProvider(b.Provider.TargetType.MakeGenericType(type.GetGenericArguments())),
+                    new StandardProvider(b.Provider.TargetType.MakeGenericType(type.GetGenericArguments()), components),
                     b.Scope,
                     b.Metadata,
                     b.ConstructorArguments,

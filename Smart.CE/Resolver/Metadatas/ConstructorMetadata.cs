@@ -2,7 +2,6 @@
 {
     using System.Reflection;
 
-    using Smart.Reflection;
     using Smart.Resolver.Constraints;
 
     /// <summary>
@@ -10,8 +9,6 @@
     /// </summary>
     public class ConstructorMetadata
     {
-        private IActivator activator;
-
         public ConstructorInfo Constructor { get; private set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays", Justification = "Performance")]
@@ -19,17 +16,6 @@
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays", Justification = "Performance")]
         public IConstraint[] Constraints { get; private set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public IActivator Activator
-        {
-            get
-            {
-                return activator ?? (activator = Constructor.ToActivator());
-            }
-        }
 
         /// <summary>
         ///

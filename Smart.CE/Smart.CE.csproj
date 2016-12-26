@@ -192,6 +192,7 @@
     <Compile Include="Resolver\Injectors\PropertyInjector.cs" />
     <Compile Include="Resolver\IResolver.cs" />
     <Compile Include="Resolver\IResolverConfig.cs" />
+    <Compile Include="Resolver\Metadatas\ActivatorCache.cs" />
     <Compile Include="Resolver\Metadatas\ConstructorMetadata.cs" />
     <Compile Include="Resolver\Metadatas\IMetadataFactory.cs" />
     <Compile Include="Resolver\Metadatas\MetadataFactory.cs" />
