@@ -113,6 +113,7 @@
     <Compile Include="Converter\Converters\EnumConverterFactory.cs" />
     <Compile Include="Converter\Converters\ToStringConverterFactory.cs" />
     <Compile Include="Converter\IConverterFactory.cs" />
+    <Compile Include="Converter\IObjectConverter.cs" />
     <Compile Include="Converter\ObjectConverter.cs" />
     <Compile Include="Converter\ObjectConverterException.cs" />
     <Compile Include="Converter\TypePair.cs" />
@@ -156,6 +157,7 @@
     <Compile Include="EnumExtensions.cs" />
     <Compile Include="EventHandlerExtensions.cs" />
     <Compile Include="Functional\Maybe.cs" />
+    <Compile Include="Functions.cs" />
     <Compile Include="IInitializable.cs" />
     <Compile Include="Navigation\IViewConfirmRequest.cs" />
     <Compile Include="Navigation\ViewConfirmEventArgs.cs" />

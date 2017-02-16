@@ -10,7 +10,7 @@
     /// <summary>
     ///
     /// </summary>
-    public class ObjectConverter
+    public class ObjectConverter : IObjectConverter
     {
         private static readonly ObjectConverter Instance = new ObjectConverter();
 
