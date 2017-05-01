@@ -1,6 +1,5 @@
 ﻿namespace Smart
 {
-    using System;
     using System.Text;
 
     /// <summary>
@@ -13,9 +12,9 @@
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static string Safe(this string value)
+        public static string EmptyIfNull(this string value)
         {
-            return String.IsNullOrEmpty(value) ? string.Empty : value;
+            return value ?? string.Empty;
         }
 
         /// <summary>
@@ -24,7 +23,7 @@
         /// <param name="value"></param>
         /// <param name="count"></param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Ignore")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Extensions")]
         public static string Repeat(this string value, int count)
         {
             var sb = new StringBuilder(value.Length * count);
@@ -32,6 +31,7 @@
             {
                 sb.Append(value);
             }
+
             return sb.ToString();
         }
     }

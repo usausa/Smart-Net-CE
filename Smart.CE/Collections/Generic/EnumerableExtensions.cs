@@ -25,7 +25,7 @@
         /// <typeparam name="T"></typeparam>
         /// <param name="source"></param>
         /// <returns></returns>
-        public static IEnumerable<T> Safe<T>(this IEnumerable<T> source)
+        public static IEnumerable<T> EmptyIfNull<T>(this IEnumerable<T> source)
         {
             return source ?? Enumerable.Empty<T>();
         }
